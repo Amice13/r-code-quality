@@ -1,0 +1,4851 @@
+3.1-Descriptive_BH.R
+3.2-Basic_Charts_BH.r
+4.1-Forecast_BH.R
+4.2-Forecast charts.R
+7-Regression_BH.r
+AM_scaling_for_importance.R
+AM_scaling_for_issue.R
+BBT_scaling_for_issue.r
+singh_thornton_APSR_replication.R
+factor_analysis_2020.R
+factor_analysis_2022.R
+boot_fd_econ.R
+boot_fd_retrospective.R
+boot_fd_triple_int.R
+boot_fd_triple_int2.R
+boot_first_diffs.R
+boot_measures.R
+boot_policy.R
+boot_pred_probs.R
+build_bootstrap_figs.R
+main_analysis_code.R
+AG_code.R
+CM_code.R
+NewCode (6) (2).R
+Tobacco Bridge Sharing.R
+Cultivar_grouping_analysis.R
+Section2.r
+Section3.r
+Section4.r
+Section5.r
+Section6_Part1.r
+Section6_Part2.r
+01_ensemble_modelling.R
+02_process_layers.R
+Kao Revkin Retribution or Reconciliation 2021 AJPS List Experiment Code.R
+Function_RerandCov.R
+OKdata_RerandCov.R
+Simulation_RerandCov.R
+Figure_1.R
+Figure_2.R
+Supplementary_Figure_1.R
+PSA Homemade4-1.R
+PSA_Functions-1.R
+Ewers Lewis et al. Modelling and Predictions Code.R
+anger_social_replication.R
+maps.R
+stat_analysis.R
+Appendix B - Descriptive Statistics.R
+Appendix C - Civil War Onset Robustness.R
+Appendix C - Mobilization Onset Robustness.R
+Appendix D - Mobilization Heterogeneity Tests.R
+Main Results.R
+cohesion_crossnat_replication_code.R
+cohesion_experiment_replication_code.R
+merge_with_vdem.R
+SFE_CMPS_ReplicationScript.R
+1_main_conjoint_fig2-6.R
+2a_lapop_datacleaning.R
+2b_lapop_analysis_plus_App141517.R
+App10_PowerAnalyses.R
+App10_SampleSizes.R
+App11_AdditionalResults.R
+App12_SocioEcon_Validity.R
+App13_OLSconjoint.R
+App16_Victimization.R
+App5-8_DescriptiveStatistics.R
+App9_IdeoIndices.R
+App9_IdeoValidity.R
+App9_TwoDimen_Models.R
+polps.R
+Denmark_balCode.R
+England_balCode.R
+RCodes_Austria.R
+RCodes_Bulgaria.R
+RCodes_Cyprus.R
+RCodes_Czech.R
+RCodes_Denmark.R
+RCodes_England.R
+RCodes_Estonia.R
+RCodes_Finland.R
+RCodes_France.R
+RCodes_Germany.R
+RCodes_Greece.R
+RCodes_Hungary.R
+RCodes_Ireland.R
+RCodes_Italy.R
+RCodes_Poland.R
+RCodes_Portugal.R
+RCodes_Slovakia.R
+RCodes_Slovenia.R
+RCodes_Spain.R
+austria_cleaning_plus.R
+bulgaria_cleaning_plus.R
+croatia_cleaning_plus.R
+cyprus_cleaning_plus.R
+czech_cleaning_plus.R
+denmark_cleaning_plus.R
+england_cleaning_plus.R
+estonia_cleaning_plus.R
+finland_cleaning_plus.R
+france_cleaning_plus.R
+germany_cleaning_plus.R
+greece_cleaning_plus.R
+hungary_cleaning_plus.R
+ireland_cleaning_plus.R
+italy_cleaning_plus.R
+lituania_cleaning_plus.R
+poland_cleaning_plus.R
+portugal_cleaning_plus.R
+romania_cleaning_plus.R
+slovakia_cleaning_plus.R
+slovenia_cleaning_plus.R
+spain_cleaning_plus.R
+00_run.R
+01_data_preparation.R
+02_regression_analysis.R
+03_figures.R
+04_tables.R
+activate.R
+appendix_analysis_code.R
+paper_analysis_code.R
+fearCode3.R
+Double Profile PB Replication Cregg.R
+Double Profile PB Replication.R
+Single-Profile PB Replication Cregg.R
+Single-Profile PB Replication.R
+Generate_plot_Lasso_regression_analysis_All_data.R
+Generate_plot_flow_cytokines_univariate.R
+Generate_plot_flow_metab_univariate.R
+Generate_plots_univariate.R
+Main_Lasso_regr_bulk_marker_metab_conc_cytokines.R
+Normalize_Cytokines.r
+Normalize_Function.r
+Perform_Lasso_integration.R
+compute_metric.R
+functions.R
+preprocessing_cytokines.R
+preprocessing_flow_data.R
+preprocessing_metab.R
+run_flow_cyto_pipeline.R
+stat_analysis.R
+credibiility_jop_replication_mainresults.R
+credibility_jop_replication_crowdcoding.R
+credibility_jop_replication_externalvalidity.R
+credibility_jop_replication_publicopinion.R
+R script for manuscript.R
+Random Forest Classifier R Scripts.R
+WordEmbeddingFunctions.R
+SPID_v1.2_network.R
+REPLICATION_FILE_Appendix.R
+REPLICATION_FILE_Descriptive.R
+REPLICATION_FILE_Main.R
+AnalysisCode.R
+Peters_et_al_2023_Springer_script.R
+analysis.R
+2023_notts_repl_PLMvsFIXEST.R
+Replication_Individual_SH1.R
+fixed-vs-random-effects-country-level.R
+ordered-betareg-analysis.R
+Script Democracy conceptions and AI.R
+dataManipulation.R
+lower48control.R
+powerPlantsModel.R
+repcode.socialpatriotism.R
+replicationcode.R
+Replication Code.R
+immigration.R
+Paper code for Tables.R
+01_experimental_analysis.R
+02_speech_analysis.R
+replicationFile_howRepresentationEmpowers.R
+halloweenforest_PLOS_final.R
+R examples impact evaluation in firms and organizations.R
+rake.R
+replication.r
+CorseAnalysis.R
+YardangSubset_Spatstat_PublicScript.R
+replication_Schneider_2016_SimilaritiesDifferences.R
+figures_script.R
+RDhonest.R
+analysis_EUreferendum.R
+r_figure1.R
+01_visualisation.R
+Descriptives.R
+Electoral_System_1917.R
+RDD_tables_figures.R
+Analysis.R
+Analysis1.R
+RSV_seasonality_code.R
+extract_pgmm_mi.R
+extract_texreg_dpm.R
+long_run_effects.R
+pgmm_summary_fix.R
+recodification.R
+1. Dictionary Analysis and IG Wordclouds.R
+1. SOPA_Scrape_OpenSecrets.R
+2. Create Framing Salience Plots & Prep TS data.R
+2. SOPA_Scrape Interest Group websites.R
+3. Time-Series Analysis_VAR_NegBinom.R
+EUCD_1. Identify IGs and scrape IG data.R
+EUCD_2. Scrape Interest Group Websites.R
+MEPs_votes_Descriptives.R
+Validation of dictionary.R
+bioessays2_allspecies_code.R
+forest.rma2.R
+JOP2019final.R
+BC, BH, Ash.R_Israel2023.R
+conjoint_Israel2023.R
+01_clean&stack.R
+02_analysis.R
+03_appendix.R
+Figure1.R
+Figure3.R
+Figure4.R
+Figure5.R
+Figure6.R
+Table4.R
+1_CompileEUTL.R
+2_AddFirmData.R
+3_AddRegulatorData.R
+4_Analysis.R
+PADM_ReplicationScript.R
+Chapter 3-Principal Components Analysis (R-Script).R
+Categories_robustness_check.R
+Master_Script.R
+Party_figures_and_models.R
+election_country_merging.R
+gov_partic_first.R
+institutional_factors.R
+issue_salience_divergence.R
+polarization.R
+uk_example.R
+Replication_AR_2018_RSM_Sanghyun_Hong.R
+HierarchicalBayesianQuantileRegressionModels.R
+dietrichcrabtree.R
+empirical_bootstrap_code.R
+empirical_illustration_code.R
+simulation_code.R
+functions.R
+replication.R
+cgss_baidu_climate_replicate.R
+ccvw_replication_code_AppendixA.R
+ccvw_replication_code_study1.R
+ccvw_replication_code_study2.R
+ccvw_replication_code_study3.R
+02_Swiss-immigration-analysis.R
+amicus_analysis.R
+cities_analysis.R
+incumbent_analysis.R
+table1.R
+02_analysis_r.R
+study1.R
+study2.R
+study3.R
+Goritz_R Script_QCA_Explaining Resilience Orientation.R
+Abundance estimation script.R
+Covid_RI.R
+Covid_graphs.R
+Covid_heterogeneity.R
+Covid_regressions.R
+Master.R
+Mobility_Heterogeneity.R
+Mobility_RI.R
+Mobility_graphs.R
+Mobility_regressions.R
+Pooled_Mobility_Heterogeneity.R
+Pooled_Mobility_regressions.R
+Prepare_data_county.R
+Prepare_data_zip.R
+Quantile_covid_regressions-1.R
+Quantile_covid_regressions.R
+Quantile_mobility_regressions.R
+Summary_Table.R
+zip_randomization.R
+ContinuousModel.R
+DeprivationModel.R
+DirichletModel.R
+GovsupportModel.R
+IncomeaboveaverageModel.R
+IncomeproxyModel.R
+IncomequartilesModel.R
+LAPOPIncomeModel.R
+LogitModel.R
+MacroModel.R
+MainModel.R
+MetricinvarianceModel.R
+MicroModel.R
+NocovarsModel.R
+PartisanshipModel.R
+Processing.R
+ScalarinvarianceModel.R
+SingleclassModel.R
+VoteintentionModel.R
+Wave2010.R
+Wave2012.R
+Wave2014.R
+Wave2016.R
+Wave2018.R
+02_analysis_r.R
+fig.si1.R
+fig.si2.R
+fig.si3.R
+fig.si4.R
+fig.si5.R
+fig.si6.R
+fig.si7.R
+fig.si8.R
+fig2.R
+fig3.R
+fig4.R
+fig5.R
+functions.R
+table_and_misc_numbers.R
+create_weights.R
+dynamic_mrp.R
+get_target_margins.R
+4_figures.R
+Donald Trump and the Lie - R Analysis File v POP Final.R
+DIPLOMA_THESIS-code.R
+bcw_transform.R
+terror_cleaning.R
+terror_master.R
+terror_rdd.R
+terror_robustEB.R
+CFI_Model.R
+01_synthetic_data_model.r
+00_master-3.R
+01_simu-3.R
+02_portfolios-3.R
+03_portfolios_liq-3.R
+Fig. 5A.R
+Fig. 5D.R
+Fig. 6A.R
+Fig. 6B.R
+Fig. 6C.R
+Fig. 6D.R
+Fig. 6E.R
+Fig. 6F.R
+Fig. 6G.R
+Fig. G.R
+Fig.1A.R
+Fig.1B-D.R
+Fig.2.R
+Fig.3.R
+Fig.4.R
+Fig.5B.R
+Fig.5C.R
+Fig.7.R
+Fig.8.R
+S3_Fig.R
+Fig_Correlation_Social_housing_with_various_indicators.R
+Fig_Taxation_Rent_control_Social_housing.R
+Fig_Taxation_neutrality_indices_shades.R
+Fig_Taxation_neutrality_vs_Rent_control_EN.R
+Fig_Taxation_neutrality_vs_various_indices_EN.R
+Tab_Neutrality_indices.R
+c03_Panel_data_RE_estimation_Composite_neutrality_indices.r
+c03_Panel_data_RE_estimation_Individual_indices.r
+IdeoRatings_estimation.R
+SkillsRatings_estimation.R
+figures_main_text.R
+Ballot Roll-Off Reproduction R Script.R
+air sup and war-battle outcomes R replication script 5-22-20.R
+Appendix_AandB.R
+Figure 1.R
+Figure 10.R
+Figure 11.R
+Figure 14.R
+Figure 2.R
+Figure 3.R
+Figure 4.R
+Figure 5.R
+Figure 9.R
+citizens_profile_without_outcome.R
+step1_councilors.R
+Njunge_EN_Glmnet_bootValidation.r
+Step2_CreatePairs.R
+Step3_GatherCorrelations.R
+Step4_ModelCorrelations.R
+Step5_ObservedNetworks.R
+Step6_Bootstrapping_part1.R
+Step6_Bootstrapping_part2.R
+Step6_Bootstrapping_part3.R
+Step7_PlotResults.R
+UR_comics_functions.R
+fillMatrix_example.R
+correlations_test.R
+Household Smoke-Exposure Risks_Mazbahul Ahamad.R
+huddlestonJEPSreplication_R.R
+ESS well-being gap analysis.R
+LISS panel data analysis.R
+1) Further clean data.R
+econ 2) Create descriptive tables.R
+econ 3) Graph econ descriptives.r
+econ 4) Run econ reg model.R
+_inversions.R
+1_Preprocessing.R
+2_a_Train_Models.R
+2_b_Prepare_Datasets.R
+2_c_Compute_Tweetscores.R
+3_a_Validation_Partylevel.R
+3_b_Validation_Individual.R
+3_c_Validation_Tweetscores.R
+4_Main_Analysis.R
+5_Robustness_Individual.R
+6_Placebo_Test.R
+plotbox.R
+toolbox.R
+R_fns.R
+family_history_plots_replication.R
+covid_privacy_analysis_code.R
+RCodeUsedInPublication.R
+HNA_25Sep2020_dv.R
+define_ord_betareg.R
+helper_func.R
+install.R
+master.R
+ordered_beta_reg_sim.R
+ordered_beta_reg_sim_fixed.R
+FH_Polity permutations.R
+CorporateInfluence_Rscript.R
+Appendix_rep.R
+Main_rep.R
+anthrome_trajectory.R
+anthromes_classify.R
+download_hyde.R
+hyde_utils.R
+plotting.R
+supporting_data.R
+commsenv_model.R
+1_1 Replication - ESS data import and analysis .R
+1_2 Replication - ESS data analysis and figures.R
+2 Replication - analysis UA sample.R
+3 Replication - analysis combined NL sample.R
+replication_file_JEPS.R
+Replication_SI_study1.R
+Replication_SI_study2.R
+Replication_SI_study3.R
+Replication_main_study1.R
+Replication_main_study2.R
+Replication_main_study3.R
+Replication_prep_study1.R
+Replication_prep_study1_including_leaners.R
+Replication_prep_study1_mr.R
+Replication_prep_study1_mr_ideo.R
+Replication_prep_study1_mr_liberty.R
+Replication_prep_study1_mr_pos_neg.R
+Replication_prep_study1_quasisentences.R
+Replication_prep_study1_speeches_au.R
+Replication_prep_study1_speeches_nz.R
+Replication_prep_study1_supplementary.R
+Replication_prep_study2.R
+Replication_prep_study3.R
+1_GouldUrpelainen_Main_Replication_Code.R
+2_GouldUrpelainen_Variables.R
+3_GouldUrpelainen_DescriptiveTables.R
+4_GouldUrpelainen_DescriptiveFigures.R
+5_GouldUrpelainen_ACCESS1Map.R
+6_GouldUrpelainen_MainRegressions.R
+7_GouldUrpelainen_SupportingRegressions.R
+R script - Rafaa Chehoudi-2025 Ph.D.R
+Replication.R
+Chung FPA Replication.R
+descriptiveplots.R
+multiverse.R
+study1.R
+study1_summarystats.R
+study2.R
+study2_summarystats.R
+1_CSES_analysis.R
+2_Study1.R
+3_Study2_main.R
+4_Study2_pilot.R
+5_profile_distribution.R
+modified_Figure_3.R
+High Stakes_Stats.R
+Framing and Blame Attribution in Populist Rhetoric_Analysis.R
+exampleCode.R
+makePlots.R
+FIGURE1-1.R
+FIGURE2-1.R
+FIGURE4_5-1.R
+FIGURE6_7-1.R
+FIGURE8-1.R
+FIGUREC1-1.R
+TABLE3-1.R
+6_1.R
+6_2.R
+6_3.R
+6_4.R
+6_5.R
+7_1.R
+7_2.R
+olson_stone_replication.R
+1a.WVwells.R
+1b.WVwells-output.R
+2a.fullData-estimation.R
+2b.fullData-update.R
+2c.fullData-prediction.R
+2d.fullData-output.R
+A1.congCombined.R
+A2a.nyc.R
+A2b.nyc_output.R
+analysis.R
+functions.R
+ALL RESULTS.R
+apsr_replication_code.R
+Analysis Script.R
+hdsr_code.R
+vinicius-santana-ad-ufpe-2019.R
+Alles 2024-Replication R script 1-PropRules.r
+Alles 2024-Replication R script 2-PresPower.r
+spat_patterns_area_change.R
+01_data_cleaning.R
+01_import_and_merge.R
+02_prepare_variables.R
+analysis_s1_s4.R
+analysis_s1_s8_appendix.R
+analysis_s5.R
+analysis_s6_s7.R
+functions.R
+import_s1_US_2018.R
+import_s2_DK_2019.R
+import_s3_lucid.R
+import_s4_s5_US_2021.R
+import_s6_s7_MTurk.R
+Figure_2a.R
+Figure_2b.R
+Figure_3a.R
+Figure_3b.R
+Figure_4.R
+Table_3.R
+create_contract_proxy.R
+getFred.R
+setup_data_1.R
+setup_data_2.R
+setup_data_3.R
+setup_data_4.R
+setup_var_data.R
+JOOP_analytical code.R
+bal.R
+ceff_figure.R
+main.R
+regression.R
+summary_stat.R
+Mello 2019 EJIS.R
+Gender_Network.R
+boot_glmm.r
+diagnostic_fcns.r
+food_transfer_R_script.r
+median_quantiles_R_script.r
+mother_avoids_R_script.r
+mother_carries_R_script.r
+mother_feeding_in_proximity_R_script.r
+mother_follows_R_script.r
+mother_initiates_body_contact_R_script.r
+mother_initiates_close_proximity_R_script.r
+mother_terminates_body_contact_R_script.r
+mother_terminates_close_proximity_R_script.r
+predictor_dist_R_script.r
+ss_ggplot_R_script.r
+01_load_large_dataframes_and_save_csv_parts_final.R
+02a_perparation_of_indices_2000.R
+02b_perparation_of_indices_2009.R
+02c_perparation_of_indices_2015.R
+03a.Descriptive_Analysis_2000.R
+03b.Descriptive_Analysis_2009.R
+03c.Descriptive_Analysis_2015.R
+04a_Regressions2000.R
+04b_Regressions2009.R
+04b_Regressions2009_v2_Reading+Science.R
+04b_Regressions2009_v3_Reading+Science.R
+04c_Regressions2015.R
+04c_Regressions2015_v2_Reading+Science.R
+04c_Regressions2015_v3_Reading+Science.R
+05a_Regression_Diagnostics_2000.R
+05b_Regression_Diagnostics_2009.R
+05c_Regression_Diagnostics_2015.R
+06_Effectplots.R
+06_Effectplots_v2.R
+01-Registration-Model-Counties-Weighted-Logged.R
+01-Registration-Model-Counties.R
+02-Registration-Model-Counties-Weighted.R
+02-Registration-Model-Districts-Weighted-Logged.R
+03-Lagged-Vote-Model-Counties-Weighted-Logged.R
+03-Registration-Model-Districts.R
+04-Lagged-Vote-Model-Districts-Weighted-Logged.R
+04-Registration-Model-Districts-Weighted.R
+05-Lagged-Vote-Model-Counties.R
+05-table-log.R
+06-Lagged-Vote-Model-Counties-Weighted.R
+07-Lagged-Vote-Model-Districts.R
+08-Lagged-Vote-Model-Districts-Weighted.R
+09-Early-Vote-Model-Counties.R
+10-Early-Vote-Model-Counties-Weighted.R
+11-Demographics-Model-Counties.R
+12-Demographics-Model-Counties-Weighted.R
+13-Demographics-Model-District.R
+14-Demographics-Model-District-Weighted.R
+15-Competition-Model-Districts.R
+16-Competition-Model-Districts-Weighted.R
+17-Registration-Lagged-Vote-Model-Counties.R
+18-Registration-Lagged-Vote-Model-Counties-Weighted.R
+19-Registration-Lagged-Vote-Model-Districts.R
+20-Registration-Lagged-Vote-Model-Districts-Weighted.R
+21-Registration-Early-Vote-Model-Counties.R
+22-Registration-Early-Vote-Model-Counties-Weighted.R
+23-Registration-Demographics-Model-Counties.R
+24-Registration-Demographics-Model-Counties-Weighted.R
+25-Registration-Demographics-Model-Districts.R
+26-Registration-Demographics-Model-Districts-Weighted.R
+27-Registration-Competition-Districts-Unweighted.R
+28-Registration-Competition-Districts-Weighted.R
+29-Registration-Lagged-Vote-Demographics-Early-Vote-Model-Counties.R
+30-Registration-Lagged-Vote-Demographics-Early-Vote-Model-Counties-Weighted.R
+31-Registration-Lagged-Vote-Demographics-Competition-Model-Districts-Unweighted.R
+32-Registration-Lagged-Vote-Demographics-Competition-Model-Districts-Weighted.R
+33-tables.R
+34-pred-figures.R
+35-coefficient-figures.R
+36-map.R
+run_all.R
+run_log.R
+mediation CiC R2.R
+Tutorial-articles the importance of data and code sharing.R
+ReplicationCode.r
+00starting_definition.R
+01set_fao_data.R
+01set_wfp_data.R
+02set_global_data.R
+02set_il_data.R
+03organise_prices.R
+05analyse_prices.R
+05analyse_prices_perc.R
+07compare_expectations_ts.R
+08compare_expectations_var.R
+10total_compare.R
+riots_replication_final.R
+JHR_REP_CODE.R
+Analysis Tutorial.R
+Hmc.R
+HmcRun_CorrNormal.R
+HmcRun_Lasso.R
+HmcRun_LassoPreliminary.R
+HmcRun_NormalMixture.R
+HmcRun_Preliminary.R
+HmcRun_StandardNormal.R
+HmcRun_t_NotScaled.R
+HmcRun_t_Scaled.R
+Rocftp.R
+0-Readme.R
+1-Functions.R
+2-Forecast.R
+3-Accuracy.R
+4-Main.R
+5-Appendix.R
+NaturalResourcesConflict.R
+zam_v1.R
+Indicator_Calculation_Mother_Script.R
+Livestock_Product_Calculations.R
+Off_farm_gender.R
+Parcelles_Land_Area.R
+Prices.R
+REVERSE_TRUE_FALSE_SCRIPT.R
+Setting_Universal_Units.R
+TRUE_FALSE_SCRIPT.R
+Total_Incomes.R
+Value_Calculations.R
+Whole_Livestock_Calculations.R
+OpenMindat-package.R
+OpenMindat.R
+mindat_api_tools.R
+mindat_cache.R
+mindat_data_maker.R
+mindat_endpoint.R
+mindat_geomaterials.R
+mindat_ima_minerals.R
+mindat_localities.R
+mindat_querys.R
+mindat_response_data_parse.R
+test_OpenMindat.R
+test_mindat_api_tools.R
+test_mindat_cache.R
+test_mindat_data_parse.R
+test_mindat_geomaterials.R
+test_mindat_ima_minerals.R
+test_mindat_localities.R
+test_mindat_query.R
+test_mindat_rest_api.R
+1890ConstData-DRAgg1924 VC.R
+aggregate_data.R
+collapse_1890sdata.R
+create-Weimar-TCU.R
+create-dr1924-TCU.R
+create_TCU_map.R
+create_dr1924_GESIS-1.R
+lme_and_graphs1.R
+_replic_1996.R
+_replic_1998_depfed.R
+Tremblay_Waring_analysis.R
+ReplicationFinal.R
+coeff_plot_functions.R
+FH-summary.R
+FH.R
+FHCAR-summary.R
+FHCAR.R
+models.R
+Fig3.R
+Fig4_Tab1.R
+Fig5_Tab2_FigS27_TabS19_TabS20.R
+Fig6.R
+FigE1_FigE2_FigE3.R
+FigE4.r
+FigE5_FigS3_FigS20_FigS21_FigS22_TabS6_TabS7_TabS8_TabS9_TabS10_TabS11.R
+FigE6.R
+FigS1.R
+FigS11_FigS12_FigS13_TabS15_Zip.R
+FigS14_FigS15_FigS16_TabS16_Tract.R
+FigS17_FigS18_FigS19_TabS17_Precinct.R
+FigS2.r
+FigS26.R
+FigS28.R
+FigS5.r
+FigS6_FigS7_TabS12_TabS13.R
+FigS8_FigS9_FigS10_TabS14_City.R
+Figs23_FigS24_FigS25.R
+TabS18.R
+theme_jake.R
+replication_code.R
+analyzing_2016.R
+bigKRLS_vs_KRLS_speed.R
+building_2016_data_frame.R
+building_and_analyzing_2016_merged_file.R
+create_data_small.R
+cv_election2016_D1.R
+eigenbenchmark.R
+evaluate_kcrossvalidation.R
+journal_articles.R
+kcrossvalidate_2016.R
+kcv_election2016_D2.R
+sims_popsd_coverage.R
+sims_subsampling.R
+visualizations.R
+2019.11.25_script_1_Risk reduction.r
+Chapter 4-Multilevel Explanatory Analysis (R-Script).R
+UGA_bia_national.R
+Public Syntax.R
+00_master_r.R
+01_GP_figures_effects_by_content.R
+02_GP_tables_effects_by_content.R
+03_GP_Attrition_TableA21.R
+04_GP_Balance_TableA22.R
+05_facebook_setup.R
+MorsePratt_StrategiesofContestation_Code.R
+ RAC_DiD_21Mar2021_R2.R
+RAC_DiD_03Jun2020_R2.R
+appendix_figures.R
+btscs.R
+conditionality_appendix_models.R
+conditionality_models.R
+1-figure 1.R
+10-appendix table 5.R
+11-appendix table 6.R
+12-appendix table 8.R
+13-appendix table 9.R
+14-appendix table 10.R
+15-appendix table 13.R
+16-appendix figure 10.R
+17-appendix table 14.R
+18-appendix figure 9.R
+2-figure  2.R
+3-figure 3.R
+4-figure 4.R
+5-figure 5.R
+6-figure 6.R
+7-table 2.R
+8-figure 7.R
+9-figure 8.R
+prepare_ParlSpeech_data.R
+prepare_ToN_data.R
+me-analysis.R
+me-prep.R
+analysis_replication_code.R
+med.publicuse.R
+EffectOfProtocol14FiguresAndTables.R
+0-DataSummaries.R
+1-MakeTimeTrees.R
+2-InferAncestralStates.R
+3-DisparityDistances.R
+4-DisparityTrends.R
+5-RateTests.R
+FigScript.R
+calc_metrics2.R
+calculate_morphological_distances2.R
+geoscalePlot2.R
+geoscalePlot3.R
+simple.dbFD.R
+test_rates2.R
+nhs_replication_code.r
+qry_analysis.R
+Maier_data analysis.R
+TPP Paper_RP.R
+tax_analysis_clean.R
+Figure1.R
+Figure2.R
+brazil-RD-analysis.R
+Script for seeded LDA.R
+2018.08.13_Optimal_portfolio_calculation_script_1.R
+(1) Yu, Whang, and Lee_main result (Tables 1-2,A1-A3_Figures 1-2).R
+(2) Yu, Whang, and Lee_linear specification (Table OA1).R
+(3) Yu, Whang, and Lee_stability trend (Figure OA1).R
+(4) Yu, Whang, and Lee_democracy variables (Tables OA2-OA7).R
+amce.R
+Figures.R
+analyses.R
+01_data_import.R
+02_data_preparation.R
+04_rand_check.R
+05_descriptive data.R
+06_main_effects.R
+07_extra_cross_tables_etc.R
+08_tab_plot.R
+DEseq_RDA_signet.R
+signet_claire_droso_3.R
+make_figs.R
+Child Externalizing PP Completion_FINAL_checkingip.R
+Child Internalizing PP Completion_FINAL_checked.R
+Child PTS PP Completion_FINAL_checked.R
+Child Tot Probs PP Completion_FINAL_checked.R
+Child Tot Probs PP Follow Up_FINAL_checked.R
+Externalizing Follow Up Completion_FINAL_checked.R
+Externalizing RCT Completion_FINAL_checked.R
+Internalizing RCT Completion_FINAL_checked.R
+Internalizing RCT FollowUp_FINAL_checked.R
+Tot Probs Follow Up RCT_FINAL_checked.R
+Tot Probs RCT Completion_FINAL_checked.R
+Figures.R
+analysis_produce_bags.R
+DataAnalysis_FrameSalience.R
+Analysis 1.R
+Analysis 2.R
+Analysis 3.R
+Perspective.R
+Transcripts.R
+Transcripts_Date.R
+FD graph 1 - Evangelicals (SSM).R
+FD graph 2 - RCs (SSM).R
+FD graph 3 - Evangelicals (Abortion).R
+FD graph 4 - RCs (Abortion).R
+Replication file - all tables & models - RPS paper - Schmidt.R
+R_script.R
+Meta-analysis R script.R
+combined-final.R
+1_Figures_2-4.R
+2_Modeling.R
+3_Fig_5-6-8a_AME.R
+4_Fig_7-8b_TERGM.R
+ggCirc.R
+listToArray.R
+Ghassim - BJPolS 2024a - Response requests in surveys - Replication code.R
+f-CreatePompMod.R
+f-ReformatSims.R
+m-check_model.R
+m-create_contact_matrix.R
+m-main_simulations_ms20_revisionB.R
+s-base_packages.R
+analysis.R
+1. Fig 1 Sentiment Plot.R
+2. Fig 2 and 3 Visits Plots.R
+3. Macro Models Main.R
+4. Micro Models Main.R
+5. Plotting Regression Coefficients.R
+Combined in out Sentiment Models Appendix.R
+Macro Month FE Models Appendix.R
+Sentiment Probability Models Appendix.R
+appendix_demographics.R
+media.reflect.syntax.R
+ABT 2023-Replication R script ch2.R
+ABT 2023-Replication R script ch3.R
+ABT 2023-Replication R script ch4.R
+ABT 2023-Replication R script ch5.R
+ABT 2023-Replication R script ch6.R
+Figure 1 and appendix fig A2_replication.R
+Figure 2_replication.R
+appendix fig A1_replication.R
+code-main.R
+sample-description.R
+group-selection-script.R
+Code_EDCC_Final.R
+Cox.R
+Linear.R
+Lognormal.R
+Processing.R
+Quadratic.R
+Statespace.R
+Weibull.R
+spat_patterns_area_change.R
+01descriptives.R
+02analysis-democ-main.R
+03indonesia.R
+04-appendix-analysis-democ-alt_democ-measure.R
+04-appendix-analysis-democ-media.R
+04-appendix-analysis-democ-robustness.R
+04-appendix-analysis-fullsample.R
+FirstStreetProcessing.R
+DVM_supp.R
+Data_processing.R
+FF_supp.R
+Fetch_data.R
+weighted_index.R
+juon_bochsler_cps_autonomy_ceefsu_analyses.R
+juon_bochsler_cps_autonomy_ceefsu_analyses_me.R
+juon_bochsler_cps_autonomy_global_analyses.R
+juon_bochsler_cps_autonomy_global_analyses_me.R
+Kumar_JOP_Replication Code.R
+00-Prepare_Computer.R
+01-Get_Index_Data.R
+02-Do_Descriptive_Figures.R
+03-Do_ARCH_Test.R
+04-Estimate_Garch_Model.R
+05-Find_Best_Garch_Model.R
+06-Simulate_Garch_Model.R
+garch_fcts.R
+Figure1-countryCuGraphsAUSJPN.R
+Figure2-AverageVsCu.R
+Figure4-GermanyCaseStudyGraphs.R
+codes_clean.R
+From_raw_to_clean_coint_data.R
+Reproduce_figures.R
+battleground states survey.R
+western states survey.R
+Youth QCA - Script 1 - Data Preperation.R
+Youth QCA - Script 4 - Calibration Robustness Checks.R
+Bolker_easyPredCI_12222016.R
+FX_anova_extract.R
+FX_multlevel_model_helper_functions.R
+FX_multlevel_model_wrapper_for_helper_functions.R
+FX_round_df_columns.R
+FX_run_multi_level_model.R
+FX_run_multi_level_model_NO_MONTH_EFFECT.R
+Replication_Analysis_EJPR.R
+replication_code.R
+replication.R
+analysis_locations.R
+analysis_main.R
+Urb_dh_script.R
+NaturalResourcesConflict.R
+Master.R
+bar_charts.R
+basic_cleaning.R
+flow_chart_numbers.R
+hainmueller_weights.R
+histogram_knowledge_gap.R
+interaction_tables.R
+main_regressions.R
+shortlist_functions.R
+summary_and_balance_table.R
+video_ratings.R
+Chapter 5-Principal Components Analysis (R Script).R
+CrossCulturalLaughExperimentsPhaseIILaughStudies.R
+Vectorial capacity and TEP1 genotypes of Anopheles gambiae.R
+Allard _ Get and Clean Data-1.R
+TextMiningScript.R
+BJPOLS - Basic Values and Candidate Emergence - R script file.R
+simulations.R
+simulations_iterated.R
+study_1_rtw-mw_F.R
+study_1_rtw-mw_analysis.R
+study_1_rtw-mw_simulations.R
+study_2_misperceptions_F.R
+study_2_misperceptions_additional_analysis.R
+study_2_misperceptions_analysis.R
+study_2_misperceptions_bols.R
+study_2_misperceptions_probabilities.R
+study_3_conjoint_analysis.R
+utils.R
+01_data_preprocessing.R
+02_hybridmodel.R
+scripit.R
+ReplicationFile.R
+TableFunctionsFinal.R
+TableWriteFunctions.R
+nestedTopics.R
+replication.R
+StatsAnalysis.Flapper.R
+leaders 2025 replication funcs.R
+leaders 2025 replication.R
+Figures_code.R
+Alejandro and Feldman - 2024 - The discursive process of resemantisation - rscript.r
+Media Matters Replication Script - R.R
+chapter01.R
+chapter02.R
+chapter05.R
+chapter06.R
+chapter07.R
+chapter08.R
+chapter10.R
+chapter11.R
+chapter12.R
+chapter13.R
+chapter14.R
+chapter15.R
+chapter16.R
+chapter17.R
+chapter19.R
+chapter20.R
+chapter21.R
+chapter22.R
+chapter24.R
+chapter25.R
+chapter26.R
+chapter27.R
+chapterA.R
+fm_oc_R_code.R
+FinalTables.R
+WindowFunctions.R
+Figure B2 and B5 - Distribution of TV Signals & 1st 2nd vote shares.R
+exit_index.R
+flags_replication.R
+arfima-adl-replication.r
+Benchmark_cost_realdata.R
+Benchmark_existingGRN_GENIE3_SUMMARY.R
+Benchmark_existingGRN_GENIE3_setting2.R
+Benchmark_existingGRN_GENIE3_setting2_sharedlinkdetection.R
+D0002_simulation_maskRate.R
+D0002_simulation_maskRate_summary.R
+D0002_simulation_rcpp.R
+D0002_simulation_summary.R
+D0003_MB_JGL2norm.R
+D0003_MB_cont.R
+D0003_MB_summary.R
+D0004_GBM_JGL2norm.R
+D0004_GBM_cont.R
+D0004_GBM_summary.R
+FUNCTIONS.R
+Rcode_Fig2.R
+Rcode_Fig3.R
+00_setup.R
+01_produce_figures.R
+Figure_1.R
+Figure_2.R
+Figure_3.R
+Figure_4.R
+Figure_5_1.R
+Figure_5_2.R
+Figure_5_3.R
+Figure_5_all.R
+Figure_A1.R
+Figure_A2.R
+Figure_A3_1.R
+Figure_A3_2.R
+Figure_A3_3.R
+Figure_A3_all.R
+TFDTW.R
+grid.search.R
+implement.R
+misc.R
+simulate.R
+synth.R
+analysis_afrobarometer.R
+analysis_all.R
+analysis_altoutcomes.R
+analysis_descriptives.R
+analysis_ealevel.R
+analysis_frt.R
+analysis_globals.R
+analysis_heterogeneity.R
+analysis_hh_fe.R
+analysis_inclmaps.R
+analysis_robchecks.R
+analysis_table1.R
+analysis_table2.R
+1-import dictionary tidy.R
+2-wrangle categories.R
+3-descriptives.R
+4-figure 1 ssm perc of rhetoric.R
+4-figure 2 ssm by mft.R
+5-study2 all issues.R
+6-figure 4 trichotomy analysis.R
+7-table 2 analysis.R
+00_analysis_mainresults.R
+01_analysis_mediation_moderation.R
+utils.R
+syria-selfid-replication.r
+replication_code_appendix.R
+replication_code_article.R
+CHIN_replication.R
+ethno_replication.r
+graphs.R
+main text.R
+partisan_segregation.R
+supplementary.R
+ale.R
+ar1.R
+ar1_extra.R
+ar2.R
+auc.R
+aucCI.R
+create_features.R
+data_and_map.R
+full-analysis.R
+gam.R
+initialplot.R
+model_preproc.R
+prevalence.R
+rf.R
+subcodes.R
+subplots.R
+variableimportance.R
+xgb.R
+analyze-bias-awareness.R
+analyze-candidate-metrics.R
+analyze-demographics.R
+analyze-search-metrics.R
+analyze-vmp-behavior-attitude.R
+analyze-vmp-demographics.R
+analyze-vmp-familiarity.R
+analyze-vmp.R
+analyze-vote-shift.R
+data-clean.R
+data-format.R
+data-randsamp.R
+group_comparisons.R
+main.R
+presentation.R
+rand_samp.R
+rm_negative.R
+vmp.R
+messages_to_documents.R
+pilot_analysis.R
+pilot_analysis_2.R
+pilot_analysis_3.R
+pilot_analysis_3_dupe.R
+victimhood_initial_lda.R
+victimhood_pilot_generator.R
+analysis.R
+Medicare expansion RDD script.R
+Troops or Tanks R Replication Code_Descriptive Charts, Maps, Case Study Charts.R
+Presidential Investments_Fig1 and Fig2 Replication.R
+Presidential Investments_Nominations Analysis.R
+HarbridgeYong_Volden_Wiseman_Addtl_Figures.R
+SM_code_milk.R
+VG_Script1.R
+VG_Script2.R
+VG_Script3.R
+replicationscript.r
+Figure_4.R
+Figure_5.R
+Figure_6.R
+Figures_1_2_3.R
+Master_Source_Scripts.R
+Estimation.R
+Estimation_batch.R
+conjoint.estimation.R
+data_management.R
+factorial.experiment.estimation.R
+feasibility.estimation.R
+heatmap.estimation.R
+move.behavior.estimation.R
+neighborhood.quality.proxy.analysis.R
+other.appendix.estimation.R
+quickfire.estimation.R
+Paustyan_Russian Politics_R_Script.R
+Dendrogram.R
+Package_MixtureRegression_GroupVariableSelection.R
+benchmark.R
+figures.R
+helpers.R
+in text.R
+montana.R
+structural.R
+weights.R
+sharia.R
+German code.R
+Interaction model code.R
+Stratified model code.R
+us code.R
+Aggregate_Nat_L1_L2.R
+GWR.R
+HTE.R
+Paper_tables.R
+Paper_tables_saturated.R
+coef_plots_democracy.R
+coef_plots_election.R
+coef_plots_margin.R
+competitiveness_measures.R
+levels_of_aggregation.R
+merge.R
+process_forest.R
+process_upsampled.R
+Analysis.R
+Analysis_Solvency2.R
+HelperFunctions.R
+Init.R
+stargazermod.R
+Estimation.R
+Estimation_batch.R
+conjoint.estimation.R
+data_management.R
+factorial.experiment.estimation.R
+feasibility.estimation.R
+heatmap.estimation.R
+move.behavior.estimation.R
+neighborhood.quality.proxy.analysis.R
+other.appendix.estimation.R
+quickfire.estimation.R
+FitPrincipalStratification.R
+makephi.R
+mergepredictions.R
+mvCovInvLogDet.R
+mvpsmod.R
+mvpsmod_fixtheta.R
+mvpsmod_ind.R
+plot.ps.spatmodel.R
+plot.psregression.R
+plot.spatpredmodel.R
+plotigammaprior.R
+plotps.R
+principalstratmod.R
+principalstratmod_mono.R
+principalstratmod_monoind.R
+psbayes.R
+psregression.R
+psspatmodel.R
+psspatmodelglm.R
+spatpred.R
+sum.miss.R
+summarizeps.R
+summary.psbayes.R
+summary.psregression.R
+summary.spatpredmodel.R
+summarypollution.R
+00_preprocess.R
+01_main_analyses.R
+02_textanalysis.R
+03_robustness.R
+AhlquistPAsimulationsAnalysis.R
+BIListExp.R
+DLn2000J3b1.R
+DLn2000J3b_2.R
+DLn2000J3b_4.R
+DLn2000J4b1.R
+DLn2000J4b_2.R
+DLn2000J4b_4.R
+DesignedListExp1000.R
+N2000simsAnalysis.R
+JCR_replication_code_oct24.R
+AB-r6-clean.R
+AB-r8-clean.R
+AB-trade.R
+Figure 2.R
+milner-ghana.R
+milner-uganda-2018.R
+milner-uganda.R
+Code_Figures.R
+replication code.R
+SupplementaryCode_S3_IndependentContrasts.R
+SupplementaryCode_S4_PhylogenyFigure2.R
+replication_rtm_ES.R
+UnmaskingReplication.R
+UnmaskingReplicationSI.R
+cps_replication.R
+ALL_ANALYSIS.R
+analysis_functions.R
+desc_outcomes.R
+desc_rails.R
+desc_table.R
+did_1815_1922.R
+did_cw_terr.R
+did_estimators.R
+did_ind_aut.R
+did_secession.R
+did_separatism.R
+did_separatism_irr.R
+did_separatism_nnt.R
+did_separatism_npc.R
+mech_1815_1922.R
+mech_separatism.R
+nw_functions.R
+rail_budget.R
+rails_ia.R
+separatism_iv.R
+setup_analysis.R
+simrails2segments.R
+simulate.R
+simulate_all.R
+simulator_class.R
+validate_rails.R
+ReplicationCode.R
+code_figure1_appendixe_appendixf.r
+Undercount16May16.R
+clean_data.R
+graphs.R
+nb_under_lik.R
+Plots.R
+Create graphs.R
+Preprocess (For Upload).R
+STM (For Upload).R
+Word Network Analysis (For Upload).R
+Regressão com dados em painel.R
+Script_AnIntroductionToPanelDataQCAInR.R
+Maps.R
+EuropenSoccerLeagues.R
+FrontLoading.R
+1.0 Analysis_GVGH.R
+JCSO_replication.R
+Script_Genética de poblaciones_Fusarium.R
+feature_correlation_table.R
+fig1_si.R
+fig2_si.R
+fig3.R
+fig3_si.R
+fig4.R
+fig4b_si.R
+fig6.R
+figs5_and_4a_si.R
+install_packages.R
+popmap_analysis.R
+predict_districts.R
+prep_fig1_fig2_si.R
+prep_fig3_fig4.R
+subgroup_correlations.R
+table1.R
+Figures_Bechtel_Liesch_Scheve.R
+Script for Explainable and Green AI v3.R
+Script for Pre-study to Explainable and Green AI.R
+Script for generating choice design and choice cards.R
+submission_edcc_el_salvador_student_rev.R
+submission_edcc_el_salvador_teacher.R
+CFA.R
+CFA_1st_configural.R
+CFA_2nd_configural.R
+CFA_bifactor_configural.R
+CFA_bifactor_metric.R
+CFA_bifactor_previous.R
+CFA_bifactor_scalar.R
+CFA_bifactor_scalar_partial1.R
+CFA_bifactor_scalar_partial2.R
+CFA_bifactor_strict.R
+CFA_descriptive.R
+CFA_graphic.R
+CFA_scoretest.R
+CFA_unifactor_configural.R
+CFA_unifactor_previous.R
+CFApartial.R
+or_theat_proj_script_20221031.R
+complementary_survey_tables.R
+repscript.R
+listexp_ru.R
+contribution analysis.R
+functions.R
+health and participation analysis - JOP.R
+persuasion analysis.R
+set up data from private.R
+vote (self-report) analysis.R
+voting analysis.R
+00-helperfunctions.r
+01-comparativeanalysis.R
+02-mainanalysis.R
+03-mechanismanalysis.R
+04-appendix.R
+observational&experiment.R
+textbookAnalysis.R
+trade_deforestation_appendix.R
+trade_deforestation_replication.R
+Yellow Rail Spectrogram.R
+Boxplots by Continent.R
+Density Plots.R
+Imputed Value Simulations.R
+ivregs.R
+replication.R
+A0 - Run simulation via source.R
+A1 - Functions.R
+A2 - Parameters.R
+A3 - Simulation Script.R
+A4 - Summarize Simulation Results.R
+A5 - Apply All Analysis Methods to Simulation Results.R
+A6 - Tables.R
+replication_analysis.R
+attribute_affinity_replication.R
+attribute_affinity_replication_appendix.R
+functions.R
+Reinbold_issue Salience.R
+Chapter 3-Binomial and Ordinal Multilevel Analysis (R-Script).R
+ChangingHearts_GublerEtAl_Jul2021-1.R
+ChangingHearts_GublerEtAl_Jul2021.R
+appendix_flowchart_study2.R
+Analysis-Experiment.R
+Analysis-Pew.R
+analysis_script.R
+data_processing_script.R
+10_Table A3.R
+11_Figure A6.R
+12_Figure A7.R
+13_Table 2.R
+1_Figure 1.R
+2_Figure A1.R
+3_Figure 2.R
+4_Table A2.R
+5_Figure A2.R
+6_Figure A3.R
+7_Figure A4.R
+8_Figure A5.R
+9_Figure 3.R
+Replication Log Script.R
+data_cleaning_and_merging.R
+figure1.R
+master.R
+Tweet.R
+PB_Script_public.R
+ReadMe.R
+helpers.R
+replicate_manuscript.R
+replicate_si_appendix.R
+si_causal_forest.R
+si_causal_interact_lucid.R
+si_conjoint_donate_norc.R
+si_conjoint_hetfx_a_lucid.R
+si_conjoint_hetfx_a_norc.R
+si_conjoint_hetfx_p_lucid.R
+si_conjoint_ordinal.R
+si_corrplots.R
+si_wts_lucid.R
+si_wts_norc.R
+02Municipality_Analysis.R
+03NHA_Analysis.R
+00-main.R
+01-fe-models-reproduction-in-r.R
+02-fe-models-add-year-fe.R
+03-fe-models-add-clustered-se.R
+04-fe-models-add-year-fe-clustered-se.R
+05-fe-models-reproduction-scaled-vars.R
+06-fe-models-scaled-vars-add-year-fe.R
+07-fe-models-plm-fe.R
+08-fe-models-plm-re.R
+09-ordbetareg-fe-regressions.R
+10-ordbetareg-twfe-regressions.R
+11-iv-reproduction-in-r.R
+12-iv-reproduction-clustered-se.R
+appendix_prep_Monthly_stata.R
+appendix_prep_sums_nat_upc_year_month.R
+calc_final_taste.R
+calc_initial_taste.R
+prep_sums_nat_upc_year.R
+sample_builder.R
+Fig2PanelA.r
+Fig2PanelsBCD.r
+Fig3PanelA.r
+Fig3PanelsBCD.r
+Fig4PanelA.r
+Fig4PanelsBCD.r
+Fig5PanelA.r
+Fig5PanelsBCD.r
+Table1.r
+code_for_figures.R
+simulated_comparative_statics_and_fig5.R
+01 Descriptives.R
+02a CBPS Main.R
+02b CBPS Robust.R
+02c CBPS Extended.R
+03 Alternatives.R
+04 Additional.R
+04_deFactoCbi-Figures.R
+National Security Focus Visualization.R
+Code for Gender imbalance in RU public.R
+Replicate_BLM_ENGOs_ETDP.R
+00_setup.R
+01_process_gibson_data.R
+02_process_iyengar_data.R
+03_process_muraoka_data.R
+04_Figure1.R
+05_gibson_text_discussion.R
+06_Figure2.R
+07_FigureA1.R
+08_FigureA2.R
+09_FigureA3.R
+10_FigureA4.R
+11_FigureA5.R
+12_Gill_Retail_Sales_Analysis.R
+13_FigureA7.R
+14_FigureA8.R
+15_FigureA9.R
+16_FigureA10.R
+Master.R
+activate.R
+PRS Replication File_Analyses.1.R
+data_trend_description.R
+dc_dataprep.R
+dc_natrates_analysis.R
+dc_natrates_dataprep.R
+analyze_data_conjoint_bureaucrats.R
+analyze_data_conjoint_politicians.R
+analyze_data_descriptives.R
+analyze_data_diffindisc.R
+analyze_data_rdd.R
+analyze_data_survey_bureaucrats.R
+analyze_data_survey_politicians.R
+prepare_data_conjoint_bureaucrats.R
+prepare_data_conjoint_politicians.R
+prepare_data_diffindisc.R
+prepare_data_rdd.R
+prepare_data_survey_bureaucrats.R
+prepare_data_survey_politicians.R
+R script - Calibration.R
+R script - QCA analysis.R
+F75_Metabolomics_Preprocess.R
+1_data_ingest.R
+2_data_analysis_graphics.R
+Solar_Rep_Census.R
+Solar_Rep_Figure.R
+Solar_Rep_Survey.R
+analysis.R
+global_parameters.R
+scenarios_intro.R
+simulations.R
+rp_fig1-1.R
+rp_fig2-1.R
+rp_tabA1.R
+accommodation_backlash_script.R
+backlash_functions.R
+Thal APSR Replication Code.R
+Schneider_2018_two_step_replication.R
+smartcities_cyberrisk_replication.R
+JuryTheorem.R
+distributions.R
+textlength.R
+civil_regions_rep.R
+civil_trends_rep.R
+country_graph_rep.R
+est_factors_rep.R
+gov_regions_rep.R
+gov_trends_rep.R
+leg_regions_rep.R
+leg_trends_rep.R
+parl_regions_rep.R
+parl_trends_rep.R
+police_regions_rep.R
+police_trends_rep.R
+polpar_regions_rep.R
+polpar_trends_rep.R
+regions_graphs_rep.R
+trends_all_rep.R
+trends_des_rep.R
+trends_regs_rep.R
+trends_stimsons_rep.R
+3wayindep.R
+rutilities.R
+Change point and network analysis.R
+Clutersing of rivers.R
+Malik_CDF_ReplicationFinal.R
+add-application-gender-centrality.R
+add-application-pageviews.R
+data-validation.R
+packages-add-applications.r
+paper-analyses.R
+paper-functions.R
+paper-packages.R
+SvP_RP-1.R
+Script Conceptions of democracy and AfD - v1.R
+01_sim_v4a.R
+02_sim_v4b.R
+03_sim_perf.R
+04_sim_out.R
+05_nes_models.R
+06_nes_pca.R
+07_nes_out.R
+hgrm2.R
+analyis.R
+fluevexperiiter34plosone.R
+confirmatory study analyses.R
+meta analysis - correlations.R
+meta analysis - interaction, simple slopes, and main effects.R
+study 1 analyses.R
+study 2 analyses.R
+study 3 analyses.R
+study 4 analyses.R
+R_CODE_POSTCOM_INVALIDS.R
+ReplicationCode.R
+causal analysis - R examples.R
+climatecityclub.R
+deconvolve.R
+deconvolve_bs.R
+figure12.R
+figureA12.R
+figureA13.R
+figureA3-A4.R
+figureE1-E2.R
+figureE3.R
+figureE4-E6.R
+figureE7-E8.R
+table7b.R
+table8.R
+table8prep.R
+symbionts_calc_OA.R
+Replication_main_study1a.R
+Replication_main_study1b.R
+Replication_main_study2.R
+Replication_oa_section1.R
+Replication_oa_section2.R
+Replication_oa_section6.R
+Replication_oa_section7.R
+Replication_oa_study1a.R
+Replication_oa_study1b.R
+Replication_oa_study2.R
+Replication_prep_study1a.R
+Replication_prep_study1b.R
+Replication_prep_study1b_including_abstentions.R
+Replication_prep_study2.R
+Replication_prep_supplementary.R
+Replication_data.R
+Replication_Script.R
+01.1-replicate_confirmatory_models.R
+01.2-replicate_confirmatory_plots.R
+02.1-replicate_exploratory_models.R
+02.2-replicate_exploratory_plots.R
+03-replicate_paper_plots.R
+analyzeRollCallVotesAngles.r
+replicationAnalysisWithIdeal.r
+replicationAnalysisWithOC.r
+replicationNominateAnalysis.r
+did_function.R
+jop_replication_dataverse2.R
+pred.function.R
+reg.results.function.R
+0-Setup.R
+1-Data-Preparation.R
+1b-fun.R
+2-Analysis.R
+compareSystemsFigures.r
+vbm-replication-01052021.R
+01_Preprocess.R
+04_Analysis_Main.R
+05_Outputs.R
+checkViolationDist.R
+closestKiln.R
+closestObj.R
+constructKilnPMData.R
+constructKilnPopData.R
+extractCopernicus.R
+kilnPopDist.R
+pnasKilnAnalysis.R
+data_replication_file.R
+An.species.R
+Ejemplos_Carto_CS.R
+Mapping_Applications.R
+Spatial_Utilities.R
+mymap.R
+text-analysis-replication.R
+refugees_welcome.R
+F75_intestinal_process.R
+0_createdata.R
+1_descriptive_analysis.R
+2_analysis.R
+3_appendix.R
+Bayesian.PMF.R
+Figs2_3_Table4.R
+Figs4_5.R
+Table5_PanelA.R
+Table5_PanelB.R
+immiginfoexpresults03192018.R
+immiginfoload03202018.R
+r_script2.R
+02_Replication_RScript_CDCR.R
+Script_Factor-Analysis.R
+make figure 1.R
+parallel_code-snow.R
+replication code CPS.R
+analysis_cn.R
+analysis_vn.R
+execute_all.R
+stargazer_fix.r
+ReStat.R
+0_install_packages.R
+RcppExports.R
+figure1_a_b.R
+figure2.R
+figure3_a_b.R
+figure4_a_b.R
+figureB1_a_b.R
+figureD1.R
+figureD2_a_b.R
+figureE1_a_b_c.R
+figureG10_a_b.R
+figureG11_a_b.R
+figureG12_a_b.R
+figureG1_a_b_c.R
+figureG2_a_b_c.R
+figureG3_a_b_c.R
+figureG4_a_b.R
+figureG5_a_b.R
+figureG6.R
+figureG8.R
+figureG9_a_b_c.R
+figureH1_a_b_c.R
+figureH2_a_b.R
+figureI1_a_b.R
+figureI2_a_b_c.R
+figureI3_a_b_c.R
+figureI4_a_b.R
+figureI5.R
+figureI6.R
+figureJ1_a_b.R
+figureJ2_a_b_c.R
+figureJ3_a_b_c.R
+figureJ4_a_b_c.R
+figureJ5_a_b.R
+figureK1_a_b_c.R
+gsynth.R
+interFE.R
+table1.R
+table2.R
+table3.R
+tableA1.R
+tableD1.R
+tableF1.R
+tableG1.R
+tableG2_figureG7.R
+tableG3.R
+tableI1.R
+tableI2.R
+tableJ1.R
+tableK1.R
+Figure_script_public.R
+README_replication.R
+script1_datacleaning.R
+script2_analysis.R
+ESS-merged-BJPS.R
+ITA-SurveyExp-BJPS.R
+experimental_figures_6-8.R
+figure2_code.R
+figure3_code.R
+bird-mammal_MCMC_final.R
+bird_analyses_final.R
+bird_phylo_final.R
+01_GEO_group.R
+02_IDS.R
+03_Muzz.R
+04_DrugVeen.R
+05_Docking Results.R
+01_GEO_group.R
+02_IDS.R
+03_WGCNA.R
+04_GO_KEGG.R
+05_veen.R
+06_IBOR_Fig.R
+AhlquistMosleyRIOcode.R
+extract_logistf.R
+Code for Gender imbalance in RU public.R
+0-anonymize-files.R
+1-clean-data.R
+3-figures.R
+define-levels.R
+fluctuations_replication_code.R
+politymap.R
+ruralinsmap.R
+cc.scaling_runs.limited.for.DAILY_HOURLY.bayesian_trend.scaling_CA_GPD.RunJagsMod.R
+cc.scaling_runs.limited.for.DAILY_HOURLY.event_based_multilevel.bayes.qreg.R
+Weathering the Storm Code.R
+figure-1.R
+read_retriever_xlsx.R
+replication-script.R
+MakeorTake_Analysis_Result_Tables.R
+MakeorTake_PEC_Rplots.R
+MakeorTake_rent_variables.R
+CWC_graph_replication_20221017.R
+kenwick_simmons_io_covid.R
+JLC Final.R
+1_build_sample.R
+2_prep_params.R
+3_numerical_example.R
+TVA_CONST.R
+cyra_fun_updated.R
+Replication Code Butler et al Inside the Secret Garden.R
+figure_doc.R
+fit_models.R
+helper_funcs.R
+recode_cces.R
+recode_pre_pew.R
+run_calibration_sim.R
+sim_figs.R
+simulate.R
+ideal_justice_replication.R
+EliaPOBEFairerSex_Code-1.R
+AhlquistAnsellCumGov.R
+AhlquistAnsellLeaveCountryOut.R
+AhlquistAnsellMainModelFitting.R
+AhlquistAnsellNoImputeModels.R
+AppendixFIRE.R
+AppendixSavingsModels.R
+NYCHA IR Analysis.R
+00_replicate_everything.R
+01_table_1.R
+02_table_2.R
+03_table_3.R
+04_table_4.R
+05_table_A1.R
+06_table_A2.R
+07_table_A3.R
+08_table_A4.R
+09_table_A5.R
+10_table_A6.R
+11_table_A7.R
+12_table_A8.R
+13_table_A9.R
+14_table_A10.R
+15_table_A11.R
+16_table_A12.R
+17_table_A13.R
+18_table_A14.R
+19_table_A15.R
+20_table_A16.R
+21_table_A17.R
+22_table_A18.R
+23_table_A19.R
+24_table_A20.R
+25_table_A21.R
+26_table_A22.R
+27_table_A23.R
+28_table_A24.R
+29_table_A25.R
+30_figure_5.R
+ricearea_by_month.R
+1_false_alarm_sim.R
+2_false_alarm_sim_arma.R
+3_ic_arl.R
+4_ic_arl_arma.R
+5_cs_analysis.R
+6_results_1235_training.R
+7_get_cs_thresholds.R
+8_sim_study_plots.R
+9_bw_adj_helpers.R
+TED_data_funs.R
+get_nuts3_geo_feat.R
+log_reg_funs.R
+replication.R
+CG Anxiety PP Completion_FINAL_checked.R
+CG PTSD PP Completion_FINAL_checked.R
+Depression PP Completion_FINAL_checked.R
+Depression PP FollowUp_FINAL_checked.R
+Depression RCT Completion Input Code_Updated_FINAL_checked.R
+Depression RCT Follow Up Input Code_Updated_FINAL_checked.R
+Global Distress PP Completion_FINAL_checked.R
+Global Distress RCT Completion_FINAL_checked.R
+R_code_L17.R
+R_code_L18.R
+R_code_L19.R
+R_code_L20.R
+platform_aggregation_tutorial.R
+beckley_rep.R
+Mapas_dist.pot-Malezas.R
+NMDS_malezas_col.R
+Script to plot sampled sites by crop.R
+JMP1_rollcall_notideal.R
+ReplicationCode_final.R
+Script.R
+Script_cause_for_celebration_or_concern.R
+Aroma.R
+Chemical.R
+Cooking ER and CLBR.R
+Cooking WUR and GSL.R
+Cooking.R
+GL and GB anova.R
+GL and GB.R
+GT.R
+LB anova.R
+Length Breadth ratio.R
+OCT AND GT.R
+Figure1AReplication.R
+analysis.r
+descriptive_statistics.R
+ff-3-1.R
+ff-3-2.R
+ff-3-3.R
+ff-4-1.R
+ff-4-2.R
+ff-5-1.R
+ff-5-2.R
+ff-5-3.R
+ff-6-1.R
+ff-6-2.R
+ff-6-3.R
+make.R
+JOP_table 3.R
+JOP_tables 1 and 2.R
+01_Clark_ALM_Cleanup.R
+02_Clark_ALM_Weights.R
+03A_Clark_ALM_H1_Affect_Likert.R
+03B_Clark_ALM_H1_Affect_FA.R
+04A_Clark_ALM_H2_Cause_Likert.R
+04B_Clark_ALM_H2_Cause_FA.R
+05A_Clark_ALM_H3_Policy_Likert.R
+05B_Clark_ALM_H3_Policy_FA.R
+06_Clark_ALM_Demographics_Table.R
+WeitzShapiroWinters_JOP_Credibility_Replication.R
+BCI_introductioncode.R
+InstallRPackages.R
+MasterScript.R
+Study1Analysis.R
+Study1DataGen.R
+Study2Analysis.R
+Study3Analysis.R
+Appendix-G.R
+make-randomization-inference-datasets.R
+SS2 BNPL Mugs Mediation.R
+SS3 BNPL Coffee ModMediation.R
+Study 2 BNPL Halloween Deco.R
+Study 4 BNPL Flights.R
+03 k-means_with_optimal_clust.R
+04 kmeans zonations and sampling points by spcosa.R
+DemSatisCode_Replicate.R
+LicensedToDriveButNotToWork_ReplicationCode_HansLueders.R
+02 Code_Ganaderia.R
+amce_replace_dim_names.R
+cjoint_amce_latex_output.R
+custom_amce_comparison.R
+custom_amce_plot.R
+custom_mm_plot.R
+quick_barplot.R
+replace_duplicate_factor_labels_across_variables.R
+tab_w_na.R
+topic-model-code-macro.R
+topic-model-code-micro.R
+Figure-1.r
+Unity.r
+UnityAbstentions.r
+effectSim.r
+effectSimPlot.r
+figuresAppendix.r
+loyal.r
+loyalGov.r
+loyaltyplot.r
+replication_master.r
+substantiveBackground.R
+substantiveEffects.R
+substantiveVotes.R
+substativeVotesCon.r
+0-master.R
+1-descriptive.R
+2-models-spde.R
+3-models-spem.R
+4-figures-coefplots.R
+5-figures-ROCs.R
+6-tables.R
+7-figures-field_range-estimates.R
+script.R
+Groemping_Halpin_2021_PolicSciences_replication.R
+analysis_figures_results.R
+analysis_fit_models.R
+analysis_model_diagnostics.R
+analysis_norming_study.R
+analysis_obtain-similarities.R
+ice_v1_replication.R
+00_reproduce_analysis.R
+01_retrieve_abstracts.R
+02_validate_dictionaries.R
+03_classify_abstracts.R
+04_analysis.R
+05_stm_topic_model.R
+06_check_stats.R
+dictionary_functions.r
+function_theme_base.R
+scopus_journal_functions_cursor.R
+Map.R
+JOP AppendixA.R
+JOP AppendixC.R
+JOP AppendixD.R
+JOP AppendixE.R
+JOP AppendixF.R
+JOP Figure2.R
+JOP Table1.R
+CodigoRELECPIREU_robustos.R
+Co-Occurrence Familial and Nonfamilial Relationships 26_06.R
+Individual Text Example Co-Occurrence Example.R
+cleanData.R
+cleanText.R
+extractState.R
+filingInfo.R
+getIndex.R
+IHMe_data_code.R
+Obesity_code_AUS_29_Jan_2025_IHME_three.R
+Obesity_code_BRA_29_Jan_2025_IHME_three.R
+Obesity_code_IND_29_Jan_2025_IHME_three.R
+Obesity_code_KSA_29_Jan_2025_IHME_three.R
+Obesity_code_MEX_29_Jan_2025_IHME_three.R
+Obesity_code_SPA_29_Jan_2025_IHME_three.R
+Obesity_code_THA_29_Jan_2025_IHME_three.R
+Obesity_code_ZAF_29_Jan_2025_IHME_three.R
+Markov Model_FBS vs SCY 19Sep2022.R
+Markov Model_FBS+GCT vs SCY 17Sep21.R
+Markov Model_FBS_NoCT vs SCY 17Sep21.R
+MGOBBI_RISP.R
+00master.R
+01-classify-xgboost.R
+02-xgboost_functions.R
+03-import-access.R
+04-aggregate-control.R
+05-import-viol-for-est.R
+06-estimate_r.R
+07-merge-data.R
+08-descriptives.R
+09-control-maps.R
+10-main-analysis.R
+11-count-analysis.R
+12-make_oosperformance_table.R
+01_clean&stack.R
+02_analysis.R
+03_appendix.R
+analysis.R
+analysis_appendix.R
+compile_data.R
+1. Descriptives_Sect4-2.R
+10. Analysis_App6-1_6-2.R
+11. Analysis_App7-1_7-2.R
+12. Analysis_App7-3_7-4.R
+2. Figure3.R
+3. Analysis_Sect5-1.R
+4. Analysis_App3-2_3-3.R
+5. Analysis_App3-4.R
+6. Analysis_App4-1_4-2.R
+7. Analysis_App4-1_4-3.R
+8. Analysis_App4-1_4-4.R
+9. Analysis_App5-1_5-2.R
+A. GESTA_prepare.R
+B. GESTA_potential.R
+1_Aggregate_Models_Figures.R
+1_Survey_Models_Figures.R
+2_Aggregate_Models_Tables.R
+2_Survey_Models_Tables.R
+Code_data_merge2009.R
+Code_data_merge2014.R
+Code_data_merge2019.R
+ADW_positions_master.r
+as_mcmc.R
+data_bayes_out.R
+data_management_textfiles.R
+ep_idealpoints_and_errors_bayes80.R
+ep_jags_functions.R
+plots_positions_bayes.R
+posteriorchecks.R
+prepare_data_set.R
+preparing_speeches_file.R
+preparing_speeches_function.R
+save_data_bayes.R
+wfm_filter.R
+Air Superiority and Battle Outcome.R
+NMDS_age_Paper.R
+NMDS_status_Paper.R
+Goodman_Stokes_internet_voting_code.R
+1-MakeTimeTrees.R
+2-InferAncestralStates.R
+3-DisparityDistances&PCOA.R
+4-GetStratRanges&AssignClasses.R
+5-TrendAnalyses.R
+figure_code.R
+bootstrap_test.R
+difference_in_proportions_tests.R
+calculo_precio_vacuna.R
+BCFvU_JOP_fig2.R
+replication.R
+Supplemental_Measures.R
+Study 2 NVSQ ano.R
+Study1 NVSQ ano.R
+Fig4_suppTable3.R
+Fig5_suppFig2.R
+Figures_1_2_5A_table1_SuppFig1.R
+cloth_filter_modeling.R
+geosmin_modeling.R
+geosmin_shiny_app.R
+script_meta-analysis.R
+1a_descriptives.R
+1b_csr.R
+1c_neighbors.R
+1d_matching.R
+1e_coefplot.R
+2a_mechanisms.R
+3a_villagelevel.R
+conley_burlig.R
+helpers.R
+libraries.R
+sensPlot_custom.R
+starship_survey_01_data-clean.R
+starship_survey_03_models_v2.R
+starship_video_01_data-clean.R
+starship_video_02_models.R
+GilensR1.R
+GilensR2.R
+GilensR3.R
+rep1.R
+RManualforQCA.R
+VirScan_analyses_program.R
+baseline_characteristics.R
+ebv_analyses.R
+Analyses.R
+Appendix simulated data.r
+Chapter 2 simulated data.r
+Chapter 7 simulated data forecasting.r
+Chapter 7 simulated data.r
+regpat-network-example.r
+what_is_islamophobia_replication.R
+BRUVS_Univariate_Sp_Abundance.R
+Post_hoc_analysis_cobble_restoration.R
+UBRUVS_Univariate_Sp_Abundance.R
+analysis.R
+Manuscript.r
+S1 Script.R
+S2 Script.R
+SM9 Script.R
+Sensitivity Tests S1 S2 SM9 Script.R
+amce2.R
+plotamce.R
+replication.r
+wind_analysis_rep_canada_pnas.R
+wind_analysis_rep_usa_pnas.R
+wind_figures_rep_pnas.R
+analysis_forRelease.R
+Script - Part 1 Conceptions of democracy.R
+Script - Part 2 Analyze items used to measure conceptions of democracy.R
+replication_code.R
+JHR_Clark and Zhao_Replication.R
+analysis.R
+functions.R
+Nolan_script.R
+populism_paper_replication.R
+create_fig_1.R
+create_fig_2.R
+create_fig_3.R
+create_fig_4.R
+create_fig_5.R
+create_fig_6.R
+create_fig_7.R
+create_fig_8.R
+create_fig_SI-1.R
+create_fig_SI-11.R
+create_fig_SI-13.R
+create_fig_SI-2.R
+create_fig_SI-3.R
+create_fig_SI-4.R
+create_fig_SI-6.R
+create_fig_SI-7.R
+create_fig_SI-8.R
+create_fig_SI-9.R
+create_tab_SI-13-14.R
+create_tab_SI-3.R
+create_tab_SI-4.R
+create_tab_SI-5.R
+r_script2.R
+mopf_plos.R
+Bay_cw.R
+Bay_merge.R
+Bay_samp.R
+SCAG_codes.R
+SCAG_cw.R
+SCAG_merge.R
+SCAG_samp.R
+cl_coordinates_bay_study_area.R
+cl_coordinates_scag_study_area.R
+combined_samp_slope.R
+figure_1.R
+figure_2.R
+figure_a1.R
+figure_a2.R
+hoa_bay_simple.R
+hoa_socal_simple.R
+marginal_effects.R
+next_cycle_95_slope.R
+othering_belonging.R
+pl_ja.R
+random_effects_models.R
+slope.R
+table_1.R
+table_a1.R
+table_a2.R
+table_a3.R
+table_a4.R
+tract_jobs-access.R
+tract_rent.R
+R Code 4.1.25.R
+clustering.R
+diallel.R
+diallel4.R
+heritability.R
+Fig1_correlation.R
+compind_MinMax_V1.R
+graphs_capability_v1.R
+graphs_intent_v1.R
+graphs_power_v1.R
+experimental data replication code.R
+observational data replication code.R
+20231120_inMODELA Emulator Tutorial_R Code.R
+script-dataset_2015-2022.R
+main-analysis.R
+main-estimates.R
+no-design-effects.R
+subgroup-analysis.R
+subgroup-censor.R
+subgroup-confidence.R
+subgroup-corruption.R
+subgroup-system.R
+helper-functions.R
+helper-objects.R
+appendix measurement equivalence.R
+main text analyses.R
+plot_function.R
+Barnett_misperceived_replication_FINAL.R
+data_analysis.R
+read_me.R
+Farag_2020_Replication_Mass Elite Differences in Tunisia.R
+0_BuildCorpus.R
+1_EmergencyScaling.R
+2_AnalyticalPlots.R
+EmergencyBaseline_HOC.R
+EmergencyScale250.R
+HoC-WordVectorModel_Context10_300d.R
+Chow_Levin_IO_mediation.R
+Chow_Levin_IO_stm.R
+Figure1-countryCuGraphsAUSJPN.R
+Figure2-AverageVsCu.R
+Figure4-GermanyCaseStudyGraphs.R
+protocolo.R
+supplementary_material.R
+Code_R_chaudhuri_etal2025.R
+01_get_population_data.R
+02_import_ahrf_data.R
+03_pull_empower_data.R
+04_create_analytic_data.R
+05_primary_figures.R
+06_supplemental_figures.R
+99_create_data_dictionary.R
+activate.R
+ahrf_variables.R
+global.R
+mk_nytimes.R
+server.R
+ui.R
+utils.R
+ENM_BRT_PNTDS.R
+Edge analysis clean script for JFO.R
+AustraliaR_Code.R
+CanadaRcode.R
+UK_R_Code.R
+USA_R_Code.R
+Walker_et al_Replication_submitted.R
+10_fig_a1.R
+11_fig_a2.R
+12_fig_a3.R
+13_fig_a4.R
+14_fig_a5.R
+15_fig_a6.R
+16_table_a2.R
+17_fig_b1.R
+18_fig_b2.R
+19_fig_b3.R
+2_harmonize_data.R
+3_fig_1.R
+4_fig_2.R
+5_fig_3.R
+6_fig_4.R
+7_fig_5.R
+8_fig_6.R
+9_fig_7.R
+PS_Reviewer_Script.R
+Vmurinus_Sexmat_modellingBMFA.R
+Vmurinus_Sexmat_modellingHI.R
+Vmurinus_Sexmat_modellingTreat.R
+appendix_dotplot_code.R
+eu_extremes_dotplot.R
+01_load_and_prepare_factiva_data.R
+02_plot_figure_3.R
+04_load_and_prepare_twitter_public_list_data.R
+05_load_and_prepare_twitter_stream_data_2014.R
+06_load_and_prepare_twitter_stream_data_2015.R
+07_create_twitter_friendlist_db.R
+09_anomymise_twitter_stream_data.R
+10_create_twitter_graphs.R
+12_create_twitter_rt_at_fship_graphs.R
+13_compute_net_stats_on_rt_graph.R
+14_sim_v_remove_on_rt_graph.R
+15_plot_figure_5.R
+16_twitter_user_activity.R
+17_twitter_user_labelling_attributes.R
+18_twitter_user_ego_network.R
+19_create_two_friend_subgraphs.R
+20_descriptive_stats_plot_figure_4_6.R
+data_cleaning_and_merging.R
+figure1.R
+master.R
+SupDataDR4A.R
+SupDataDR4B.R
+SupDataDR4C.R
+SupDataDR4D.R
+SupDataDR4E.R
+SupDataDR4F.R
+SupDataDR5B.R
+SupDataDR7.R
+metoo_analysis_corrected.R
+RP_article_replication.R
+WMKM_REStat_nhis_figs.r
+WMKM_ReStat_hospital_placebo.R
+WMKM_Restat_figures.R
+R-Skript_Populismus_Maj_Relativismus.R
+AJPS_SUP_figureS1.R
+AJPS_SUP_figureS2.R
+AJPS_SUP_figureS3.R
+AJPS_SUP_figureS4.R
+AJPS_SUP_figureS5.R
+AJPS_contrast1.R
+AJPS_contrast2.R
+AJPS_contrast3.R
+AJPS_contrast4.R
+AJPS_contrast5.R
+AJPS_contrast6.R
+AJPS_figure1.R
+AJPS_figure4.R
+AJPS_figure5.R
+AJPS_figures2_and3.R
+HuCon_ISQ_R_Code.R
+Study1.R
+Study3.R
+tmyk_replicationcode2.R
+replication_code.R
+Management_Analysis_Dataverse.R
+Monitored_Analysis_Dataverse.R
+Model_Improvements.R
+Original_Replication.R
+R script_complete.R
+01_load_large_dataframes_and_save_csv_parts_final.R
+02a_perparation_of_indices_2000.R
+02b_perparation_of_indices_2009.R
+02c_perparation_of_indices_2015.R
+03a.Descriptive_Analysis_2000.R
+03b.Descriptive_Analysis_2009.R
+03c.Descriptive_Analysis_2015.R
+04a_Regressions2000.R
+04b_Regressions2009.R
+04c_Regressions2015.R
+05a_Regression_Diagnostics_2000.R
+05b_Regression_Diagnostics_2009.R
+05c_Regression_Diagnostics_2015.R
+hr_uf_R_code.R
+Script_Figure1.R
+Goldstein_Replication_JPIPE 2021.R
+1_Fig1_PoliticizationIndicators.R
+2_Fig2_DescriptiveDVplot.R
+3_MultivariateAnalysis.R
+4_MultivariateAnalysis_PollingData.R
+5_ComplexityValidation.R
+Replication file__Contreras_2024.R
+Replicating_Figure2.R
+Replicating_Figure3_TablesS1S5.R
+Replicating_FigureS2.R
+Replicating_Figures5andS3.R
+Replicating_Tables1and2_Figures1andS1.R
+01_Data Processing and Analysis_5-analysis.R
+02_Webtracking_Data_Descriptives_Rev.R
+03_Mobile_granularity_Rev.R
+04_Sample and Weights.R
+05_Factor_analysis.R
+06_Descriptives.R
+07_Weigth_analysis.R
+01_timeseriesconstruct.R
+A_mathval_internal_validity_tests.R
+B_mathval_internal_validity_tests.R
+C_mathval_internal_validity_tests.R
+D_mathval_internal_validity_tests.R
+Run_Me_MainCode_BA.R
+X_OtherCommercTraffic_ARIMA_Fit.R
+X_PaxScheduledDE_ARIMA_Fit.R
+X_PaxScheduledEurope_ARIMA_Fit.R
+X_PaxScheduledNonEurope_ARIMA_Fit.R
+X_PaxScheduledTot_ARIMA_Fit.R
+X_PaxTerminalTot_ARIMA_Fit.R
+X_PaxTransit_ARIMA_Fit.R
+X_TotTraffic_ARIMA_Fit.R
+seasonal_argument.R
+x_OtherCommercTraffic_AIC_Tests.R
+x_OtherCommercTraffic_descriptstats.R
+x_OtherCommercTraffic_reprocess.R
+x_PaxScheduledDE_AIC_Tests.R
+x_PaxScheduledDE_descriptstats.R
+x_PaxScheduledDE_reprocess.R
+x_PaxScheduledEurope_AIC_Tests.R
+x_PaxScheduledEurope_descriptstats.R
+x_PaxScheduledEurope_reprocess.R
+x_PaxScheduledNonEurope_AIC_Tests.R
+x_PaxScheduledNonEurope_descriptstats.R
+x_PaxScheduledNonEurope_reprocess.R
+x_PaxScheduledTot_AIC_Tests.R
+x_PaxScheduledTot_descriptstats.R
+x_PaxScheduledTot_reprocess.R
+x_PaxTerminalTot_AIC_Tests.R
+x_PaxTerminalTot_descriptstats.R
+x_PaxTerminalTot_reprocess.R
+x_PaxTransit_AIC_Tests.R
+x_PaxTransit_descriptstats.R
+x_PaxTransit_reprocess.R
+x_TotTrafficBackup_AIC_Tests.R
+x_TotTrafficBackup_reprocess.R
+x_TotTraffic_AIC_Tests.R
+x_TotTraffic_descriptstats.R
+x_TotTraffic_reprocess.R
+Alas-2019-Figure-3-Script.R
+0_main.R
+fg01_tbA1.R
+fg02.R
+fg02_fg03_corpus.R
+fg03.R
+fg04.R
+fg05_tb04_tb05.R
+fg06.R
+fg06_corpus.R
+fg07-08.R
+fg07_corpus.R
+fg07_local_glove_model_estimation.R
+fg09-10-E5.R
+fg09_corpus.R
+fgB1_tbB2.R
+fgC2.R
+fgC2_local_glove_model_estimation.R
+fgD3-D4.R
+fgD3-D4_local_glove_model_estimation.R
+fgF6.R
+fgF7-F8-F9-G10.R
+fgH11.R
+tb03.R
+Replication.R
+Data preparation.R
+replication_pb2.R
+RaessRenWagnerFPA.R
+functions.R
+replication.R
+alluvial plot.R
+script.R
+Sendai_crosstabs.R
+desc_stats_fv.R
+desc_stats_kv.R
+figure1.R
+figure2.R
+figure3.R
+figure4.R
+figure5.R
+figureB1.R
+figureC1.R
+firstborn_an_fv.R
+firstborn_an_fv_het.R
+firstborn_an_kv.R
+firstborn_an_kv_het.R
+Replication_BBC_PLOS.R
+RunFile_BBC_PLOS.R
+bootCFM_3s.R
+CTX_elisa_validations.R
+F75_ELISA validations.R
+WGCNA.R
+glycocalyx_discovery.R
+intermodule_association.R
+metabolomics_univariate.R
+proteomics_univariate.R
+analysis_replication.R
+1-jpam-manuscript.R
+figure.R
+networkPlot_SF.R
+usdeaths.R
+augment_nodelist.R
+hex.R
+make_edgelist.R
+make_nodelist.R
+process_from_to_data.R
+replicate.R
+review.R
+test-name.R
+testthat.R
+code_analysis_01_descriptive_plots_tables.R
+code_analysis_02c_candidate_models_plots.R
+code_analysis_03g_voter_models_plots.R
+code_analysis_04_validation_lucid_labelbox.R
+code_function_theme_base.R
+code_prepare_02_merge_2005.R
+code_prepare_02_merge_2009.R
+code_prepare_02_merge_2013.R
+code_prepare_02_merge_2017.R
+code_prepare_02_merge_2017_minor.R
+code_prepare_03_merge_emotions_and_rtr.R
+code_prepare_04a_voter_data.R
+code_prepare_04b_candidate_data.R
+code_prepare_05_harmonize_election_studies.R
+baccini_match.r
+baccini_matchACLP.r
+BuntainePrather_JEPS_Replication.R
+base.R
+models.R
+overlay_interpolation.R
+simulations.R
+Guenette_HNReporting_Stats_Actionability_FINAL.R
+Guenette_HNReporting_Stats_Variation_FINAL.R
+2ndSetOfResults.R
+3rdSetOfResults.R
+4thSetOfResults.R
+AnalysisAuthorsName.R
+00-util.R
+01-sampling.R
+02-frequency-of-effects.R
+03-examples.R
+04-magnitude-of-effects.R
+RcppExports.R
+bapvar-package.R
+bapvar.R
+bapvar_dynamics.R
+gen_inits.R
+plots.R
+Code.R
+OLS analysis.R
+srg cleaning.R
+3ie Aquaculture Systematic Review analysis code.R
+Tabulate_MergedData.R
+WBWC_ChemicalAnalysis_Code.R
+balancetest.R
+disagreement_datasetup.R
+disagreement_plots.R
+FunctionsReStat.r
+ScriptReStat.r
+SEM_visuals.R
+Pairwise_snps_Figure4.R
+Rplots_figure3.R
+SuppFigure1.R
+replication_compliance.R
+Chapter 5-Principal Components Analysis (R Script).R
+Replication Script.R
+ReplicationScript.R
+1-dyad-sims-2015-02-23.R
+2-dyad-sims-misspec-shocks-2015-02-23.R
+5-russett-oneal-reanalysis.R
+6-fisman-reanalysis.R
+functions.R
+replication.R
+replication_code.R
+ibrd-rep-161111.R
+01_create_analysis_datasets.R
+02_R_code_to_perform_analyses.R
+Table(1).R
+appendix_replication.R
+CRP_LMEM_dose_response.R
+CRP_a5-i-KO_altered_contexts.R
+CRP_a5-i-KO_dose_response.R
+CRP_a5-pyr-KO_altered_contexts.R
+CRP_a5-pyr-KO_dose_response.R
+CRP_pWT_altered_contexts.R
+CRP_pWT_dose_response.R
+CRP_saline_baseline.R
+CRP_saline_vs_etom7.R
+CRP_same_vs_diff_contexts.R
+ERcorr_LMEM_dose_response.R
+ERcorr_a5-i-KO_altered_contexts.R
+ERcorr_a5-i-KO_dose_response.R
+ERcorr_a5-pyr-KO_altered_contexts.R
+ERcorr_a5-pyr-KO_dose_response.R
+ERcorr_compare_saline_etom7.R
+ERcorr_compare_same_diff_contexts.R
+ERcorr_pWT_altered_contexts.R
+ERcorr_pWT_dose_response.R
+Mobility_LMEM_dose_response.R
+Mobility_a5_i_KO_dose_response.R
+Mobility_a5_pyr_KO_dose_response.R
+Mobility_compare_saline_baseline.R
+Mobility_compare_saline_etom7.R
+Mobility_pWT_dose_response.R
+PV_LMEM_compare_saline_baseline.R
+PV_LMEM_compare_saline_etom7.R
+PV_LMEM_compare_same_vs_diff_contexts.R
+PV_LMEM_dose_response.R
+PV_a5-i-KO_DR.R
+PV_a5-i-KO_same_vs_diff_contexts.R
+PV_a5-i-KO_vs_a5-pyr-KO.R
+PV_a5-pyr-KO_DR.R
+PV_a5-pyr-KO_same_vs_diff_contexts.R
+PV_pWT_DR.R
+PV_pWT_same_vs_diff_contexts.R
+RM_LMEM_compare_saline_baseline.R
+RM_LMEM_compare_saline_etom7.R
+RM_LMEM_compare_same_vs_diff_contexts.R
+RM_LMEM_dose_response.R
+RM_a5-i-KO_DR.R
+RM_a5-i-KO_same_vs_diff_contexts.R
+RM_a5-i-KO_vs_a5-pyr-KO.R
+RM_a5-pyr-KO_DR.R
+RM_a5-pyr-KO_same_vs_diff_contexts.R
+RM_pWT_DR.R
+RM_pWT_same_vs_diff_contexts.R
+meanER_LMEM_dose_response.R
+meanER_a5-i-KO_dose_response.R
+meanER_a5-pyr-KO_dose_response.R
+meanER_pWT_dose_response.R
+meanER_saline_baseline.R
+meanER_saline_vs_etom7.R
+pMI_LMEM_dose_response.R
+pMI_a5-i-KO_DR.R
+pMI_a5-i-K_vs_a5-pyr-KO.R
+pMI_a5-pyr-KO_DR.R
+pMI_compare_saline_baseline.R
+pMI_compare_saline_etom7.R
+pMI_mutants_saline_baseline.R
+pMI_pWT_DR.R
+rohlfing_mindthegap.R
+1_make_data.R
+2_figure_1.R
+2_figure_2.R
+2_figure_3.R
+2_figure_4.R
+2_table_1.R
+2_table_2.R
+2_table_3.R
+2_table_4.R
+2_table_5.R
+3_figure_a1.R
+3_figure_a2.R
+3_figure_a5.R
+3_figure_a6.R
+3_figure_a7.R
+3_table_a1.R
+3_table_a10.R
+3_table_a11.R
+3_table_a12.R
+3_table_a13.R
+3_table_a14.R
+3_table_a15.R
+3_table_a16.R
+3_table_a17.R
+3_table_a18.R
+3_table_a19.R
+3_table_a2.R
+3_table_a20.R
+3_table_a21.R
+3_table_a22.R
+3_table_a23.R
+3_table_a24.R
+3_table_a25.R
+3_table_a26.R
+3_table_a27.R
+3_table_a28.R
+3_table_a29.R
+3_table_a30.R
+3_table_a31_32.R
+3_table_a33.R
+3_table_a34.R
+3_table_a35_a36_a37.R
+3_table_a38.R
+3_table_a39.R
+3_table_a3_a4_a5.R
+3_table_a40.R
+3_table_a6.R
+3_table_a7.R
+3_table_a8.R
+3_table_a9.R
+_1_main.R
+_functions.R
+random_networks_4groups_simulations.R
+sifaka dynamic model wet season.R
+sifaka model dynamic dry season.R
+sifaka static model dry season.R
+sifaka static model wet season.R
+Chambers-Ju and Hecock LAPS 2021 Replication.R
+ReplicationCode_Analysis.R
+ReplicationCode_DataPrep.R
+ReplicationCode_Functions.R
+ReplicationCode.R
+2_R script.R
+wood_grose_replication_code_final_2021.R
+0.1. Packages.R
+0.2. Preliminary definitions.R
+1.1. Data preparation - monthly.R
+1.1. Data preparation - quarterly.R
+2.1. Combination forecasts.R
+2.2. DMSPE forecasts.R
+2.3. C-ENET forecasts.R
+2.4. KS forecasts.R
+2.5. ENET forecasts.R
+2.6. PCR forecasts.R
+2.7. 3PRF forecasts.R
+2.8. 3PRFm forecasts.R
+3.1. Allocation.R
+4.1. Data and Definitions.R
+4.2. Execute forecasts.R
+5.1. Output preparation.R
+5.2. Output.R
+5.3. Plots litsiakas.R
+5.3. Plots monthly.R
+5.3. Plots monthly1927.R
+5.3. Plots rapachzhou.R
+5.3. Plots.R
+Run all.R
+replication_script.R
+Visual_conjoint_REP.R
+CollocateCoherence.R
+GetCollocateMDW_largecorpus.R
+PlotTSNE.R
+JRO_code_Jan_6_2023.R
+Bureaucratic Autonomy and Policymaking Capacity_Main Analysis.R
+Policymaking_Capacity_Scores_Model_001_MAINSPECIFICATION.R
+Policymaking_Capacity_Scores_Model_002.R
+Policymaking_Capacity_Scores_Model_003.R
+Policymaking_Capacity_Scores_Model_004.R
+Policymaking_Capacity_Scores_Model_005.R
+Policymaking_Capacity_Scores_Model_006.R
+Policymaking_Capacity_Scores_Model_007.R
+Policymaking_Capacity_Scores_Model_008.R
+Policymaking_Capacity_Scores_Model_009.R
+Policymaking_Capacity_Scores_Model_010.R
+Policymaking_Capacity_Scores_Model_011.R
+Policymaking_Capacity_Scores_Model_012.R
+Policymaking_Capacity_Scores_Model_013.R
+Policymaking_Capacity_Scores_Model_014.R
+Policymaking_Capacity_Scores_Model_015.R
+Policymaking_Capacity_Scores_Model_016.R
+Policymaking_Capacity_Scores_Model_017.R
+Dofile-analyses.R
+Dofile-dataset-construction-2.R
+Dofile-figures.R
+WorkandDemandMakingReplicationCPS.R
+HarbridgeYong_Snead_LSQ_analysis_replication.R
+regtable.R
+Methods_S1.R
+replication_code.R
+BHRV_replicationIO.R
+R-functions.R
+EP_Trade_Interflex_Script_R.R
+LessIsMore.R
+affective.replication.R
+plots.R
+regressions.R
+stargazer_fix.R
+Dataverse_replication.R
+1.1_create_soteu_corpora.R
+1.2_soteu_word_error_rate.R
+1.3_soteu_wordfish_sentiment.R
+1.4_soteu_simulations.R
+2.1_austria_corpus.R
+2.2_austria_datasets.R
+2.3_austria_models.R
+2.4_austria_simulation.R
+3.1_mff_corpus.R
+3.2_mff_models.R
+3.3_mff_simulation.R
+4.1_demo_apicalls.R
+fig10_1.r
+fig10_10.r
+fig10_11.r
+fig10_12.r
+fig10_13.r
+fig10_14.r
+fig10_15.r
+fig10_2.r
+fig10_3.r
+fig10_4.r
+fig10_5.r
+fig10_6.r
+fig10_7.r
+fig10_8.r
+fig10_9.r
+fig11_1.r
+fig11_10.r
+fig11_11.r
+fig11_12.r
+fig11_13.r
+fig11_14.r
+fig11_2.r
+fig11_3.r
+fig11_4.r
+fig11_5.r
+fig11_6.r
+fig11_7.r
+fig11_8.r
+fig11_9.r
+fig1_2.r
+fig2_1a.R
+fig2_1b.r
+fig2_2.r
+fig2_3.r
+fig3_1.r
+fig3_10.r
+fig3_11.r
+fig3_2.r
+fig3_3.r
+fig3_4.r
+fig3_5.r
+fig3_6.r
+fig3_7.r
+fig3_8.r
+fig3_9.r
+fig4_0.r
+fig4_1.r
+fig4_10.r
+fig4_11.r
+fig4_12.r
+fig4_13.r
+fig4_14.r
+fig4_15.r
+fig4_16.r
+fig4_17.r
+fig4_18.r
+fig4_19.R
+fig4_2.r
+fig4_20.r
+fig4_21.R
+fig4_3.r
+fig4_4.r
+fig4_5.r
+fig4_6.r
+fig4_7.r
+fig4_8.r
+fig4_9.r
+fig5_1.r
+fig6_1.r
+fig6_2.r
+fig6_3.r
+fig6_4.r
+fig6_5.r
+fig6_6.r
+fig6_7.r
+fig7_1.r
+fig7_10.r
+fig7_11.r
+fig7_2.r
+fig7_3.r
+fig7_4.r
+fig7_5.r
+fig7_6.r
+fig7_7.r
+fig7_8.r
+fig7_9.r
+fig8_1.r
+fig8_10.r
+fig8_2.r
+fig8_3.r
+fig8_4.r
+fig8_5.r
+fig8_6.r
+fig8_7.r
+fig8_8.r
+fig8_9.r
+fig9_1.r
+fig9_10.r
+fig9_2.r
+fig9_3.r
+fig9_4.r
+fig9_5.r
+fig9_6.r
+fig9_7.r
+fig9_8.r
+fig9_9.r
+install_packages.R
+tab10_3.r
+tab10_4.r
+tab11_1.r
+tab11_2.r
+tab11_3.r
+tab11_5.r
+tab11_6.r
+tab11_7.r
+tab2_1.r
+tab3_1.r
+tab3_2.r
+tab4_1.r
+tab4_2.r
+tab4_3.r
+tab5_1.r
+tab5_2.r
+tab5_3.r
+tab6_1.r
+tab6_2.r
+tab6_3.r
+tab6_4.r
+tab6_5.r
+tab7_1.r
+tab7_2.r
+tab7_3.r
+tab8_1.r
+tab8_2.r
+tab8_3.r
+tab8_4.r
+tab8_5.r
+tab9_1.r
+tab9_2.r
+tab9_3.r
+tab9_4.r
+tab9_5.r
+tab9_6.r
+replication_final.R
+tables-figures.R
+ChenXu_Replication.R
+assessment_script-1.R
+Thomann 2018_chapter 5_170104.R
+Thomann 2018_chapter 6_180308.R
+swing.R
+swing.functions.R
+basic_shiny_app.R
+shiny_app_city_filter_exercise.R
+shiny_app_city_filter_illustration.R
+topic4_workshop_h2o.R
+NO_Analysis.R
+NZ_Analysis.R
+Plotting.R
+SynthFunctions.R
+01_MACRO_CULT_FINAL copy.R
+02_PISA_VALIDATION copy.R
+03_POLICY_FINAL copy.R
+04_PROFESS_FINAL copy.R
+All_Figures.R
+Fig1.R
+Fig2.R
+Fig3.R
+Fig4.R
+Supp.R
+Vink et al_2019_replication_script_Figures.R
+Vink_et_al_2019_dual_citizenship_dataset_preparation_R_script.R
+usage-notes.R
+Mattingly_Chen_Appendix_Tables_Figures.R
+Mattingly_Chen_Main_Tables_Figures.R
+Mattingly_Chen_Maps.R
+Mattingly_Chen_Variable_Creation.R
+Run_Me.R
+Seeing lies and laying blame r script.R
+00-01-install_h2o_3_24_0_4.R
+01-01-classify_smd_data_01.R
+01-01-classify_smd_data_02.R
+01-01-classify_smd_data_03.R
+01-02-classify_press_data_01.R
+01-02-classify_press_data_02.R
+01-02-classify_press_data_03.R
+01-03-classify_twitter_data_01.R
+01-03-classify_twitter_data_02.R
+01-03-classify_twitter_data_03.R
+02-01-prep_data_main_paper.R
+03-01-generate_paper_tables.R
+04-01-var.R
+05-01-figure_2.R
+05-02-figure_3.R
+05-03-figure_4.R
+0A-01-01-prep_data_appendix_retweets.R
+0A-01-01-prep_data_appendix_split_parties.R
+0A-02-01-var_retweet.R
+0A-02-02-var_no_press.R
+0A-02-03-var_parties_split.R
+0A-03-02-figure_A1.R
+0A-03-02-figure_A2.R
+0A-03-03-figure_A3_A4.R
+0A-03-04-figure_A5.R
+0A-03-05-figure_A6_A7.R
+0A-04-01-class_perf_text_de.R
+0A-04-02-class_perf_text_fr.R
+0A-04-03-class_perf_twitter_de.R
+0A-04-03-class_perf_twitter_fr.R
+ggplot_theme_ddl.R
+GIGANTEA.R
+RunGenomeBasedModel.R
+1-diagram-aid.R
+2-visualizations.R
+3-modeling-process.R
+4-mpc-results.R
+Check Expected Value Math.R
+Consistent Bias Simulation.R
+Empirically Parameterized Simulation.R
+analyses.R
+draw_coefplot.R
+NIL Policy Diffusion Reproduction R Script.R
+PDBD_r-script_lesson_1.r
+PDBD_r-script_lesson_2.R
+code.R
+apsr_10y.R
+amen_brother_analysis.R
+discogs_parser.R
+funky_drummer_analysis.R
+post_1990_analysis.R
+think_about_it_analysis.R
+Formality status transitions and international trade in Bolivia.R
+Alg2.R
+Alg3.R
+SimuBP.R
+Simu_S1a.R
+Simu_S1b.R
+Simu_S1c.R
+Simu_S2a.R
+Simu_S2b.R
+Simu_S2c.R
+Simu_S3a.R
+pLD.R
+Schnakenberg_Turner_Replication.R
+Schnakenberg_Turner_dataprep.R
+app_annie_downloads.R
+compare_twitter_weibo_locations.R
+compare_twitter_weibo_text.R
+format_population_grid.R
+instagram_user_count_drop.R
+plot_hk_mentions.R
+plot_wikipedia_views.R
+sample_first_tweets.R
+sample_instagram_by_population.R
+sample_instagram_hk.R
+twitter_follower_count_increase.R
+twitter_liu_xiaobo_mentions.R
+twitter_user_count_jump.R
+replicationCode.r
+BCCH12ECTAcomp.R
+BCCH12ECTAcomp_figures.R
+BCW16JBEScomp.R
+BCW16JBEScomp_figures.R
+application_v05.R
+bcvBinary.R
+create_figures_v05.R
+hd_binary_v02.R
+mu_by_sim.R
+mu_plots.R
+simBinary.R
+simLinear.R
+JKLP_JOP_appendix_replication.R
+JKLP_JOP_replication.R
+1-compute-policy-variables.R
+2-merge-covariates.R
+3-prepare-corpus.R
+4-estimate-topic-models.R
+5-output-topic-models.R
+6-figures.R
+7-tables.R
+Code_ENDIREH2003_setupDta.R
+Code_ENDIREH2006_setupDta.R
+Code_ENDIREH2011_setupDta.R
+Code_ENDIREH2016_setupDta.R
+Code_ENDIREH_paper_replication-1.R
+Tutorial_Board_Interlocks.R
+FigureA5.R
+Table1_models1-3.R
+Table1_models1A-3A.R
+Table1_models4-6.R
+Table1_models4A-6A.R
+Table2.R
+Table3.R
+TableA1.R
+TableA10_models1-2.R
+TableA10_models1A-2A.R
+TableA10_models3-4.R
+TableA10_models3A-4A.R
+TableA11.R
+TableA12.R
+TableA2.R
+TableA3.R
+TableA4_models1-3.R
+TableA4_models10-12.R
+TableA4_models4-6.R
+TableA4_models7-9.R
+TableA5.R
+TableA6.R
+TableA7_models1-3.R
+TableA7_models1A-3A.R
+TableA7_models4-6.R
+TableA7_models4A-6A.R
+TableA8_models1-3.R
+TableA8_models1A-3A.R
+TableA8_models4-6.R
+TableA8_models4A-6A.R
+TableA9_models1-2.R
+TableA9_models1A-2A.R
+TableA9_models3-4.R
+TableA9_models3A-4A.R
+Juvenile Sentencing_A Mixed Methods Approach.R
+1-Process-Part-1.R
+Generate-Profiles.R
+PerambulatorSpeed.R
+stage_1_iv_models.R
+stage_2_mte_approval.R
+figure5.R
+figureC1.R
+figureC2.R
+gerrymanderTables1_2.R
+code_p4andembryo.R
+case_study.R
+performance_packages_2023_07_26.R
+inequality_figures_replication.R
+inequality_main_replication.R
+1_models_baseline and robustness.R
+2_figure 1_descriptive figure in main text.R
+3a_figure 2_extended models differences by worldregion.R
+3b_figure 2_extended models using projected changes in AI.R
+3c_figure 2_combined figure.R
+4a_figure 3_differences by regional background characteristics_internal country perspective.R
+4b_figure s10_differences by regional background characteristics at country level.R
+5a_figure 4_differences by sex and age.R
+5b_figure 4_differences by sex and education.R
+5c_figure 4_combined figure.R
+6_extended data figure 2.R
+7_table s4_exploring determinants of migration in cross-sectional comparison-1.R
+Cox.R
+Figure6.R
+Figures1+2.R
+Figures3+4+5.R
+Table3.R
+Tables1+2.R
+applyTemplate.R
+glmmPQL.R
+writeout-ftable.R
+ROC curve.R
+lasso.R
+WorkedExample.r
+WorkedExample_rev.r
+Bittleston_et_al_2018_R_code.R
+00_libraries.R
+01_get-data.R
+02_clean-data.R
+03_descriptives.R
+04_synth_analysis.R
+04b_synth_analysis_excluded_states.R
+04c_synth_firstdose_excluded_states.R
+06_multistate.R
+07a_multiverse_run.R
+07b_multiverse_analysis.R
+08_Bayes_factor.R
+09_firstdose_compare_bw_s.R
+LawProM Figures.R
+LawProM.R
+replication_file_who_polices_abascal_et_al.R
+01_Load_Survey_Experiment.R
+02_Balance_Check.R
+03_Hypothesis1_1.R
+04_Hypothesis1_2.R
+05_Hypothesis2.R
+A1_TV_Coverage_STM.R
+A2_World_Value_Survey.R
+A3_Manipulation_Check.R
+S1_Evaluation_of_Cabinet.R
+Adding age to prepared data.R
+Condition modelling 3.R
+Figure generation.R
+ICC calculation 2.R
+Individual consistency.R
+Prepping bci.R
+Random effect simulation.R
+Reproductive modelling.R
+Survival modelling 3.R
+UKCP projections 2.R
+Variance decomposition.R
+replicationcode_hataandogura(2024).R
+creation of matrices_45km.R
+creation of spatial lags_45km.R
+cleaning_BadrinathanChauchardSiddiqui.R
+replication_BadrinathanChauchardSiddiqui.R
+S01_DatesUrlsScript.R
+S02_codeDLtoPS.R
+S03_merge_dataAnalysis.R
+S04_modeling-1.R
+S04_modeling.R
+functions.R
+1. Calibration Baseline Model.R
+2. Calibration Regime Switch Model.R
+3. Forecasting baseline improvement model.R
+4. Forecasting regime switch model.R
+5. Forecasting mortality rates.R
+6. Best estimate mortality rates.R
+7. SCR case study.R
+Functions calibration baseline model.R
+Functions calibration regime switch.R
+Functions projection baseline model.R
+Functions projection mortality rates.R
+Functions projection regime switch.R
+Analysis_smc_Mada.R
+Analysis_student_irt_Mada.R
+Djupe_Neiheisel_Reciprocity_PB.R
+F01_dictionary_into_long_format.R
+F02_sum_multiple_columns_by_grouping_vector.R
+F03_df_col_subset.R
+F04_calculate_herfindahl_index_for_vector.R
+F05_is_top_three_color_for_bar_graphs.R
+Peters_Vink_2021_AASP_script.R
+Annex10_Arima.R
+Annex3_Variation_Convergence.R
+Annex4.R
+Annex5_Confidence.R
+Annex6_Convergence.R
+Annex7_Composition_Bottom_Prob.R
+Annex8_Composition_Top_Prob.R
+coefficient of variation.R
+confidence in estimates by wave and type of flow.R
+fig3_Relative_Likelihood.R
+fig4_Changes_Immigration.R
+libraries.R
+migration_data_cleaning.R
+split_violin_and_labels.R
+table1_samples.R
+post_strat_bayesian_mod_prov7mom.R
+post_strat_bayesian_mod_regions13.R
+Analysis.R
+know_wh_analyses.R
+figure_1.R
+figure_2.R
+figure_3.R
+figure_4_plot.R
+figure_5.R
+figure_6.R
+figure_7.R
+Chapter 5 R script.R
+ReplicationCode.R
+R-Code for Data Preparation and Analysis.R
+appendix.R
+replication_electoralstudies.R
+___replication_master_file.R
+__libraries_functions.R
+__variable_definitions.R
+_main_figure3_figures7.R
+_main_figure4.R
+_main_table1_tablea5.R
+appendix1_tablea1.R
+appendix1_tablea2.R
+appendix1_tablea3.R
+appendix1_tablea4.R
+appendix3.1.R
+appendix3.2.R
+appendix3.3.R
+appendix3.4.R
+appendix3.5.R
+appendix3.6.R
+appendix3.7.1a.R
+appendix3.7.1b.R
+appendix3.7.1c.R
+appendix3.7.2a.R
+appendix3.7.2b.R
+appendix3.7.3a.R
+appendix3.7.3b.R
+appendix3.7.3c.R
+appendix3.7.3d.R
+appendix3.7.4.R
+appendix3.7.5.R
+appendix4b.R
+appendix5.1.R
+appendix5.2.R
+appendix5.3.R
+appendix5.4.R
+appendix5.5.R
+supplement1.R
+supplement2.1_2.4.R
+supplement2.5.R
+supplement2.6.R
+supplement2.7.R
+supplement3.R
+conjoint_analysis.R
+cleaning_rawdata.R
+combine_waves.R
+expert_dataset.R
+master_replication.R
+party_dataset.R
+ESS 2008 Bootstrapping.R
+ESS 2008.R
+ESS 2016 Bootstrapping.R
+ESS 2016.R
+Figure Syntax.R
+KTAForRep.R
+runBQR.R
+sipri_text_download.R
+01_bo_irt_model.R
+02_regression_data_gen.R
+03_regression_analysis.R
+04_generate_plots.R
+Jensenius_Chhibber_2022_replication_code.R
+Script_1_GlassCliff_in_AmericanPolitics_SR.R
+Script_2_GlassCliff_in_AmericanPolitics_SR.R
+Script_3_GlassCliff_in_AmericanPolitics_SR.R
+Racial Bias JPART Replication Code.R
+Supplementary Materials.R
+attrition late public use code.R
+R Codes for Sample Representativeness Tests.R
+Study 1 R Replication Codes.R
+Study 2 R Replication Codes.R
+Study 3 R Replication Codes.R
+PB_ms_county_level_presidential_models.R
+PB_ms_figures_1_2_county_maps.R
+PB_ms_figures_3_presidential_coefficient_plot.R
+PB_ms_figures_4_5_6_vs_models_plots.R
+PB_ms_presidential_county_model_tables_appendix1A_to_4A.R
+PB_ms_vsg_model_tables_appendix.R
+PB_table2_covid_restrictions_public_opinion.R
+covid-polarization-replication-code-07202020.R
+R_scripts_for_Main_et_el_2023.R
+brain_fig.R
+brain_fits.R
+fauxmesa_Bayes_synthetic_analysis.R
+fauxmesa_Bayes_synthetic_fits.R
+fauxmesa_MLE_synthetic_analysis.R
+fauxmesa_MLE_synthetic_fits.R
+fauxmesa_fit_true_model.R
+fauxmesa_generate_synthetic_data.R
+lysozyme_analysis.R
+replicateMainPaper.R
+replicateSI.R
+Script1_Replicationfiles_Clientelism_and Programmatic_Redistribution_Brazil_Main.R
+Script2_Replicationfiles_Clientelism_and Programmatic_Redistribution_Brazil_Appendix.R
+3 R script to replicate all figures.R
+Replication_2021_Lee_APSR_public_access.R
+data_cleaning.R
+data_cleaning_traj.R
+Exercise_Full_QCA_Instructions_Only.R
+Exercise_Full_QCA_Solution.R
+Getting_started_with_R.R
+chapter2_calibration.R
+chapter3_necessity.R
+chapter4_sufficiency.R
+chapter5_roundingup.R
+chapter6_tools.R
+2.validate_attention.R
+3.analysis_clean_initial_loop_for_robustness_tables.R
+common_fns.R
+run.R
+Thal PB Replication.R
+Dignity Replication Code.R
+00_setup_load.R
+01_fit_model.R
+02-paper-figs.R
+02_summary_stats.R
+03_simulate.R
+04_gof.R
+05_individual.R
+06_posterior.R
+07_setup_load_experiment.R
+08_fit_model_experiment.R
+09_survey_summary_stats.R
+10_summary_stats_full_sample.R
+11_housing_trust.R
+12_nycc_prep.R
+13_nycc_fit.R
+14_nycc_survey_summary_stats.R
+15_nycc_simulate.R
+16_nycc_gof.R
+17_nycc_appl.R
+18_urban_sub.R
+19_map_time.R
+20_fit_model_voting_party.R
+21_fit_model_alt_specs.R
+22_home_prices.R
+23_map_time_nycc.R
+24_turnout_trust_context.R
+model_setup.R
+nbhd_stats.R
+prep_city_data.R
+prep_graphs.R
+prep_responses.R
+run_all.R
+utils.R
+varpart_regions.R
+Marginal_Damages_Model.R
+Process_Asthma_Data.R
+Results_With_Emissions.R
+SchoolDistrict_County_Mapping.R
+SnapElections_REPfile-1.R
+SnapElections_appendix-1.R
+Summary Computation Code.R
+Table Creation Code.R
+ReadSimulationResults.R
+RealDataAnalysis.R
+SimulateDatasets.R
+SummarizeSimulationResults.R
+Analysis Script Final.R
+00-master.R
+01-application_malesky-etal_main.R
+02-application_malesky-etal_all.R
+03-application_malesky-etal_main-figures.R
+04-application_malesky-etal_all-figures.R
+11-application_paglayan_main.R
+12-application_paglayan_augsynth.R
+13-application_paglayan_gsynth.R
+14-application_paglayan_check-PT.R
+15-application_paglayan_figures.R
+21-simulation_setup.R
+22-simulation_dgp.R
+23-simulation_function.R
+24-simulation_run.R
+25-simulation_efficiency-auto-figure.R
+26-simulation_efficiency-figure.R
+31-illustration-figures.R
+Custom_RDD_Function.R
+LCS_Distribution.R
+Main.R
+Opinion_Report_Timing.R
+Parliament.R
+Politbarometer_Popularity.R
+Politbarometer_Salience.R
+Prediction_Accuracy.R
+Randomization_Inference.R
+Spiegel_Salience.R
+Substantive.R
+Summary.R
+Word_Contribution.R
+R_Studio_Script_Data.Analisys.R
+ACDPR_Replication_CPS.R
+Figure1.r
+01_data_setup.R
+02_descriptive_analysis.R
+03_diff_in_diff.R
+04_ddd.R
+05_event_study_plots.R
+06_appendix_dem_tables.R
+LIM.R
+Malik_LSQ2022_Replication_file.R
+Script_PCR-PLSR boots.R
+SJL_CPS_TableC.2.R
+02_CEM.R
+PA_code.R
+1_Analysis.R
+2_Figures.R
+4_Robustness.R
+set_up.R
+facebook_analysis.R
+gtrends_analysis.R
+human_validation_analysis.R
+protest_data_analysis.R
+realtime_twitter_analysis.R
+twitter_network_analysis.R
+youtube_analysis.R
+all.R
+appendix.R
+compareidealK1D.R
+h111.R
+pop_polisci_twitter_replication.R
+EM1.Block.R
+EM1.Precinct.R
+EM2.Block.R
+EM2.Precinct.R
+Figure1.R
+Figure2.R
+Figure3.R
+Goodman.R
+KingEI.R
+L2.Demo.R
+Precincts.R
+Predict.EM.Combine.R
+Predict.EM1.Block.R
+Predict.EM1.Precinct.R
+Predict.EM2.Block.R
+Predict.EM2.Precinct.R
+Predict.L2.R
+Predict.R
+Residuals.R
+Table1.R
+Table2.R
+Table3.R
+Table4.R
+Table5.R
+Table6.R
+Table7.R
+Turnout.R
+classify.R
+error.R
+Causal.R
+DescriptiveAnalysis.R
+multilevel.R
+multilevelDummy.R
+plot_functions.R
+TurnbullRama_replicationscript.R
+replication.r
+EDA.R
+GOF_1950.R
+GOF_2015.R
+GOF_Plot.R
+Model_Fit.R
+Plot_SCC.R
+daggishIllustration.R
+data_readin.R
+master.R
+scc_intro_plots_PA.R
+supreme_court_code.R
+visualizations_PA.R
+VietnamPFESReplication.R
+implicit_trust_SSI_replication.R
+implicit_trust_anes_replication.R
+implicit_trust_student2012_replication.R
+implicit_trust_student2013_replication.R
+albers_hexgrid.R
+analysis_1886adm.R
+analysis_all.R
+analysis_austhung.R
+analysis_burninbootse.R
+analysis_bymap.R
+analysis_continents.R
+analysis_controls.R
+analysis_cuts.R
+analysis_cutxsec.R
+analysis_descriptives.R
+analysis_edgelevel.R
+analysis_fullint.R
+analysis_globals.R
+analysis_lingdist.R
+analysis_long.R
+analysis_longxsec.R
+analysis_periodicity.R
+analysis_pool.R
+analysis_popint.R
+analysis_resolcheck.R
+analysis_resolution.R
+analysis_sdm.R
+analysis_shift_notrun.R
+analysis_shiftcheck.R
+analysis_shiftcheck_notrun.R
+analysis_structcheck.R
+analysis_structure.R
+controlsonly.R
+crop_graph.R
+dist_km_fast.R
+estimate_montecarlo.R
+examples.R
+expand_LEDA.R
+heg_comparison_plot.R
+heg_polygons_compare.R
+libraries.R
+load_fao.R
+load_hydrobasins.R
+main_margprob.R
+main_plots_tables.R
+make_realnw_functions.R
+mc_all.R
+mc_bootse.R
+mc_burnin.R
+mc_inference.R
+mc_init.R
+mc_size.R
+mc_uncertainty.R
+meta_data_table.R
+optimize_nwresolution.R
+plot_spatial_graph.R
+postgresql2R_spatial.R
+prep_final_data.R
+prepare_all.R
+prepare_graph.R
+prepare_networks.R
+prepare_sdm_analysis.R
+pspm_example.R
+replication.R
+stargazer.R
+Figure11.R
+Figure3and10.R
+Script_sentimentAnalysis.R
+00_start-2.R
+01_gen_measures-2.R
+02_gen_output-2.R
+estimate.ED-2.R
+data.R
+functions.R
+timeline.R
+2_EORA_MRIO_Exp_emp.R
+3_EORA_MRIO_Exp_emp_MixedIncome.R
+4_ILO_CLEAN_FULL_final.R
+5_Output_analysis.R
+ROptimization-DiscoidvsLevallois.R
+Rcode-DiscoidvsLevallois.R
+AllOyoFunctions2.R
+global.R
+oyo.shiny.R
+CushmanEtAl_LeafPhenologyGEDI.R
+PRQ_data_replication_code.R
+Data analysis and visualization.R
+Parallel processing for calculating edge connections in 3 GPT words.R
+Parallel processing for calculating edge connections in lyric split.R
+app.R
+disambiguation_robustness.R
+robustness_code.R
+robustness_data.R
+robustness_final.R
+Main_Board.R
+Main_Board_Coverage.R
+Main_Board_HT.R
+Main_Board_HT2.R
+Main_Board_HT_Oracle.R
+Main_Board_RE.R
+Main_Board_time_fcre.R
+Main_Board_vio.R
+Main_Simulations_Summary.R
+Marinov_Replication.R
+Simulations_Summary_HT.R
+Simulations_Summary_HTOR.R
+Simulations_Summary_RE.R
+Simulations_Summary_Vio.R
+Summary_fcre.R
+Summary_times.R
+TacticalVotingApplication.R
+simsHT_function.R
+sims_HT_Oracle_Only.R
+sims_function.R
+sims_function_RE.R
+sims_function_coverage.R
+sims_function_time_fcre.R
+sims_function_vio.R
+Appendix_Plots.R
+Appendix_main.R
+Contagion+Homophily.R
+Contagion.R
+Homophily+Timeshock.R
+Homophily.R
+Master.R
+NetDenSTtest.R
+Plots.R
+main.R
+polity.R
+rawDataNet.R
+rawdatPlots.R
+Synthese_cleaning.R
+synthese_matching.R
+Full Replication.R
+battlegrounds_analyses.R
+Script for Graphics.R
+Figure1.R
+Figure2_Figure4.R
+Table1.R
+Table2_Figure3_Table3_Figure5.R
+Fig2_Fig_4_Fig6.R
+Fig3_Fig5.R
+Fig_7.R
+Fig_8.R
+equivalence_testing.R
+analysis.R
+transformations.R
+00_utils.R
+01a_get_big_donors.R
+01b_get_census_covariates.R
+01c_get_firms.R
+02_toy_sims.R
+02a_az_firms.R
+02b_ga_firms.R
+02c_ia_firms.R
+02d_ma_firms.R
+02e_md_firms.R
+02f_mn_firms.R
+02g_nc_firms.R
+02h_nm_firms.R
+02i_oh_firms.R
+02j_or_firms.R
+02k_pa_firms.R
+02l_tx_firms.R
+02m_va_firms.R
+02n_wi_firms.R
+03_histogram_grids.R
+04_pvalue_lineplots.R
+05_unusual_precincts.R
+06_donor_firm_level_data.R
+07_regressions.R
+08_marginal_seats_robustness.R
+jelst_scottjones_disability_replication.R
+1_fedback_dataprep.R
+2_fedback_desc.R
+3_fedback_maps.R
+4_fedback_reg.R
+REGRESSION_fintech_RCFS.R
+analysis.R
+03_democ_tweets_prepare.R
+04_democ_tweets_ts.R
+05_get_user_profiles.R
+06_plot_geo_users.R
+07_map_protest.R
+08_democ_tweets_ts_robust.R
+09_news_analysis.R
+10_revdata.R
+tte_TablesGraphs.R
+ChavezJoel_RScript-TX_Oil_Gas_HIV_MVC_2006and2018.R
+KSFR23_analysis_main.R
+KSFR23_analysis_otherDVs.R
+KSFR23_analysis_robustness.R
+KSFR23_appendix.R
+KSFR23_preprocess.R
+KSFR23_util.R
+Code for replication.R
+analysis.R
+TR-plot-preferences.R
+fig5-plot-qualtrics.R
+fig6-plot-evaluations-inform-enjoy.R
+fig7-plot-evaluations-agree.R
+JJPSreplication_yamaguchietal2024.R
+1.fit_main_models.R
+2.analysis_main_models.R
+3a.supplementary_otheranalyses.R
+3b.supplementary_negbin.R
+3c.supplementary_agencysize.R
+3d.supplementary_nomultiagencyshootings.R
+3e.supplementary_no2020.R
+3f.supplementary_PDonly.R
+3g.supplementary_M5regional.R
+3h.supplementary_reverseorder.R
+3i.supplementary_differentpriors.R
+script1_direct.R
+script2_dle.R
+script_2Jul2019.R
+cost_concentrations.R
+functions.R
+peskaPARSE.R
+0-init.R
+1-build-donor-regression-dataset.R
+2-donor-tables-and-figures.R
+3-candidate-tables-and-figures.R
+4-table-A1.R
+flexible_sensitivity_analysis_replication_codes_application.R
+flexible_sensitivity_analysis_replication_codes_simulation.R
+Figure 1B volcano plot.R
+Figure 6C and S7C heatmap.R
+Figure S7B volcano plot.R
+CarlsonTelephoneJOPReplicationCode-1.R
+01_Main_Analysis.R
+02_Appendix.R
+Title VII Analysis - Congress, 13 state south.R
+Title VII Analysis - Congress.R
+Title VII Analysis - Opinion.R
+R2IVE_V1.R
+R2IVE_V2.R
+besttuning.R
+DonnellyBJPSreplication.R
+PK-KSR_Replication.R
+Pigeonholing Partisans Replication Script.R
+Pigeonholing Partisans Replication Script_Appendix.R
+microcosm_analysis_code_2-12-20.R
+Replication Script.R
+Estimate Twitter Ideology.R
+response rate by treatment.R
+twitter ideology distribution.R
+figure_1.R
+table_1.R
+table_2a_2b.R
+figureA10-load-oemerge-03122021.R
+gss-panel-analysis-09302022.R
+naas-table-a3-09302022.R
+pew-overtime-figures-A1-09302022.R
+replication-black-white-09212022.R
+replication-hopkaiper-12212022.R
+table-a9-replication-12212022.R
+Appendix_S6.R
+Table_A4.R
+fig_1_panel_b.R
+fig_1_panel_d.R
+fig_1_panels_a_c_table_A13_figure_B3.R
+fig_2_Tables_A14-A17.R
+fig_3_Tables_A18-A22.R
+fig_4_Tables_A23-A28.R
+fig_5_Tables_A29-A33.R
+fig_6.R
+fig_7_table_B6.R
+fig_8.R
+fig_9_table_A34.R
+fig_A10_Table_B12.R
+fig_A1_panel_a.R
+fig_A1_panel_b.R
+fig_A2_table_A4.R
+fig_A3.R
+fig_A4.R
+fig_A5_panel_b.R
+fig_A5_panels_a_c_Table_B7.R
+fig_A6_Table_B8.R
+fig_A7_Table_B9.R
+fig_A8_Table_B10.R
+fig_A9_Table_B11.R
+fig_B1-B2.R
+table_1_table_A2.R
+table_2_A10_A11_B5.R
+table_A1.R
+table_A12.R
+table_A3.R
+table_A5.R
+table_A6.R
+table_A7.R
+table_A8_A9.R
+tables_B1 -B4_(effects on crime).R
+NPCReplication.R
+Figure 2.R
+Figure 3.R
+Figure 4.R
+Figure 5.R
+Figure A1.R
+Figure A10.R
+Figure A11.R
+Figure A12.R
+Figure A13.R
+Figure A14.R
+Figure A15.R
+Figure A16.R
+Figure A17.R
+Figure A18.R
+Figure A19.R
+Figure A2.R
+Figure A20.R
+Figure A21.R
+Figure A22.R
+Figure A23.R
+Figure A24.R
+Figure A25.R
+Figure A26.R
+Figure A27.R
+Figure A28.R
+Figure A29.R
+Figure A3.R
+Figure A30.R
+Figure A31.R
+Figure A32.R
+Figure A33.R
+Figure A34.R
+Figure A35.R
+Figure A36.R
+Figure A37.R
+Figure A38.R
+Figure A39.R
+Figure A4.R
+Figure A40.R
+Figure A41.R
+Figure A42.R
+Figure A43.R
+Figure A44.R
+Figure A45.R
+Figure A46.R
+Figure A47.R
+Figure A48.R
+Figure A49.R
+Figure A5.R
+Figure A50.R
+Figure A51.R
+Figure A52.R
+Figure A6.R
+Figure A7.R
+Figure A8.R
+Figure A9.R
+Table 2.R
+Table 4.R
+Table 5.R
+Table A1.R
+Table A2.R
+Table A3.R
+Table A4.R
+Table A5.R
+Table A6.R
+Table A7.R
+Table A8.R
+Table A9.R
+Coder Agreement.R
+Woke Code.R
+build.R
+helper_fxns.R
+install_packages.R
+load_packages.R
+run-cps.R
+theme.R
+08_MJW_Roth.r
+Figure 1.R
+Figure 4.R
+LDVReplication.R
+03 - Calculation_of_tactical_incentives_measure.R
+09 - Counterfactuals_Figure5.R
+utils_pivotality_functions.R
+3_conduct_MCA.R
+01-import.R
+02-gen_figure.R
+03-gen_descriptive_stats.R
+04-gen_models.R
+05-alternative_specifications.R
+00_GENERAL.R
+ACLED_FUNCTIONS.R
+ACLED_MAP2020.R
+ACLED_MAP2021.R
+CCES2018_CLEAN.R
+CCES2018_DESCRIPTIVE.R
+CCES2018_REGRESSION.R
+CES2020_CLEAN.R
+CES2020_DESCRIPTIVE.R
+CES2020_REGRESSION.R
+Functions.R
+Load_RUCA.R
+RUCC_MAP.R
+MTurkRepublicans.R
+stacking MTurk and ANES.R
+1_run_sim_study.R
+2_find_far_thresholds_independent.R
+3_helper_functions_independent.R
+4_sim_study_plots.R
+5_cs_plots.R
+6_cs_thresholds.R
+7_cs_helper_functions.R
+8_cs_thresholds_plots_original.R
+study1-miteAnalysis.R
+study2-mrtAnalysis.R
+study2-swmtAnalysis.R
+ch10_logistic.R
+ch11_survial.R
+ch7.R
+ch8.R
+ch9_linear_regression.R
+ch9_simple.R
+Sample size only sex.R
+data_cleaning.R
+final_models.R
+functions.R
+manuscript_code.R
+PairwiseCode_replication_11032021.R
+adult.R
+helper2.R
+kropko_anes.R
+kropko_anes_test_helper.R
+kropko_sim.R
+main_replication.R
+mar1_data_gen.R
+mar1_midas.R
+midas_handler_cont.R
+package_dependencies.R
+speed_cols.R
+speed_rows.R
+rep1.R
+rep2.R
+rep3.R
+rep4.R
+repB.R
+Supplementary file 3_code_for_reproduction.R
+replication_code.r
+00_import-data.R
+01_clean-launch-1.R
+02_scramble-treatment.R
+03_standardize-responses.R
+AMA_table.R
+Summary_and_balance.R
+additional_tests.R
+attrition_table.R
+black_treatments_regressions.R
+consort_chart_numbers.R
+dummy_variables.R
+entropy_weighting.R
+helpers.R
+histograms.R
+interaction_tables.R
+main.R
+main_regressions.R
+power_calculations.R
+regressions_follow_up_sample.R
+1_lift_data_cleaner.R
+2_demographics_data_cleaner.R
+3_lift_and_demo_merge_data.R
+4_demographics.R
+5_descriptives.R
+6_NHST.R
+fig1.R
+fig2.R
+figP.R
+figS.R
+code.R
+1.1_TotalMethylationLoss_Decitabine_Github.R
+1_TotalMethylationLoss_TET-TKO_Github.R
+2_KineticsCalc_1_Decitabine_0-30_Github.R
+2_KineticsCalc_1_TET-TKO_6-18_Github.R
+3_PlottingDemethylationKinetics_Ranks_Decitabine_.R
+3_PlottingDemethylationKinetics_Ranks_TET-TKO_Github.R
+IMPP_analysis.R
+MultiScale.R
+MultiScaleSparse.R
+MultiScaleSparseFunctions.R
+dimensionality_fxns.R
+install.R
+master.R
+_2_analyze_regression_tables.R
+_3_analyze_regression_panel.R
+_5_analyze_regression_tables.R
+DescriptiveStatsPlot.R
+aap_analysis_interaction.R
+aap_analysis_late.R
+aap_analysis_late_coef_plot.R
+aap_analysis_late_excluded.R
+aap_analysis_late_recall_survey.R
+aap_analysis_late_replication.R
+aap_analysis_late_skills.R
+aap_analysis_simulation.R
+compliance_calc.R
+data_merge.R
+var_create.R
+1_clean_nvdrs.R
+1a_clean_nvdrs_occupation.R
+1b_export_occupation_text.R
+1c_figure_s2_wordcloud_by_occupation.R
+1d_clean_ACS_PUMS.R
+2a_create_ACS_county_weight.R
+3a_aggregate_measures.R
+4a_figure_s1_compare_cmf_nvdrs.R
+5a_figure1_overtime_association.R
+5a_figure_s3_bivariate_association.R
+5b_figure2_figures4_sameness_main.R
+5c_figure3_sameness_overtime.R
+5d_figure3_macro_micro.R
+6c_figure_s5_nonlinearity.R
+META_run.R
+Lupia.science.replication.R
+a_example_prepareData.R
+b_example_analyzeData.R
+c_example_produceFigures.R
+d_sim_double_robust.R
+e_sim_complex_sample.R
+f_sim_cross_fitting.R
+g_slide_animated_figures.R
+prepare_environment.R
+strong_reanalysis.R
+Replicate_Descriptives.R
+Replication_Econ_Social_Effects.R
+Replication_MainFigures.R
+Replication_SupplementaryMaterials.R
+Replication_Welfare_Favorability.R
+R_Script_Twitter_COVID-19_US_Departments.R
+figures_R.R
+VG_Script1.R
+VG_Script2.R
+VG_Script3.R
+ciri_polity_analysis_jop.R
+CDC_Mortality_Read_Script.R
+Marginal_Damages_Model_Script.R
+NEI_2008_Read_Script.R
+NEI_2011_Read_Script.R
+NEI_2014_Read_Script.R
+NEI_2017_Read_Script.R
+Population_Mapping_Script.R
+Results_With_Emissions_Script.R
+study1_analysis_Fesenfeld_etal.R
+study2_analysis_Fesenfeld_etal.R
+Code_predictive_modeling.R
+recouping_SEM_Appendix_Rcode.R
+recouping_negbin_Appendix_Rcode.R
+recouping_negbin_Time_Varying_Appendix_Rcode.R
+britain_wordfish.R
+britian weighted log odds.R
+france weighted log odds.R
+france_wordfish.R
+netherlands weighted log odds.R
+netherlands_wordfish.R
+apsr-figures-base-locations.R
+apsr-figures-cat-bayes-20190924.R
+apsr-figures-cat-bayes-contact-only-20190924.R
+apsr-figures-cat-bayes-ideology-20190924.R
+apsr-figures-cat-bayes-nobase-20190924.R
+apsr-figures-contact-breakdown.R
+apsr-figures-country-spending-total.R
+apsr-figures-logit-bayes-20190930.R
+apsr-figures-map-troop-levels.R
+apsr-figures-ordered-logit-20190925.R
+apsr-figures-troop-levels.R
+apsr-load-data-20190924.R
+apsr-models-binary-bayes-20190930.R
+apsr-models-cat-bayes-20190905.R
+apsr-models-cat-bayes-contact-only-20191001.R
+apsr-models-cat-bayes-ideology-20191001.R
+apsr-models-cat-bayes-no-base-20191005.R
+apsr-models-mlogit-20190930.R
+apsr-models-ordered-20190925.R
+analysis_appendix.R
+analysis_main_text.R
+d1.R
+d10.R
+d2.R
+d3.R
+d4.R
+d5.R
+d6.R
+d7.R
+d8.R
+d9.R
+data_prep.R
+data_prep_drop_censored.R
+data_prep_postcw.R
+drift.R
+drift_alt1.R
+drift_alt2.R
+drift_drop_censored.R
+drift_mil.R
+drift_postcw.R
+dynamic.R
+estimates_extract_k7.R
+loio_estimates_extract .R
+s1.R
+s10.R
+s2.R
+s3.R
+s4.R
+s5.R
+s6.R
+s7.R
+s8.R
+s9.R
+static.R
+static_drop_censored.R
+static_postcw.R
+00_initialize.R
+01_big_unmatched_trip.R
+01_calculate_dists.R
+01_ebal.R
+01_event_study.R
+01_pre_2010_full.R
+01_rainfall.R
+02_event_study_td.R
+02_make_map.R
+02_multinom.R
+02_pre_2010_trip.R
+02_prep_match.R
+02_primary_linear_time_trend.R
+02_rob_trip.R
+03_big_unmatched_full.R
+03_first_stage_match.R
+03_genmatch.R
+03_regs_table.R
+04_match.R
+04_prop_score_matching.R
+04_second_stage_match.R
+05_check_registrations_before_deadline.R
+05_exact_match.R
+05_prep_reg.R
+05_triple_diff_reg.R
+06_alt_regs.R
+06_county_specific_triple_plot.R
+06_make_balance_table_1.R
+06_matching_regression.R
+07_balance_table.R
+07_every_voter_in_state.R
+07_make_balance_table_2.R
+AutoCluster4.R
+README - load and aggregate files.R
+ScriptSection3and4.R
+ScriptSection5.R
+ScriptSection5Placebo.R
+ScriptSection6.R
+AP12-1-Load_Data.R
+AP12-2-Rasch_Models.R
+AP12-3-DIF.R
+AP12-4-Compare_New_and_Old.R
+AP16-1-Load_Data.R
+AP16-2-Rasch_Models.R
+AP16-3-DIF.R
+AP16-4-Compare_New_and_Old.R
+FUN-binary_check.R
+FUN-binary_count.R
+FUN-check_dif.R
+FUN-check_scale_items.R
+FUN-fix_disorder.R
+FUN-gen_groupvars.R
+FUN-get_relstats.R
+FUN-rescale_items.R
+FUN-run_anovas.R
+FUN-run_lr.R
+anes-1-subset_restricted_data.R
+anes-2-define_groupvars.R
+anes-3-rename_scalevars.R
+anes-4-define_scales.R
+auth1-run_models.R
+auth2-coef_plot.R
+auth3-person_locations.R
+auth4-item_locations.R
+auth5-combine_plots.R
+fg-e1.R
+fg-f1.R
+fg2.R
+fg3.R
+fg4a.R
+fg4b.R
+fg5.R
+figure_preferences.R
+scale_items.R
+tables-c1-c13.R
+Figure 4-1.R
+Figure 4-2.R
+Figure 4-3.R
+Figure 4-4.R
+Figure 4-5_4-7.R
+Figure 4-6.R
+Figure 4-8_Table 4-1.R
+Figure 4-9_4-10.R
+Figure 5-1.R
+Figure 5-2.R
+Figure 5-3.R
+Figure 5-4.R
+Figure 5-5_5-6.R
+Figure 5-7.R
+Figure 5-8_Table 5-1.R
+Table 4-2.R
+bayesx.estim_r.R
+bias_plot.R
+change_point.R
+plot_rhos.R
+rescale.R
+rw_matrix.R
+Chapter 2 script.R
+II Complete.R
+Blowdown_BiomassChange.R
+Blowdown_GapSizeFrequency.R
+Blowdown_HeightTransitionMatrix.R
+full_replication.R
+1_dpr_ts_plots.R
+2_dpr_model_data.R
+3_sim_study_ts_plots.R
+4_sim_study_run.R
+5_sim_study_detection_rate.R
+6_time_test.R
+data_generation.R
+pl_fd_helper.R
+pl_fd_methods.R
+sim_study_settings.R
+sim_study_single_run.R
+functions.R
+latent.R
+two-stage probit.R
+agreement.R
+correlates_and_regressions.R
+icc_plot.R
+icj_descriptive.R
+ideal_points.R
+irt_data_preprocessing.R
+plot_ideal.R
+Thesis_R.R
+pnas_replication_SI.R
+pnas_replication_main.R
+conjoint_analysis.R
+correspondence_analysis.R
+descriptive_table.R
+robustness_checks.R
+Harding_Nwokolo_Nigeria_MediaTextAnalysis.R
+Main_Analysis.R
+Translation.R
+preprocessing.R
+Code_S1_PTF_functions.R
+functions.R
+graphs_mm_20240415.R
+additional_analysis.R
+aggregate_analysis_PT.R
+aggregate_analysis_SA.R
+aggregate_analysis_SM_figures.R
+aggregate_analysis_TWFE.R
+figure_1.R
+figure_10.R
+figure_2.R
+figure_4.R
+figure_5.R
+figure_6.R
+figure_7.R
+figure_8.R
+figure_9.R
+hh_panel_analysis.R
+survey_analysis.R
+Manuscript_Models_Replication_Figures1_4_5_6_8_Appendix_Figures.R
+Manuscript_Models_Replication_Tables.R
+Manuscript_Replication_Figure2_Figure3.R
+Manuscript_Replication_Figure7.R
+PanelmatchLiss.R
+Figure1Code.R
+Figure2Code.R
+McShaneNLP.R
+McShaneNonPooled.R
+McShaneSimulation.R
+McShaneStan.R
+Figure 2.R
+Figure 3.R
+Figure 4.R
+Figure 5.R
+Figure 6.R
+Figure 7.R
+Figure 8.R
+Table 1.R
+Table 2.R
+Table 3.R
+Table 4.R
+0_Master.R
+9_Analysis.R
+R_Code.R
+Bargaining Delay Replication.R
+CDHR2019_yearly_calculations_example.r
+CDHR_validation_aggregatemetdata.r
+CDHR_validation_matchERAIdata.r
+MakeYearlyRecord_spi1_pctl02.r
+MakeYearlyRecord_spi1_pctl07.r
+MakeYearlyRecord_spi1_pctl16.r
+MakeYearlyRecord_spi1_pctl84.r
+MakeYearlyRecord_spi1_pctl93.r
+MakeYearlyRecord_spi1_pctl98.r
+MakeYearlyRecord_spi3_pctl02.r
+MakeYearlyRecord_spi3_pctl07.r
+MakeYearlyRecord_spi3_pctl16.r
+MakeYearlyRecord_spi3_pctl84.r
+MakeYearlyRecord_spi3_pctl93.r
+MakeYearlyRecord_spi3_pctl98.r
+MakeYearlyRecord_spi6_pctl02.r
+MakeYearlyRecord_spi6_pctl07.r
+MakeYearlyRecord_spi6_pctl16.r
+MakeYearlyRecord_spi6_pctl84.r
+MakeYearlyRecord_spi6_pctl93.r
+MakeYearlyRecord_spi6_pctl98.r
+MakeYearlyRecord_t2manom.r
+MakeYearlyRecord_tmax_pctl84.r
+MakeYearlyRecord_tmax_pctl93.r
+MakeYearlyRecord_tmax_pctl98.r
+MakeYearlyRecord_tmaxanom.r
+MakeYearlyRecord_tmin_pctl02.r
+MakeYearlyRecord_tmin_pctl07.r
+MakeYearlyRecord_tmin_pctl16.r
+MakeYearlyRecord_tminanom.r
+MakeYearlyRecord_tp1_pctl84.r
+MakeYearlyRecord_tp1_pctl93.r
+MakeYearlyRecord_tp1_pctl98.r
+MakeYearlyRecord_umax_pctl84.r
+MakeYearlyRecord_umax_pctl93.r
+MakeYearlyRecord_umax_pctl98.r
+MakeYearlyRecord_umaxanom.r
+MakeFigures.R
+01_CCES-sample-n_figure-01.R
+01_prep-cces.R
+02_create-aggregates-by-level.R
+02_prep-acs.R
+03_model-turnout.R
+03_stats_rpv_appendix-c-05.R
+04_fit_mr.R
+04_tabs_table-01-appendix-tables.R
+05_cd-map_figure-03a-04.R
+05_poststrat.R
+06_coefplot_figure-03b.R
+06a_calib-oneway.R
+06b_summ-to-race-cd.R
+06c_calib-twway-national.R
+07_anova_table-02.R
+07a_summ-statelevel.R
+07b_summ-sims_export.R
+08_FL-validation-model.R
+08_coalition_figure-06-table-03.R
+09_FL_partyreg-EI.R
+09_prior-pd_figure-A01.R
+10_cohesion_figure-05.R
+11_change-2016-2020.R
+12_compare-ggfix.R
+13_EI-FL-validation.R
+14_EI-435-districts.R
+15_compare_EI-MRP.R
+16_compare_racialgap_EI-MRP.R
+17_compare_anova_EI-MRP.R
+18_AAPI_figure-B01.R
+Disrupting regulation replication file.R
+rtlmauc.R
+rtlmfolds.R
+analyze_unique_devices_and_pageviews.R
+appannieplots.R
+calculate_significant_increases_fa_ru.R
+combine_leader_wikipedia2vec_pnas_check.R
+count_daily_wikipedia_views_functions.R
+count_daily_wikipedia_views_only_pnas_check.R
+count_daily_wikipedia_views_only_pnas_check_si_sig_increases.R
+fig2.R
+fig4_A1.R
+fig5_A7_A8.R
+fig6_A9.R
+figA10.R
+figA16_A17.R
+figA2.R
+figA3.R
+figA4.R
+figA5.R
+figA6.R
+get_leader_in_other_languages_functions.R
+get_leaders_in_other_languages.R
+make_seed_files.R
+pull_and_train_wikipedia_entities.R
+standardize_wikipedia_pre_https_blocked_lists.R
+tableA1.R
+tableA6_A7.R
+tableA6_A7_formatting.R
+top_page_diffs_pnas_check.R
+wikipedia_views_by_country_blocked_v_not_ratio_to_all.R
+wikipedia_views_check_blocked_expansion.R
+wikipedia_views_check_expansion.R
+Chapter 6-Multilevel Explanatory Analysis (R-Script).R
+Fig.S2.R
+Figure 2.R
+Figure 3.R
+Figure 5.R
+Figure 6-part1.R
+Figure 6-part2.R
+Figure.1.R
+Gene_skewing_clusterng_analyses.R
+Gene_skewing_density_analyses.R
+Read_data.R
+stitchResults.R
+tracts08_10.R
+tracts14_18.R
+PoP Graphics RR 041221.R
+jeehp-21-23-supple 1.R
+crime_replication.R
+00_SumStats.R
+01_Analysis_Response.R
+02_Analysis_Friendliness.R
+03_Analysis_Thoroughness.R
+04_Analysis_Response_SchoolCharacteristics.R
+05_Analysis_Friendliness_SchoolCharacteristics.R
+06_Analysis_Thoroughness_SchoolCharacteristics.R
+07_Multiple_Comparisons.R
+08_Record_Disclosure_Analysis.R
+09_Names_Pretest.R
+Living_in_Fear_Rscript.R
+Mediation_and_Sensitivity_Analyses.R
+collect-data.r
+MasterScript_GEC_Accepted.R
+Lundgren & Klamberg R script (Figures 1, 2, and 5).R
+calculatePower.R
+r_script.R
+01 Data wrangling and analysis.R
+dfa_figure_a1.R
+dfa_figure_b2.R
+dfa_figure_c3.R
+dfa_figure_d4.R
+dfa_figure_e5.R
+dfa_figure_f6.R
+dfa_figure_h7.R
+dfa_figure_i8.R
+dfa_figure_j9.R
+dfa_figure_n10.R
+dfa_figure_s14.R
+dfa_figure_s15.R
+dfa_figure_s16.R
+dfa_figures_1_2.R
+dfa_table_g1.R
+dfa_table_p4_figure_p13.R
+dfa_table_r11.R
+dfa_table_r7_to_r10.R
+dfa_table_s13.R
+dfa_table_s18.R
+dfa_table_s19.R
+dfa_table_s20.R
+dfa_table_s23.R
+dfa_table_s24.R
+dfa_table_s25_figure_s17.R
+dfa_tables_1_2.R
+dfa_tables_s14_s15.R
+dfa_tables_s16_s17.R
+dfa_tables_s21_s22.R
+dfc16.R
+dfc20.R
+gen_varlists.R
+impute2007.R
+impute2007_16.R
+torres_merging.R
+Replication_of_Figures.R
+replication_Weibo_HKSManuscript.R
+FRS_HittingCarrots.R
+0061-ParameterizationAlternativesPaperBatchExecution.r
+models.r
+01_MainAnalysis.R
+_ReplicationMasterFile.R
+ab_init_education.R
+dhs_standardize_fun.R
+pubs_figA22-23.R
+regression_functions.R
+regs_ab_figA20.R
+regs_ab_figA24a.R
+regs_ab_figA24b.R
+regs_ab_figA24c.R
+regs_ab_figA24d.R
+regs_ab_figA24e.R
+regs_ab_figA24f.R
+regs_ab_figA28.R
+regs_ab_figA31.R
+regs_ab_figA40.R
+regs_ab_table1.R
+regs_ab_table1_new.R
+regs_ab_table2.R
+regs_ab_tableA10.R
+regs_ab_tableA11.R
+regs_ab_tableA14.R
+regs_ab_tableA3.R
+regs_ab_tableA8.R
+regs_ab_tableA9.R
+regs_dhs_fig3.R
+regs_dhs_fig4.R
+regs_dhs_figA13.R
+regs_dhs_figA14.R
+regs_dhs_figA15.R
+regs_dhs_figA16.R
+regs_dhs_figA17.R
+regs_dhs_figA18.R
+regs_dhs_figA21.R
+regs_dhs_figA25.R
+regs_dhs_figA25_boot.R
+regs_dhs_figA26.R
+regs_dhs_figA26_boot.R
+regs_dhs_figA29.R
+regs_dhs_figA32.R
+regs_dhs_figA34.R
+regs_dhs_figA35.R
+regs_dhs_figA36.R
+regs_dhs_figA38.R
+regs_dhs_figA39.R
+regs_dhs_figA39_boot.R
+regs_wlms_fig2.R
+regs_wlms_figA11.R
+regs_wlms_figA12.R
+regs_wlms_figA27.R
+regs_wlms_figA30.R
+regs_wlms_figA33.R
+regs_wlms_figA37.R
+regs_wlms_figA41.R
+sumstats_ab_figA10.R
+sumstats_ab_figA19.R
+sumstats_wlms_figA4.R
+sumstats_wlms_figA9.R
+01_R Syntax APC Analysis.R
+02_R_Syntax_diffuse_support_revision.R
+Fig5.R
+philly_evictions_analysis.R
+stat_binscatter.R
+RScript_Analysis_E1.R
+RScript_Analysis_E2A.R
+RScript_Analysis_E2B.R
+replication_OnlineAppendix.R
+replication_conditional_accept.R
+zelig_fix.R
+Safe injection sites NYC 231014.R
+cleandata_post.R
+cleandata_pre.R
+mergeprepost.R
+replication.r
+cranc_utc_01a_access-metric-schools-markets.R
+cranc_utc_01b_access-metric-employment.R
+cranc_utc_02_access-data.R
+cranc_utc_03_crashes-data.R
+cranc_utc_04_access-data-analysis.R
+cranc_utc_05_access-plots.R
+cranc_utc_06a_crashes-models-employment.R
+cranc_utc_06b_crashes-models-schools.R
+Krasno et al Recusal Replication Code (7.27.2020).R
+replicate-experiment-appendix.R
+replicate-experiment.R
+replicate-observational-appendix.R
+replicate-observational.R
+replicate-real-world-usage-appendix.R
+analysis_lse.R
+harris-replication-code.R
+ReplicationSteinwand&Reinsberg.R
+GillHomola_OUPChapter.R
+Code_Maldonado-Coelho_et_al_Am_Nat_2023.R
+DFMPA_Rcode_12.8.19.R
+AM_scaling_for_importance.R
+AM_scaling_for_issue.R
+BBT_scaling_for_issue.r
+Callander Wilson Simulation.R
+helper-functions.R
+install.R
+replication.R
+main_scripts.R
+fpa2022.R
+appendix.R
+main.R
+fracking_comments_analysis.R
+02_main_script.R
+Chapter 3 script.R
+File1_House_Senate_Models.R
+File2_Model_Fit_Counterfactual_Analysis.R
+replicationAJPS.R
+FigS1.R
+RSVB_epidemics.R
+ia_estimation.R
+ne_estimation.R
+replication_code_appendix.R
+replication_code_article.R
+wi_estimation.R
+VG_Script1.R
+VG_Script2.R
+VG_Script3.R
+WT_mdx_ECC_proteomics_analysis.R
+data_ingest_and_clean.R
+descriptive_statistics.R
+lib-00-utils.R
+Rscript_main_statistics.R
+Full Spectrum Paper Replication.R
+European Defense Politics RScript (1.14.25).R
+helper_functions.R
+replication_code.R
+analysis_code.R
+Sentiment Analysis Script.R
+Text processing script.R
+wood_grose_replication_code_final.R
+wood_grose_replication_code_final_Dec_14.R
+replication_file.R
+0_create_parameter_grid.R
+0_randomise_fitness.R
+0_randomise_traits.R
+2_create_parameter_grid_simulations.R
+3_Simulations.R
+SupplementaryRScript.R
+12-09-25_overall_analysis.r
+12-09-25_pvalue_plot.r
+12-09-25_pvalue_plotCIE.r
+12-09-25_pvalue_plot_bdm.r
+12-09-25_pvalue_plot_h10dm.r
+MI_Dem_CIE.r
+analysis.R
+data_preperation.R
+helpers.R
+1-RE.R
+2-P-Curve.R
+3-PET-PEESE.R
+4-P-Curve_Skewness.R
+5-P-Uniform.R
+6-WAAP.R
+7-Parameter_Selection_Models.R
+8-AK_Estimators.R
+9-EK_Estimator.R
+AR_CombResults.R
+AR_DGP.R
+AR_Estimation.R
+AR_simDataset.R
+BR_CombResults.R
+BR_DGP.R
+BR_Estimation.R
+BR_simDataset.R
+Carter_CombResults.R
+Carter_DGP.R
+Carter_Estimation.R
+Carter_simDataset.R
+CombineResults.R
+SDI_CombResults.R
+SDI_DGP.R
+SDI_Estimation.R
+SDI_simDataset.R
+Fig_1.R
+Fig_2.R
+Fig_3.R
+Fig_4.R
+Fig_5.R
+Fig_A1.R
+Fig_A10.R
+Fig_A10b.R
+Fig_A2.R
+Fig_A3.R
+Fig_A4.R
+Fig_A5.R
+Fig_A6.R
+Fig_A7.R
+Fig_A8.R
+Fig_A9.R
+Tab_2.R
+Tab_A1.r
+Tables_A3_A11.R
+ovb.R
+1_appended with brier and log scores.R
+3_paper_figures.R
+Statistical_Analysisv3.R
+Twin script - bivariate - AU.R
+Twin script - bivariate - US.R
+Twin script - trivariate - AU.R
+Twin script - trivariate - US.R
+Twin script - univariate - AU - Catholic only.R
+Twin script - univariate - AU - Protestant only.R
+Twin script - univariate - AU.R
+Twin script - univariate - US - Catholic only.R
+Twin script - univariate - US - Protestant only.R
+Twin script - univariate - US.R
+convert SPSS to Stata.R
+genepihelperfunctions.R
+1.check data integrity.R
+2.analysis.R
+functions.R
+replication.R
+Admin_data_propensity_score-1.R
+Admin_data_regressions-1.R
+Appendix_stats_balance_graphs-1.R
+Balance_table_calculations-1.R
+Building_Admin_data_before_match-1.R
+Building_Survey_data_before_matching-1.R
+Survey_data_propensity_score-1.R
+Survey_data_regressions.R
+replication file.R
+chatbot_SI_jop.R
+chatbot_paper_jop.R
+utils.R
+Figures.R
+Replication_appendix.R
+Replication_main.R
+Replication_prep.R
+aux_functions.R
+replicationV2.R
+Real, but Limited.R
+data_processing.R
+graphs_tabs_jbee.R
+payment_preprocessing.R
+recipient_payment_processing.R
+Figure 1 Code.R
+Figure 2 Code.R
+Figure 3 Code.R
+Figure 4 Code.R
+Shift Legend Function.R
+CoefficientGraphs.R
+Matching.R
+R codes to QCA.R
+figure1.r
+figure2.r
+figurea1.r
+figurea2-a.r
+figurea2-b.r
+figurea3.r
+figurea4.r
+table3.r
+tablea4-first-stage-prep.r
+tablea4-first-stage.r
+tablea4-single-entrant.r
+00_county_level_data.R
+01_eia767_1985-2005.R
+02_eia860_2007-2018.R
+03_merge_eia767_and_eia860.R
+04_fuel_and_fuel_comp_1970_2018.R
+05_coal_mine_data_eia923.R
+06_merge_boilers_to_regulations.R
+07_feature_generation.R
+08_generate_regression_vars.R
+1_master.R
+2_data.R
+3_regs_main.R
+4_regs_robust.R
+5_regs_netgen.R
+6_plot_coefyr.R
+local_reg.R
+networks.R
+plots.R
+preamble.R
+stata_regs.R
+survival_share.R
+Matching.R
+R_File_KPI_Score_Figures.R
+t_stat_post_matching.R
+t_stat_pre_matching.R
+TrusslerLegislatorAppendixAnalyses.R
+TrusslerLegislatorMainAnalyses.R
+kmz_to_csv.R
+Clark_Dolan_Replication.r
+covid_conjoint.R
+covid_conjoint_lucid.R
+covid_conjoint_yahoo.R
+fgi1_reasons_novac.R
+fgi2_familiar_entity.R
+fig5_conjoint.R
+table1_pr_willingness_vaccination.R
+tb_appendix_1.R
+1_appendix_statistics.R
+2_estimation.R
+2_estimation_commercial.R
+3_robustness.R
+3_robustness_amen.R
+3_robustness_backbone.R
+4_figures.R
+Z_crisisfigure.R
+edgeprob2.R
+ergmAME.R
+tergmprepare.R
+appendixA_clusteredse_figures.R
+appendixA_indivexplanations_interfigure.R
+appendixC_figure.R
+appendixE_figure.R
+appendixF_figure.R
+descriptive_figures.R
+main_effectsize_comparison.R
+main_interaction_figures.R
+1_cleaning.R
+2_creatingmeasures.R
+3_creatingoutput.R
+construct_measures.R
+main.R
+other_outputs.R
+AMCE_Funcs.R
+ReplicationCode_Appendix.R
+ReplicationCode_Main.R
+code_R(v3).R
+Tutorial_Board_Interlocks.R
+Agroforestry-Code_Diff between max potential AGB and current AGB.R
+Agroforestry-Code_LCLU classification in Senegal.R
+Agroforestry-Code_Max potential AGB for different ecoregions after implemting agroforestry and silvopasture.R
+Agroforestry-Code_Max_AGB_potential for each ecoregion.R
+Human-well-being_Code_pd_dhs_interpolation_0509_2024_cooking.R
+Human-well-being_Code_pd_dhs_interpolation_0509_2024_electric.R
+Human-well-being_Code_pd_dhs_interpolation_0509_2024_femaleland.R
+Human-well-being_Code_pd_dhs_interpolation_0509_2024_floor.R
+Human-well-being_Code_pd_dhs_interpolation_0509_2024_stunting.R
+Human-well-being_Code_pd_dhs_interpolation_0509_2024_water.R
+A1 GSC only cases with low foreign support.R
+A3 GSC non-leftist centre-seeking subversion.R
+A5 GSC physical integrity as dependent variable.R
+B10 GSC placebo tests.R
+B11 GSC equivalence tests.R
+B12 GSC excluding oil cases with subversion before oil onset.R
+B14 GSC excluding successful subversions.R
+B16 GSC without GCC countries.R
+B18 GSC without MENA countries.R
+B20 GSC only first movers in each region.R
+B28 GSC only subversion outside of regime formation periods.R
+B28 GSC only subversions around regime formation.R
+B32 GSC state capacity as dependent variable.R
+B5 GSC twoway fixed effects.R
+B6 GSC factors only model.R
+B7 GSC shorter pre-period.R
+B8 GSC treatment only after oil onset.R
+B9 GSC treatment all oil cases.R
+B9 GSC treatment consistent oil cases.R
+B9 GSC treatment early oil cases.R
+Manuscript Fig. 1 replication code.R
+Manuscript GSC replication code.R
+Supplementary material Figs. A18-A19 replication code.R
+functions_script.R
+main_script.R
+produce correl_plot.R
+1_lvmwd_mspm_analysis.R
+2_detrend_data_lvmwd.R
+3_helper_functions.R
+4_ads_pca_functions.R
+5_shewhart_lvmwd.R
+Selecting for Masculinity_All Figures_Replication.R
+replication_stm.R
+BLCM_malaria_tests_code.R
+JF-RP-2016.R
+cameron_2021.R
+Replication_Code.R
+responsiveness_rep.R
+Weathering the Storm Code.R
+Saha_FrontiersRR_2023.R
+01_analysisA.R
+03_appendixA.R
+spv_pb_replication_final.R
+NudgeDataAnalysis.R
+Paper_Postal_Voting_HH.R
+plots_paper_postal.R
+Figure_2_200122.R
+Statistical_Analysisv3.R
+01ctyRegNames.R
+02histLdfPop.R
+03projLdf.R
+04ldfMergeHistProj.R
+05aggLdfDema.R
+06ldfRegYrFigTab.R
+07ldfRegSspFig.R
+08redMeatIncElasTable.R
+09ctyProtDem.R
+10ctyDemaDrivers.R
+11incElastCalc.R
+12priceElasRefVal.R
+13globeModel.R
+14maps.R
+15ipr.R
+16demaFactIncGrp.R
+17masterFile.R
+figures.R
+03Chow_Levin_Mediation.R
+04Chow_Levin_STM.R
+run.R
+server.R
+ui.R
+Replication R Code.R
+0_root.R
+1_ex_sim0.R
+2_ex_HH2015.R
+3_ex_FM2015.R
+4_sim_tests_n100.R
+5_sim_tests_n300.R
+6_sim_ife_mc.R
+7_sim_inference.R
+8_plot_sim.R
+simulateDID.R
+simulateData.R
+repcode.figures.R
+TSMx.R
+Script models_AJB-D-20-00306R2.R
