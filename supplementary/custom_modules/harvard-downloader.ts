@@ -9,7 +9,6 @@ const MAX_DELAY = 64000
 // Setup custom fetcher
 const TOKEN = process.env.TOKEN
 const BASE_URL = 'https://dataverse.harvard.edu/api'
-
 let limit = 0
 
 const customFetch = async (relativeURL: string): Promise<null | Response> => {
@@ -39,7 +38,7 @@ const customFetch = async (relativeURL: string): Promise<null | Response> => {
 }
 
 // Do not set greater than 1000
-const PER_PAGE = 1000
+const PER_PAGE = 10
 
 // Search script params
 const SEARCH_PARAMS = {
@@ -49,9 +48,9 @@ const SEARCH_PARAMS = {
   fileTypeGroupFacet: 'Code'
 }
 
-export const getPage = async (page = 1): Promise<SearchResponse['data'] | null> => {
-  if (DEBUG) console.log(`Page ${page} is being fetched`)
-  const params = new URLSearchParams({ ...SEARCH_PARAMS, page: String(page) })
+export const getPage = async (start = 1): Promise<SearchResponse['data'] | null> => {
+  if (DEBUG) console.log(`Page ${start} is being fetched`)
+  const params = new URLSearchParams({ ...SEARCH_PARAMS, start: String(start) })
   const response = await customFetch(`/search?${params.toString()}`)
   if (!response) return null
   const json = await response.json() as SearchResponse

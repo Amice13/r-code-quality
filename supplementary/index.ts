@@ -19,7 +19,7 @@ const csvStream = createCsvStream(OUTPUT_FILE)
 
 const fileExists = fs.existsSync('./.tmp')
 const downloaded = fileExists ? fs.readFileSync('./.tmp').toString().split(/[\r\n]+/g).filter(Boolean) : []
-
+console.log(downloaded)
 let page = 1
 let nextPageExists = true
 
@@ -30,8 +30,9 @@ while (nextPageExists) {
   for (const dataset of items) {
     const csvData = structuredClone(dataset) as unknown as Record<string, string | number>
     if (dataset.fileCount === undefined || dataset.fileCount < 1) continue
-    const fileSet = await getFileset(dataset.global_id)
+    console.log(downloaded.includes(dataset.global_id), dataset.global_id)
     if (downloaded.includes(dataset.global_id)) continue
+    const fileSet = await getFileset(dataset.global_id)
     fs.appendFileSync('./.tmp', dataset.global_id + '\n')
     if (fileSet?.latestVersion?.files === undefined) continue
     const files = fileSet.latestVersion.files
