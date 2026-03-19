@@ -1,0 +1,14 @@
+nb.under.lik<-function(theta,y,X,Z){
+rx<-ncol(X)
+rz<-ncol(Z)
+beta<-theta[1:rx]
+gamma<-theta[(rx+1):(rx+rz)]
+alpha<-theta[rx+rz+1]
+alpha[alpha<0]<-1
+xb<-X%*%beta
+zg<-Z%*%gamma
+lambda<-exp(xb)
+dp<-plogis(Z%*%gamma)
+logl<-sum(lgamma(y+alpha^-1)+log(factorial(y))-lgamma(alpha^-1)+alpha^-1*log(alpha^-1)-alpha^-1*log(alpha^-1+lambda*dp)+y*log(lambda*dp)-y*log(alpha^-1+lambda*dp))
+return(-logl)
+}

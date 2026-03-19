@@ -1,0 +1,82 @@
+# Replication materials for "Messy Data, Robust Inference? Navigating Obstancles to Inference with bigKRLS"
+# By: Pete Mohanty (pmohanty@stanford.edu) and Robert Shaffer (rbshaffer@utexas.edu)
+
+if('2016_election_dataset.csv' %in% dir()){
+  data <- read.csv('2016_election_dataset.csv')
+}else{
+  message("Please set your working directory to 2016_election_application.")
+}
+
+# data preparation
+data$dem_2016_percent <- 100*data$dem_2016/(data$dem_2016 + data$gop_2016)
+data$gop_2016_percent <- 100*data$gop_2016/(data$dem_2016 + data$gop_2016)
+data$dem_2012_percent <- 100*data$dem_2012/(data$dem_2012 + data$gop_2012)
+data$gop_2012_percent <- 100*data$gop_2012/(data$dem_2012 + data$gop_2012)
+
+data$white_population[is.na(data$white_population)] <- 0
+data$latino_population[is.na(data$latino_population)] <- 0
+data$black_population[is.na(data$black_population)] <- 0
+data$asian_population[is.na(data$asian_population)] <- 0
+
+data$percent_white <- 100*data$white_population/data$total_population
+data$percent_latino <- 100*data$latino_population/data$total_population
+data$percent_black <- 100*data$black_population/data$total_population
+data$percent_asian <- 100*data$asian_population/data$total_population
+
+data$all_mortality_2009.2011 <- data$all_mortality_2009.2011/100
+data$all_mortality_2013.2015 <- data$all_mortality_2013.2015/100
+
+data$all_2013.2015_despair_mortality <- data$all_2013.2015_despair_mortality/100
+
+data$mortality_delta <- data$all_mortality_2013.2015 - data$all_mortality_2009.2011
+
+data$gop_2016_delta <- data$gop_2016_percent - data$gop_2012_percent
+
+data$percent_poverty <- 100*data$POVALL_2015/data$total_population
+
+data$Median_Household_Income_2015 <- data$Median_Household_Income_2015/10000
+data$AGE050210D <- data$AGE050210D/10
+
+# creating the model preliminaries
+X <- data.frame('all_mortality' = data$all_mortality_2013.2015)
+X$mortality_delta <- data$mortality_delta
+
+#X <- data.frame('despair_mortality' = data$all_2013.2015_despair_mortality)
+
+X$unemployment <- data$Unemployment_rate_2015
+X$rural <- data$Rural.urban_Continuum_Code_2013
+
+X$age <- data$AGE050210D
+X$income <- data$Median_Household_Income_2015
+X$poverty <- data$percent_poverty
+
+X$high_school_dropout <- data$Percent.of.adults.with.less.than.a.high.school.diploma..2011.2015
+X$high_school_grad <- data$Percent.of.adults.with.a.high.school.diploma.only..2011.2015
+X$some_college <- data$Percent.of.adults.completing.some.college.or.associate.s.degree..2011.2015
+X$college_grad <- data$Percent.of.adults.with.a.bachelor.s.degree.or.higher..2011.2015
+
+X$percent_white <- data$percent_white
+X$percent_latino <- data$percent_latino
+X$percent_black <- data$percent_black
+X$percent_asian <- data$percent_asian
+
+X$lat <- data$lat
+X$lon <- data$lon
+
+# alaska is the excluded category
+states <- model.matrix(~data$state)[,2:51]
+colnames(states) <- sort(unique(data$state))[2:51]
+
+X <- cbind(X, states)
+
+# fitting the model
+gop_2016_delta <- data$gop_2016_delta
+complete <- complete.cases(X) & !is.na(gop_2016_delta)
+gop_2016_delta <- gop_2016_delta[complete]
+X <- X[complete,]
+X <- as.matrix(X)
+
+hist(gop_2016_delta, main = "Change in GOP Voteshare, 2012 vs. 2016", breaks=20, ylab="Frequency (N counties)")
+
+write.csv(gop_2016_delta , file = "y_gop_2016_delta.csv", row.names=FALSE)
+write.csv(X, file = "X_2016.csv", row.names=FALSE)

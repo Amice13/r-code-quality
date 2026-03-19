@@ -4,8 +4,8 @@ import {
   getPage,
   getFileset,
   downloadFile
-} from './harvard-downloader.ts'
-import { createCsvStream } from './prepare-csv.ts'
+} from './custom_modules/harvard-downloader.ts'
+import { createCsvStream } from './custom_modules/prepare-csv.ts'
 
 // Place to store metadata and scripts
 const OUTPUT_FOLDER = path.join('..', 'data')

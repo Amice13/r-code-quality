@@ -1,0 +1,178 @@
+##########################################################################################################
+################################ CERC:  Evolution of Religion and Morality ###############################
+###################################### Cross-Cultural Analyses Script ####################################
+##########################################################################################################
+
+# This script will allow anyone to replicate the analyses in Purzycki, et al.'s "Moralistic Gods, 
+# Supernatural Punishment and the Expansion of Human Sociality" (2016; Nature). Benjamin Grant Purzycki 
+# (email: bgpurzycki@alumni.ubc.ca) prepared this script. The codebook for all variables is available in 
+# the "Codebook" tab in the main data set that is available online.
+
+##########################################################################################################
+############################################### To Do First ##############################################
+##########################################################################################################
+
+# Install the following packages:
+
+library(psych)
+library(lme4)
+library(Hmisc)
+library(car)
+library(lsr)
+library(QuantPsyc)
+
+# Run the following function to calculate R^2's for models.
+
+logisticPseudoR2s <- function(LogModel) {
+  dev  <- LogModel$deviance
+  nullDev <- LogModel$null.deviance
+  modelN <- length(LogModel$fitted.values)
+  R.l <- 1 - dev / nullDev
+  R.cs <- 1 - exp ( -(nullDev -dev) / modelN)
+  R.n <- R.cs / (1 - ( exp (-(nullDev / modelN))))
+  cat("Pseudo R^2 for logistic regression\n")
+  cat("Hosmer and Lemeshow R^2  ", round(R.l, 3), "\n")
+  cat("Cox and Snell R^2        ", round(R.cs, 3), "\n")
+  cat("Nagelkerke R^2           ", round(R.n, 3), "\n")
+}
+
+##########################################################################################################
+############################################## Simulations ###############################################
+##########################################################################################################
+
+# In the event that you'd like to generate a random binomial distribution for comparison, the following
+# script will create one.
+
+e <- 591 # The sample size (for Self Game; 589 for Local community Game).
+n <- 30 # The possible number of coin allocations per participant.
+p <- 0.5 # The probability of allocating a coin to any given cup.
+x <- rbinom(e, n, p)
+x # Your data set.
+table(x)
+t <- (table(x)/e) # The proportion of allocations for a single cup.
+t
+plot(t)
+
+##########################################################################################################
+############################################### Correlations #############################################
+##########################################################################################################
+
+# This script is easier to use if you associate the data set with the object "cerc".
+# The following will create a subset of data, run correlations on each variable, and calculate p-values 
+# for each correlation. 
+
+cerc <- #FILENAME
+  
+corrtab <- cor(cerc[, c("INGROUP", "COREL", "SELF", "COREL.1", "MMAT", "MMATc", "AGE", "CHILDREN", 
+                       "FORMALED", "DIEPUN", "LGDIEPUN", "OMNI.BG", "OMNI.LG", "BGR2", "LGR2", 
+                       "MBG", "MLG", "POLEVAL", "CORELEMO", "INGREMO", "OUTGREMO", "CORELSIM")],
+                       use = "pairwise.complete.obs")
+corrtab
+
+cor.test.p <- function(x){
+  FUN <- function(x, y) cor.test(x, y)[[3]]
+  z <- outer(
+    colnames(x), 
+    colnames(x), 
+    Vectorize(function(i,j) FUN(x[,i], x[,j]))
+  )
+  dimnames(z) <- list(colnames(x), colnames(x))
+  z
+}
+  
+corrpvalues <- cor.test.p(corrtab)
+corrpvalues
+
+##########################################################################################################
+############################################## Regressions ###############################################
+##########################################################################################################
+
+##########################################################################################################
+############################ Primary Analyses with Groups as Fixed Effects ###############################
+##########################################################################################################
+
+##########################################################################################################
+######################################## RAG1:  DISTANT vs. LOCAL ########################################
+##########################################################################################################
+
+# Note that the following have all of the key variables in the aforementioned paper. To replicate
+# specific models, delete the appropriate variable names from the following script. 
+
+# Note, too, that the Punishment-Knowledge aggregate variables are HIGHGOD.BG (for the Moralistic God) and 
+# HIGHGOD.LG (for the Local God). They are not included in the full models below. The "gods' rewards" 
+# variables have two versions. BGR1 and LGR1 include Coastal Vanuatu while BGR2 and LGR2 do not. See
+# Supplementary section S2.3.2 for more information.
+
+##############################################
+# This is for the "Local Co-Religionist Game".
+##############################################
+
+cerc <- #FILENAME
+
+RAG1.E <-glm(cbind(COREL, INGROUP)~
+               DIEPUN+LGDIEPUN+OMNI.BG+OMNI.LG+
+               BGR1+LGR1+MBG+MLG+
+               AGE.C+as.factor(SEX)+FORMALED+MMAT+CHILDREN+
+               CORELSIM+INGREMO+CORELEMO+POLEVAL+
+               as.factor(HONEST)+as.factor(TREATMENT)+as.factor(INGFIRST)+
+               relevel(SITE, "Tyva Republic"),
+               data=cerc, family=binomial)
+summary(RAG1.E)
+rag <- RAG1.E
+exp(cbind(OR = coef(rag), confint(rag)))  #both CIs using profiled log-likelihood (for logistic models and ORs)
+logisticPseudoR2s(rag)
+vif(rag)        # Variance Inflation Factor: VIF > 10 is a problem for multi-colinearity
+1/vif(rag)      # Tolerance: < 0.1 is a serious problem, < 0.2 potential problem
+mvif <- data.frame(vif(rag))
+mean(mvif$GVIF)  # Mean VIF: If substantially > 1, then regression may be biased
+
+##########################################################################################################
+######################################### RAG2:  DISTANT vs. SELF ########################################
+##########################################################################################################
+
+##########################################################################################################
+# This is the "Self Game". It is the same as the above, but has different cups for the dependent variable.
+##########################################################################################################
+
+RAG2.E <-glm(cbind(COREL.1, SELF)~
+               DIEPUN+LGDIEPUN+OMNI.BG+OMNI.LG+
+               BGR1+LGR1+MBG+MLG+
+               AGE.C+as.factor(SEX)+FORMALED+MMAT+CHILDREN+
+               CORELSIM+INGREMO+CORELEMO+POLEVAL+
+               as.factor(HONEST)+as.factor(TREATMENT)+as.factor(INGFIRST)+
+               relevel(SITE, "Tyva Republic"),
+             data=cerc, family=binomial)
+summary(RAG2.E)
+rag <- RAG2.E
+exp(cbind(OR = coef(rag), confint(rag)))  #both CIs using profiled log-likelihood (for logistic models and ORs)
+logisticPseudoR2s(rag)
+vif(rag)        # Variance Inflation Factor: VIF > 10 is a problem for multi-colinearity
+1/vif(rag)      # Tolerance: < 0.1 is a serious problem, < 0.2 potential problem
+mvif <- data.frame(vif(rag))
+mean(mvif$GVIF)  # Mean VIF: If substantially > 1, then regression may be biased
+
+##########################################################################################################
+################################### Random Effects for Stacked Dataset ###################################
+##########################################################################################################
+
+# For these analyses, use the stacked data sets. The stacked data set puts all of the DISTANT coins into
+# a single column (DISTANT), and the SELF and LOCAL cups together (EGO). It also adds a control variable
+# called GAME (0  = Self Game) which controls for the differential effects of each game. Note that in  
+# this model, participants are modeled as a random effect (i.e., a higher-order variable) because each   
+# person has a repeated measure (2 games * 30 coins per game).
+
+cerc <- #FILENAME
+  
+RAG.S.E <-glmer(cbind(DISTANT, EGO)~
+               DIEPUN+LGDIEPUN+OMNI.BG+OMNI.LG+
+               BGR1+LGR1+MBG+MLG+
+               AGE.C+as.factor(SEX)+FORMALED+MMAT+CHILDREN+
+               CORELSIM+INGREMO+CORELEMO+POLEVAL+
+               as.factor(HONEST)+as.factor(TREATMENT)+as.factor(INGFIRST)+as.factor(GAME)+
+               relevel(SITE, "Tyva Republic")+(1 | CERCID),
+             data=cerc, family=binomial)
+summary(RAG.S.E)
+rag <- RAG.S.E
+se <- sqrt(diag(vcov(rag)))
+tab <- cbind(Est = fixef(rag), LL = fixef(rag) - 1.96 * se, UL = fixef(rag) + 1.96 * se)
+exp(tab)

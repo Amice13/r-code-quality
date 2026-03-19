@@ -1,0 +1,512 @@
+#Compulsory Voting and Electoral Participation of Latin American Migrants in Belgium, Luxemburg, and the Netherlands
+#Sebastian Umpierrez de Reguero 
+#Régis Dandoy
+
+#2022
+#Politics of the Low Countries
+
+setwd("~/Desktop/Compulsory Voting")
+
+######################################################################
+###prep datasets
+######################################################################
+
+datos <- Compulsory.Voting.Benelux_20.july.2022
+colnames(datos)
+str(datos)
+summary(datos)
+
+datos$Compulsory1 = factor(datos$Compulsory1,
+                           level = c(0:2),
+                           labels = c("Voluntary", "PCompulsory", "FCompulsory"))
+
+datos$Compulsory2 = factor(datos$Compulsory2,
+                           level = c(3:0),
+                           labels = c("Both", "Only/CoO", "Only/CoR", "None"))
+datos$TypeElection = factor(datos$TypeElection,
+                           level = c(1:4),
+                           labels = c("Presidential", "Legislative", "Referendum", "Andean"))
+summary(datos)
+
+SEVT1 <- datos[, c("CodeCoO", "CoO", "Year", "SpecialRepresentation", "OverseasDistricts", "TypeElection", "CoR", "SEVT1", "lnSEVT1", "lnRegistered", "Inperson", "Remote", "VotingMethod", "Compulsory1",  "Compulsory2", "Compulsory3", "Registration", "Ballotage", "Corona")] 
+SEVT2 <- datos[, c("CodeCoO", "CoO", "Year", "SpecialRepresentation", "OverseasDistricts", "TypeElection", "CoR",
+                   "SEVT2", "lnSEVT2", "lnRegistered", "Inperson", "Remote", "VotingMethod", "Compulsory1",  "Compulsory2", "Compulsory3", "Registration", "Ballotage", "Corona")] 
+EVT1 <- datos[, c("CodeCoO", "CoO", "Year", "SpecialRepresentation", "OverseasDistricts", "TypeElection", "CoR",
+                   "EVT1", "lnMigrantStock", "Inperson", "Remote", "VotingMethod", "Compulsory1",  "Compulsory2", "Compulsory3", "Registration", "Ballotage", "Corona")] 
+EVT2 <- datos[, c("CodeCoO", "CoO", "Year", "SpecialRepresentation", "OverseasDistricts", "TypeElection", "CoR",
+                   "EVT2", "lnMigrantStock", "Inperson", "Remote", "VotingMethod", "Compulsory1",  "Compulsory2", "Compulsory3", "Registration", "Ballotage", "Corona")] 
+EVT1outliers <- datos[, c("CodeCoO", "CoO", "Year", "SpecialRepresentation", "OverseasDistricts", "TypeElection", "CoR",
+                  "EVT1", "lnMigrantStock", "Inperson", "Remote", "VotingMethod", "Compulsory1",  "Compulsory2", "Compulsory3", "Registration", "Ballotage", "Corona")] 
+EVT2outliers <- datos[, c("CodeCoO", "CoO", "Year", "SpecialRepresentation", "OverseasDistricts", "TypeElection", "CoR",
+                  "EVT2", "lnMigrantStock", "Inperson", "Remote", "VotingMethod", "Compulsory1",  "Compulsory2", "Compulsory3", "Registration", "Ballotage", "Corona")] 
+EVT1outliers <- EVT1outliers[-c(3, 4, 201, 211, 212, 213), ]
+EVT2outliers <- EVT2outliers[-c(3, 4, 201, 211, 212, 213), ]
+
+EVT1 <- na.omit(EVT1)
+EVT2 <- na.omit(EVT2)
+SEVT1 <- na.omit(SEVT1)
+SEVT2 <- na.omit(SEVT2)
+EVT1outliers <- na.omit(EVT1outliers)
+EVT2outliers <- na.omit(EVT2outliers)
+
+summary(EVT1)
+summary(EVT2)
+summary(SEVT1)
+summary(SEVT2)
+summary(EVT1outliers)
+summary(EVT2outliers)
+
+######################################################################
+###Histograms
+######################################################################
+
+attach(EVT1)
+par(mfrow=c(1,2))  
+hist(EVT1$EVT1, breaks=30, main="Histogram for NRVT", border="black", col="lightblue2")
+hist(log(EVT1$EVT1+1), breaks=30, main="Histogram for NRVT (log)", border="black", col="lightblue2")
+
+attach(EVT2)
+par(mfrow=c(1,2)) 
+hist(EVT2$EVT2, breaks=30, main="Histogram for NRVT", border="black", col="lightblue2")
+hist(log(EVT2$EVT2+1), breaks=30, main="Histogram for NRVT (log)", border="black", col="lightblue2")
+
+attach(SEVT1)
+par(mfrow=c(1,2)) 
+hist(SEVT1$SEVT1, breaks=30, main="Histogram for NRVT", border="black", col="lightblue2")
+hist(log(SEVT1$SEVT1+1), breaks=30, main="Histogram for NRVT (log)", border="black", col="lightblue2")
+
+attach(SEVT2)
+par(mfrow=c(1,2)) 
+hist(SEVT2$SEVT2, breaks=30, main="Histogram for NRVT", border="black", col="lightblue2")
+hist(log(SEVT2$SEVT2+1), breaks=30, main="Histogram for NRVT (log)", border="black", col="lightblue2")
+
+######################################################################
+###prep datasets for panel data regression
+######################################################################
+
+library(plm)
+
+pdata1 <- pdata.frame(EVT1, index=c("CodeCoO", "CoR"))
+pdata2 <- pdata.frame(EVT2, index=c("CodeCoO", "CoR"))
+pdata3 <- pdata.frame(SEVT1, index=c("CodeCoO", "CoR"))
+pdata4 <- pdata.frame(SEVT2, index=c("CodeCoO", "CoR"))
+pdata5 <- pdata.frame(EVT1outliers, index=c("CodeCoO", "CoR"))
+pdata6 <- pdata.frame(EVT2outliers, index=c("CodeCoO", "CoR"))
+
+######################################################################
+##### PLM models
+######################################################################
+
+#Model1
+
+#pooled OLS estimator
+pooling <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+
+sjPlot::tab_model(random) ###clearly random
+
+M1 <- random
+
+###########Model2
+
+#pooled OLS estimator
+pooling <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata1, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+sjPlot::tab_model(pooling) ###pooling
+sjPlot::tab_model(random) 
+
+M2 <- pooling
+
+###########Model3
+
+#pooled OLS estimator
+pooling <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+sjPlot::tab_model(pooling) ### clearly random
+sjPlot::tab_model(random)
+
+M3 <- random
+
+########MODEL 4
+
+#pooled OLS estimator
+pooling <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata2, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+sjPlot::tab_model(fixed) ####unsure fixed
+sjPlot::tab_model(pooling) ####clearly pooling
+
+M4 <- pooling
+
+sjPlot::tab_model(M1, M2, M3, M4, dv.labels=c("M1", "M2", "M3", "M4"), show.se=TRUE, show.ci=FALSE, collapse.se=TRUE)
+
+
+#####################################################################
+#####################################################################
+
+#######ROBUSTNESS CHECKS
+
+#####################################################################
+#####################################################################
+
+
+#Model5
+
+#pooled OLS estimator
+pooling <- plm(lnSEVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(lnSEVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(lnSEVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(lnSEVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(lnSEVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="random")
+summary(random)
+
+
+sjPlot::tab_model(random)
+M5 <- random
+
+###########Model6
+
+#pooled OLS estimator
+pooling <- plm(lnSEVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(lnSEVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(lnSEVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(lnSEVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(lnSEVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata3, model="random")
+summary(random)
+
+
+sjPlot::tab_model(pooling) ###clearly pooling
+M6 <- pooling
+
+
+###########Model7
+
+#pooled OLS estimator
+pooling <- plm(lnSEVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(lnSEVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(lnSEVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(lnSEVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(lnSEVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="random")
+summary(random)
+
+sjPlot::tab_model(random)
+M7 <- random
+
+########MODEL8
+
+#pooled OLS estimator
+pooling <- plm(lnSEVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(lnSEVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(lnSEVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(lnSEVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(lnSEVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnRegistered+TypeElection+Corona, data=pdata4, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+sjPlot::tab_model(pooling) #clearly pooling
+M8 <- pooling
+
+sjPlot::tab_model(M5, M6, M7, M8, dv.labels=c("M5", "M6", "M7", "M8"), show.se=TRUE, show.ci=FALSE, collapse.se=TRUE)
+
+######################################################################
+##### Alternative models without outliers (i.e., Venezuela and Bolivia)
+######################################################################
+
+#Model9
+
+#pooled OLS estimator
+pooling <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(EVT1 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+
+sjPlot::tab_model(random) ###clearly random
+
+M9 <- random
+
+###########Model10
+
+#pooled OLS estimator
+pooling <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(EVT1 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata5, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+sjPlot::tab_model(pooling) ###pooling
+sjPlot::tab_model(random) 
+
+M10 <- pooling
+
+###########Model11
+
+#pooled OLS estimator
+pooling <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(EVT2 ~ Compulsory1+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+sjPlot::tab_model(pooling) ### clearly random
+sjPlot::tab_model(random)
+
+M11 <- random
+
+########MODEL12
+
+#pooled OLS estimator
+pooling <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="pooling") 
+summary(pooling)
+
+
+#between estimator
+between <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="between")
+summary(between)
+
+#first differences estimator
+firstdiff <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="fd")
+summary(firstdiff)
+
+#fixed effects estimator
+fixed <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="within")
+summary(fixed)
+
+#random effects estimator
+random <- plm(EVT2 ~ Compulsory2+OverseasDistricts+Registration+Remote+lnMigrantStock+TypeElection+Corona, data=pdata6, model="random")
+summary(random)
+
+#LM test for random effects versus OLS
+plmtest(pooling)
+plmtest(pooling, effect="time")
+
+#Hausman test for fixed versus random effects model
+phtest(random, fixed)
+
+sjPlot::tab_model(fixed) ####unsure fixed
+sjPlot::tab_model(pooling) ####clearly pooling
+
+M12 <- pooling
+
+sjPlot::tab_model(M9, M10, M11, M12, dv.labels=c("Model 9", "Model 10", "Model 11", "Model 12"), show.se=TRUE, show.ci=FALSE, collapse.se=TRUE)
