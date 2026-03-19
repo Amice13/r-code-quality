@@ -4,16 +4,38 @@ const DEBUG = true
 
 // Delay is necessary to not abuse API. Set it from 1000 to 5000
 const DELAY = 1000
+const MAX_DELAY = 64000
 
 // Setup custom fetcher
 const TOKEN = process.env.TOKEN
 const BASE_URL = 'https://dataverse.harvard.edu/api'
-const customFetch = async (relativeURL: string) => {
+
+let limit = 0
+
+const customFetch = async (relativeURL: string): Promise<null | Response> => {
+  if (limit) {
+    if (limit > MAX_DELAY) {
+      limit = 0
+      return null
+    }
+    await new Promise(resolve => setTimeout(resolve, limit))
+  }
   const url = `${BASE_URL}${relativeURL}`
   const headers = {
     'X-Dataverse-key': TOKEN
   }
-  return await fetch(url, { headers })
+  const result = await fetch(url, { headers }).catch(err => {
+    if (DEBUG) console.log(`Delay is ${limit}`)
+    console.log(err)
+    return null
+  })
+  if (result === null) {
+    if (limit) limit *= 2
+    if (!limit) limit = DELAY
+    return customFetch(relativeURL)
+  }
+  limit = 0
+  return result
 }
 
 // Do not set greater than 1000
@@ -27,21 +49,21 @@ const SEARCH_PARAMS = {
   fileTypeGroupFacet: 'Code'
 }
 
-export const getPage = async (page = 1): Promise<SearchResponse['data']> => {
+export const getPage = async (page = 1): Promise<SearchResponse['data'] | null> => {
   if (DEBUG) console.log(`Page ${page} is being fetched`)
-  await new Promise(resolve => setTimeout(resolve, DELAY))
   const params = new URLSearchParams({ ...SEARCH_PARAMS, page: String(page) })
   const response = await customFetch(`/search?${params.toString()}`)
+  if (!response) return null
   const json = await response.json() as SearchResponse
   return json.data
 }
 
 export const getFileset = async (global_id: string): Promise<Metadata | null> => {
   if (DEBUG) console.log(`Fileset ${global_id} is being fetched`)
-  await new Promise(resolve => setTimeout(resolve, DELAY))
   try {
     const response = await customFetch(`/datasets/:persistentId?persistentId=${global_id}`)
-    const json =  await response.json() as MetadataResponse
+    if (!response) return null
+    const json =  await response?.json() as MetadataResponse
     return json.data
   } catch (_) {
     console.log(`Fileset ${global_id} is not found`)
@@ -54,6 +76,7 @@ export const downloadFile = async (id: string, filename: string): Promise<void> 
   await new Promise(resolve => setTimeout(resolve, 1000))
   try {
     const response = await customFetch(`/access/datafile/${id}`)
+    if (!response) return
     const buffer = Buffer.from(await response.arrayBuffer())
     fs.writeFileSync(filename, buffer)    
   } catch (_) {

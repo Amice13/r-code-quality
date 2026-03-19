@@ -15,8 +15,17 @@ const datasetColumns = [
 ]
 
 export const createCsvStream = (filename: string) => {
-  const datasetsWritableStream = fs.createWriteStream(filename)
-  const datasetStringifier = stringify({ header: true, columns: datasetColumns })
-  datasetStringifier.pipe(datasetsWritableStream)
-  return datasetStringifier
+  const fileExists = fs.existsSync(filename)
+  const isEmpty = !fileExists || fs.statSync(filename).size === 0
+
+  const stream = fs.createWriteStream(filename, { flags: 'a' })
+
+  const stringifier = stringify({
+    header: isEmpty,
+    columns: datasetColumns
+  })
+
+  stringifier.pipe(stream)
+
+  return stringifier
 }
