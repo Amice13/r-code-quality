@@ -15,11 +15,9 @@ fs.mkdirSync(OUTPUT_FOLDER, { recursive: true })
 
 const csvStream = createCsvStream(OUTPUT_FILE)
 
-// Old
-
+// Old records
 const fileExists = fs.existsSync('./.tmp')
 const downloaded = fileExists ? fs.readFileSync('./.tmp').toString().split(/[\r\n]+/g).filter(Boolean) : []
-console.log(downloaded)
 let page = 1
 let nextPageExists = true
 
