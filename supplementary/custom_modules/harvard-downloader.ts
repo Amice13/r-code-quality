@@ -4,7 +4,7 @@ const DEBUG = true
 
 // Delay is necessary to not abuse API. Set it from 1000 to 5000
 const DELAY = 1000
-const MAX_DELAY = 64000
+const MAX_DELAY = 5000
 
 // Setup custom fetcher
 const TOKEN = process.env.TOKEN
@@ -14,7 +14,7 @@ let limit = 0
 const customFetch = async (relativeURL: string): Promise<null | Response> => {
   if (limit) {
     if (limit > MAX_DELAY) {
-      limit = 0
+      limit = 1000
       return null
     }
     await new Promise(resolve => setTimeout(resolve, limit))
@@ -23,22 +23,24 @@ const customFetch = async (relativeURL: string): Promise<null | Response> => {
   const headers = {
     'X-Dataverse-key': TOKEN
   }
-  const result = await fetch(url, { headers }).catch(err => {
+
+  const response = await fetch(url, { headers }).catch(err => {
     if (DEBUG) console.log(`Delay is ${limit}`)
     console.log(err)
     return null
   })
-  if (result === null) {
+  if (response === null || response.status === 401 || response.status === 403) {
     if (limit) limit *= 2
     if (!limit) limit = DELAY
+    if (DEBUG) console.log(`Response - ${String(response?.status)}. Delay is ${String(limit)}`)
     return customFetch(relativeURL)
   }
-  limit = 0
-  return result
+  limit = 1000
+  return response
 }
 
 // Do not set greater than 1000
-const PER_PAGE = 10
+const PER_PAGE = 100
 
 // Search script params
 const SEARCH_PARAMS = {
@@ -63,8 +65,10 @@ export const getFileset = async (global_id: string): Promise<Metadata | null> =>
     const response = await customFetch(`/datasets/:persistentId?persistentId=${global_id}`)
     if (!response) return null
     const json =  await response?.json() as MetadataResponse
+
     return json.data
-  } catch (_) {
+  } catch (err) {
+    console.log(err)
     console.log(`Fileset ${global_id} is not found`)
     return null
   }
@@ -78,8 +82,8 @@ export const downloadFile = async (id: string, filename: string): Promise<void> 
     if (!response) return
     const buffer = Buffer.from(await response.arrayBuffer())
     fs.writeFileSync(filename, buffer)    
-  } catch (_) {
-    console.log(_)
+  } catch (err) {
+    console.log(err)
     console.log(`${filename} has not been downloaded`)
   }
 }

@@ -5,7 +5,8 @@ import {
   analyzePipes,
   hasInteractiveMethods, 
   getLoadedPackages,
-  getApiKeys
+  getApiKeys,
+  getFunctionNames
 } from './custom_modules/r-analysis.ts'
 
 const SOURCE_FOLDER = path.join('..', 'data', 'scripts')
@@ -28,8 +29,14 @@ for (const file of projects) {
   const libraries = getLoadedPackages(content)  
   const yep = hasInteractiveMethods(content)
   const apiKeys = getApiKeys(content)
+  const functionNames = getFunctionNames(content)
+  for (const f of [...new Set(functionNames)]) console.log(f)
+  // console.log(functionNames, file)
+  // const lines = content.split(/[\n\r]+/g)
 
-  console.log(content.match(/->/g))
+  // for (const line of lines) {
+  //   if (line.match(/^[^#]*->(?!>)(?:[^"')]*(?:#|$))/g)) console.log(line.split(/^[^#]*->/g).slice(-1), line)
+  // }
 
 
   // Use explicit returns - https://google.github.io/styleguide/Rguide.html

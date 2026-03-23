@@ -28,7 +28,6 @@ while (nextPageExists) {
   for (const dataset of items) {
     const csvData = structuredClone(dataset) as unknown as Record<string, string | number>
     if (dataset.fileCount === undefined || dataset.fileCount < 1) continue
-    console.log(downloaded.includes(dataset.global_id), dataset.global_id)
     if (downloaded.includes(dataset.global_id)) continue
     const fileSet = await getFileset(dataset.global_id)
     fs.appendFileSync('./.tmp', dataset.global_id + '\n')

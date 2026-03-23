@@ -31,74 +31,60 @@ export const analyzePipes = (content: string) => {
   }
 }
 
-// const parseFunction = (content: string, startPosition = 0) => {
-//   const fn = {}
-//   content = content.slice(startPosition)
-//   const chars: string[] = []
-//   const children = []
-//   let currentName = ''
-//   console.log(content)
-//   if (['\'', '"'].includes(content.at(0) ?? '')) {
-//     for (const char of content) {
-//       if (char === '\\') {
-//         chars.push('\\')
-//         continue
-//       }
-//       if (['\'', '"'].includes(char)) {
-//         if (chars.length === 0) {
-//           chars.push(char)
-//           continue
-//         } else {
-//           chars.pop()
-//         }
-//       }
-//       if (['\'', '"'].includes(char) && chars.length === 0) {
-//         if ( currentName.length > 0) return { textNode: currentName }
-//         continue
-//       }
-//       currentName += char
-//       // console.log(currentName, chars)
-//     }
-//   }
+export const getFunctionNames = (content: string, startPosition = 0) => {
+  const functionNames: string[] = []
+  content = content.slice(startPosition)
 
-//   // Functions
-//   for (const char of content) {
-//     if (char === ')' && chars.at(-1) === '(') {
-//       chars.pop()
-//     }
-//     if (char === ')' && chars.length === 0 && fn.name >) {
-//       console.log(currentName, fn.name)
-//       fn.children = parseFunction(currentName)
-//       return fn
-//     }
-//     if (char === '(') {
-//       if (chars.length === 0) {
-//         fn.name = currentName
-//         currentName = ''
-//       }
-//       if (currentName.length !== 0) currentName += char
-//       chars.push('(')
-//       continue
-//     }
-//     currentName += char
-//     if (char === '\\') {
-//       chars.push('\\')
-//       continue
-//     }
-//     if (['\'', '"'].includes(char)) {
-//       if (chars.at(-1) === '\\') {
-//         chars.pop()
-//         continue
-//       }
-//       if (chars.at(-1) === char) {
-//         chars.pop()
-//         continue
-//       }
-//     }
-//   }
-// }
+  let currentName = ''
+  let inString: string | null = null
+  let escaped = false
+  let inComment = false
 
-// console.log(parseFunction('read.tsv(file.path("My \\"wild ) path", "file(.txt"), quote = TRUE) hello world'))
+  for (const char of content) {
+    if (inComment) {
+      if (char === '\n') inComment = false
+      continue
+    }
+
+    if (escaped) {
+      escaped = false
+      continue
+    }
+
+    if (char === '\\') {
+      escaped = true
+      continue
+    }
+
+    if (inString) {
+      if (char === inString) inString = null
+      continue
+    } else if (['\'', '"', '`'].includes(char)) {
+      inString = char
+      continue
+    }
+
+    if (char === '#') {
+      inComment = true
+      continue
+    }
+
+    // Function name detected when '(' appears outside strings/comments
+    if (char === '(') {
+      if (currentName) functionNames.push(currentName)
+      currentName = ''
+      continue
+    }
+
+    // Only accumulate valid function name characters
+    currentName = /[a-zA-Z0-9._:]/.test(char) ? currentName + char : ''
+    if (/^[\d:]/.test(currentName)) currentName = ''
+    if (/\.\d/.test(currentName)) currentName = ''
+    if (/[^:]:[^:]$/.test(currentName)) currentName = ''
+  }
+
+  return functionNames
+}
 
 const fileFormats = [
   'arff',
@@ -110,6 +96,7 @@ const fileFormats = [
   'delim',
   'delim2',
   'dta',
+  'dta13',
   'epiinfo',
   'https',
   'mtp',
@@ -136,10 +123,15 @@ const fileFormats = [
   'xport',
   'XPT'
 ]
-const fileReaderRegex = new RegExp(`readLines|read(?:\.file)?[._](?<format>${fileFormats.join('|')})`)
+const fileReaderRegex = new RegExp(`readLines|read_excel|read(?:\.file)?[._](?<format>${fileFormats.join('|')})`)
 
 const getFiles = (content: string) => {
 
+}
+
+const getExternalSourcesRegex = /(?<=gsheet2tbl\()(.*?)(?=\))/
+const getExternalSources = (content: string) => {
+  return content.match(getExternalSourcesRegex)
 }
 
 const interactiveRegex = /(?:file\.choose|read\.clipboard)\(/g
