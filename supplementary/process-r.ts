@@ -4,9 +4,13 @@ import {
   analyzeLines,
   analyzePipes,
   hasInteractiveMethods, 
-  getLoadedPackages,
   getApiKeys,
-  getFunctionNames
+  getFunctionNames,
+  getFiles,
+  hasEpxlicitColumnDefinition,
+  getInstalledPackages,
+  getLoadedPackages,
+  getVariableNames
 } from './custom_modules/r-analysis.ts'
 
 const SOURCE_FOLDER = path.join('..', 'data', 'scripts')
@@ -14,6 +18,7 @@ const SOURCE_FOLDER = path.join('..', 'data', 'scripts')
 const projects = fs.readdirSync(SOURCE_FOLDER, { recursive: true })
   .filter((file) => typeof file === 'string' && /\.r$/i.test(file))
 
+// console.log(projects)
 for (const file of projects) {
   if (typeof file !== 'string') continue
   const content = fs.readFileSync(path.join(SOURCE_FOLDER, file)).toString()
@@ -24,13 +29,21 @@ for (const file of projects) {
   const fileStats: Partial<FileStats> = { project, filename }
   fileStats.size = content.length
 
-  const linesData = analyzeLines(content)
-  const pipesData = analyzePipes(content)
-  const libraries = getLoadedPackages(content)  
-  const yep = hasInteractiveMethods(content)
-  const apiKeys = getApiKeys(content)
-  const functionNames = getFunctionNames(content)
-  for (const f of [...new Set(functionNames)]) console.log(f)
+  // const linesData = analyzeLines(content)
+  // const pipesData = analyzePipes(content)
+  // const libraries = getLoadedPackages(content)  
+  // const dependsOnInteractiveMethods = hasInteractiveMethods(content)
+  // const apiKeys = getApiKeys(content)
+  // const functionNames = getFunctionNames(content)
+  // const files = getFiles(content)
+  // const explicitColumnDefinition = hasEpxlicitColumnDefinition(content)
+  // const installedPackages = getInstalledPackages(content)
+  // const installedPackages = getLoadedPackages(content)
+  const installedPackages = getVariableNames(content)
+  console.log(installedPackages, file)
+  // console.log(installedPackages)
+  // console.log(files, project, file)
+  // console.log(dependsOnInteractiveMethods)
   // console.log(functionNames, file)
   // const lines = content.split(/[\n\r]+/g)
 
@@ -45,25 +58,3 @@ for (const file of projects) {
 
   // Variable and function names should be lowercase - http://adv-r.had.co.nz/Style.html
 }
-
-//     const tablesAndVariables = content.match(/(?<![a-z\d\.])(?:\.[a-z]|[a-z])[a-z\d_]+\$(?:\.[a-z]|[a-z])[a-z\d_]/g)
-//     const goodGrepl = content.match(/\[grepl.*/g)
-//     const hasReport = content.match(/report_.*?\(.*/g)
-
-//     // console.log(tablesAndVariables)
-//     return {
-//       project,
-//       name,
-//       linesLength,
-//       commentsLength,
-//       multiCommentsLength,
-//       emptyLinesLength,
-//       // content,
-//       length
-//     }
-//   })
-
-// // console.log(projects)
-
-
-// // prediction.ideology.5 <- results.ideology.5[4]$stats$`Expected Values: E(Y|X)`\r\n'
