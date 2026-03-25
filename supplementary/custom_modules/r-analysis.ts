@@ -1,4 +1,4 @@
-const validVariableRegex = '(?:\\.[a-z\\d_]+|[a-z][a-z\\d_]+)'
+const validVariableRegex = '(?:\\.[A-z\\d_]+|[A-z][A-z\\d_]*)'
 
 /**
  * Analyzes a text block line-by-line and produces basic structural metrics.
@@ -114,6 +114,26 @@ export const getFunctionNames = (content: string, startPosition = 0) => {
   return functionNames
 }
 
+/**
+ * Extracts file-reading calls from a text block and derives metadata about referenced file paths.
+ *
+ * For each detected call, it attempts to extract:
+ * - function name (`fn`)
+ * - file format (`format`)
+ * - filename/path argument (`filename`)
+ * - quote type used (`quote`)
+ *
+ * The function also applies heuristic checks on extracted paths:
+ * - `pathIsWinValid`: filters out clearly invalid Windows path characters,
+ *   while allowing placeholder-like paths (e.g. starting with `...`)
+ * - `pathIsOnline`: detects URLs (http/ftp)
+ * - `pathIsGlobal`: identifies absolute/global paths (`~`, drive letters, `/`)
+ * - `pathOutsideScriptFolder`: detects relative paths navigating upward (`../`)
+ *
+ * @param content - Raw R code or text to analyze.
+ * @returns Array of objects describing detected file-reading operations and path characteristics.
+ */
+
 const fileFormats = [
   'arff',
   'csv',
@@ -151,26 +171,6 @@ const fileFormats = [
   'xport',
   'XPT'
 ]
-
-/**
- * Extracts file-reading calls from a text block and derives metadata about referenced file paths.
- *
- * For each detected call, it attempts to extract:
- * - function name (`fn`)
- * - file format (`format`)
- * - filename/path argument (`filename`)
- * - quote type used (`quote`)
- *
- * The function also applies heuristic checks on extracted paths:
- * - `pathIsWinValid`: filters out clearly invalid Windows path characters,
- *   while allowing placeholder-like paths (e.g. starting with `...`)
- * - `pathIsOnline`: detects URLs (http/ftp)
- * - `pathIsGlobal`: identifies absolute/global paths (`~`, drive letters, `/`)
- * - `pathOutsideScriptFolder`: detects relative paths navigating upward (`../`)
- *
- * @param content - Raw R code or text to analyze.
- * @returns Array of objects describing detected file-reading operations and path characteristics.
- */
 
 const readFunctionsRegex = `(?<=^|[^#]*?)(?<fn>readLines|gsheet2tbl|read_excel|read(?:\.file)?[._](?<format>${fileFormats.join('|')}))`
 const filenameRegex = '\\s*\\((?:(?:\\s*file\\s*=\\s*)?(?<quote>[\'"`])(?<filename>(?:\\\\.|(?!\\k<quote>).)*)\\k<quote>)?'
@@ -337,20 +337,59 @@ export const getLoadedPackages = (content: string) => {
 
 const lhaRegex = `(?:^\\s*|;\\s*)(?<name>${validVariableRegex})\\s*(?:<-|=|%<>%)`
 const rhaRegex = `->\\s*(?<name_rha>${validVariableRegex})(?=\\s*(?:[\n\r]|$))`
-const variableNameRegex = new RegExp(`${lhaRegex}|${rhaRegex}`, 'gm')
-console.log(variableNameRegex)
+const variableNameRegex = new RegExp(`${lhaRegex}|${rhaRegex}`, 'g')
 
-export const getVariableNames = (content: string) => {
-  const variables = [...content.matchAll(variableNameRegex)]
-  console.log(variables.map(v => v.groups))
+const stripStringsAndComments = (line: string) => {
+  let result = ''
+  let inString: string | null = null
+  let escaped = false
+
+  for (const char of line) {
+    if (escaped) {
+      escaped = false
+      continue
+    }
+    if (char === '\\') {
+      escaped = true
+      continue
+    }
+    if (inString) {
+      if (char === inString) inString = null
+      continue
+    }
+    if (char === '"' || char === "'" || char === '`') {
+      inString = char
+      continue
+    }
+    if (char === '#') break
+    result += char
+  }
+
+  return result
 }
 
-// // Get list of variables
-// const varNames = content.match(/(?<=^\s*|\n\s*)(?:\.[a-z\d_]|[a-z])[a-z\d_]*(?=[\s\t]*<-|=)/ig) ?? []
+export const getVariableNames = (content: string) => {
+  const lines = content.split(/[\n\r]+/g)
+  let parenthesesBalance = 0
+  const variables = []
+  for (const line of lines) {
+    const cleanLine = stripStringsAndComments(line)
+    if (parenthesesBalance === 0) {
+      variables.push(...[...cleanLine.matchAll(variableNameRegex)].map(el => el.groups))
+    }
+    for (const char of cleanLine) {
+      if (char === '(' || char === '[') parenthesesBalance++
+      if (char === ')' || char === ']') parenthesesBalance--
+    }
+  }
+  return variables.map(el => ({
+    name: el?.name ?? el?.name_rha,
+    type: el?.name !== undefined ? 'lha' : 'rha'
+  }))
+}
 
 // // Get all working directories
 // const workingDirectories = content.match(/(?<=setwd\(')[^']*?(?=,|'[\)])|(?<=setwd\(")[^"]+?(?=,|"[\)])|(?<=setwd\()[^"']*?(?=,|[\)])/g)
-
 
 //   // Project uses session info
 //   const hasSessionInfo = content.match(/sessionInfo/)
@@ -363,7 +402,6 @@ export const getVariableNames = (content: string) => {
 
 //   // Project defines themes
 //   const hasTheme = content.match(/theme\(.*/g)
-
   
 //   // References by indices
 //   const indexRefs = content.match(/\[(?:c\()?\d+[\d,\s ]+(?:\))?\]/g)
@@ -371,7 +409,7 @@ export const getVariableNames = (content: string) => {
 const poorValidation = (content: string) => {
 
   // Don’t use attach() - https://google.github.io/styleguide/Rguide.html
-  const usesAttach = /^[^#]*attach\(/.test(content)
+  const usesAttach = /^[^#]*\battach\(/.test(content)
 
   // Right-hand assignment - https://google.github.io/styleguide/Rguide.html - ->
   const usesRightHandAssignment = /\b->\b/.test(content)
