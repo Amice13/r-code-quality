@@ -1,0 +1,4 @@
+descriptive <-  subset(main_group, subset_analysis == 1)
+descriptive <- descriptive[c("cw_event_g","int_grp_rel_dominant_g","sa_territory_t","included",group_nat_vars,group_unit_vars, unit_vars_unlogged, nat_vars_unlogged,"cw_event_g_peaceyears_l1","cw_event_any_slag_l1")]
+descriptive <- data.frame(descriptive)
+stargazer(descriptive, type="text", title="Table A1. Descriptive statistics (civil violence models).", style = "apsr", notes.append=FALSE, covariate.labels = c("Civil violence","Second-order majority","Territorial autonomy","Included","Relative size (state)","Relative size (unit)", "Population (unit)", "Area (unit)", "Avg. ruggedness (unit)", "Oil in unit", "Distance capital (unit)", "Distance border (unit)","GDP pc.", "Population (state)","Democracy","Ethnic fractionalization","Election year","Peaceyears","Civil war spatial lag"), out="../tables/tablea1.txt")

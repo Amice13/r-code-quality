@@ -1,0 +1,32 @@
+library(rnoaa)
+library(multcomp)
+library(raster)
+library(caret)
+library(ebal)
+library(tidycensus)
+library(DescTools)
+library(ggeffects)
+library(SearchTrees)
+library(cowplot)
+library(rgeos)
+library(nnet)
+library(fixest)
+library(modelsummary)
+library(extrafont)
+library(scales)
+library(rgdal)
+library(Matching)
+library(RSQLite)
+library(tidyverse)
+library(data.table)
+
+save <- c("db", "cleanup", "theme_bc", "save", "weighted.ttest.ci")
+options("modelsummary_format_numeric_latex" = "plain")
+
+cleanup <- function(...){
+  save2 <- c(save, ...)
+  rm(list=ls(envir = .GlobalEnv)[! ls(envir = .GlobalEnv) %in% save2], envir = .GlobalEnv)
+  gc()
+}
+
+# db <- dbConnect(SQLite(), "D:/national_file_post18.db")

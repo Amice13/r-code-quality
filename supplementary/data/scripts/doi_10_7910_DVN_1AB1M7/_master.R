@@ -1,0 +1,22 @@
+rm(list = ls())
+library(rstudioapi)
+setwd(dirname(getActiveDocumentContext()$path))
+
+start <- Sys.time()
+sink('_log_manuscript.txt')
+source("Figure 1.R", echo = TRUE, max.deparse.length = Inf)
+source("Figure 2.R", echo = TRUE, max.deparse.length = Inf)
+source("Figure 3-4.R", echo = TRUE, max.deparse.length = Inf)
+source("Figure 5.R", echo = TRUE, max.deparse.length = Inf)
+sink()
+
+rm(list = setdiff(ls(), "start"))
+sink('_log_appendix.txt')
+source("Figure OA-1-4.R", echo = TRUE, max.deparse.length = Inf)
+source("Figure OA-5.R", echo = TRUE, max.deparse.length = Inf)
+source("Table OA-1-2.R", echo = TRUE, max.deparse.length = Inf)
+source("Figure OA-6.R", echo = TRUE, max.deparse.length = Inf)
+source("Figure OA-7, Table OA-3-4.R", echo = TRUE, max.deparse.length = Inf)
+source("Figure OA-8.R", echo = TRUE, max.deparse.length = Inf)
+Sys.time() - start
+sink()

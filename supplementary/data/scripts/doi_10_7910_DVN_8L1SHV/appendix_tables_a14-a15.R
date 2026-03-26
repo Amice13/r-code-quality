@@ -1,0 +1,205 @@
+## Installing necessary packages ----
+packages <-c(
+  "ggplot2", "foreign", "data.table", "stargazer", "lfe", "stringr", "xtable", 
+  "tidyverse", "lme4", "arm", "memisc", "vegan", "MASS", "haven", "zoo")
+if (length(setdiff(packages, rownames(installed.packages()))) > 0) {
+  install.packages(setdiff(packages, rownames(installed.packages())))  
+}
+## ----
+# regressions on the cluster
+rm(list = ls())
+options(stringsAsFactors = FALSE)
+seed_to_use <- 216
+set.seed(seed_to_use)
+
+# install.packages(pkgs = c("data.table", "stargazer"), repos = "https://cloud.r-project.org/")
+### Libraries
+library(foreign)
+library(data.table)
+library(stargazer)
+library(lfe)
+
+#################################################################
+####### 1. Load data
+#################################################################
+
+
+# load full data
+load("~/geog_rotation_full.rdata")
+
+
+
+# need to get rid of missingness in education
+geog_rotation <- geog_rotation[eduname_cd != 999, ]
+geog_rotation <- geog_rotation[years < 2016, ]
+geog_rotation[, bali_dummy :=  ifelse(grepl(
+  pattern = "bali", x = provnm_lokasi_kerja, ignore.case = TRUE), 1, 0)]
+
+######################################################################
+######################################################################
+#######  TABLES FOR THE APPENDIX
+######################################################################
+######################################################################
+
+
+control_list <- "+gender_cd+umur_skrg+eduname_cd+factor(religion_cd)+yrs_in_bkn"
+dv_list <- c("new_vals","jab_change","promotion")
+
+########### Table 2: Gender ----
+fmla1 <-  as.formula(paste(paste(dv_list[3],"~"),
+                           "bali_dummy+post_dem+gender_cd*post_dem*bali_dummy",
+                           paste(control_list),
+                           paste("| prov_tempat_lahir+instansi+years | 0 | pns_id")))
+
+fmla2 <-  as.formula(paste(paste(dv_list[3],"~"),
+                           "bali_dummy+post_dem+gender_cd*post_dem*bali_dummy",
+                           paste(control_list),
+                           paste("| pns_id+instansi+years | 0 | pns_id")))
+
+fmla3 <-  as.formula(paste(paste(dv_list[3],"~"),
+                           "bali_dummy+post_dem+gender_cd*post_dem*bali_dummy",
+                           paste(control_list),
+                           paste("| pns_id+instansi+golongan_id+years | 0 | pns_id")))
+
+# Estimation
+m1 <- felm(fmla1, data = geog_rotation, keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m2 <- felm(fmla2, data = geog_rotation, keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m3 <- felm(fmla3, data = geog_rotation, keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m4 <- felm(fmla1, data = geog_rotation[post_dem_hire == 0], keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m5 <- felm(fmla2, data = geog_rotation[post_dem_hire == 0], keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m6 <- felm(fmla3, data = geog_rotation[post_dem_hire == 0], keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+
+# Get standard errors
+se1 <- m1$cse
+se2 <- m2$cse
+se3 <- m3$cse
+se4 <- m4$cse
+se5 <- m5$cse
+se6 <- m6$cse
+
+# Table:
+stargazer(m1,m2,m3,m4,m5,m6,type="latex",notes = "Standard errors are clustered at the individual level.",
+          style="qje",
+          title            = "Echelon Analysis: Gender",
+          covariate.labels =  c("Working in Bali",
+                              "Post Democratization",
+                               "Female",
+                               "Age",
+                               "Education: Junior High",
+                               "Education: Senior High",
+                               "Education: Diploma I/II/III",
+                               "Education: Diploma IV/S1",
+                               "Education: Post-Graduate",
+                               "Protestant",
+                               "Catholic",
+                               "Buddhist",
+                               "Hindu",
+                               "Confucian",
+                               "Other",
+                               "Years in Civil Service",
+                               "Female*Post Democratization",
+            "Working in Bali*Female",
+            "Working in Bali*Post Democratization",
+            "Working in Bali*Post Democratization*Female"),
+          dep.var.caption  = "Promotion",
+          dep.var.labels.include = FALSE,
+           column.labels   = c("Promotion","Promotion","Promotion","Promotion","Promotion","Promotion"),
+          se=list(se1,se2,se3,se4,se5,se6),
+          add.lines = list(c("Sample", "Full", "Full","Full","Pre-1999","Pre-1999", "Pre-1999"),
+                           c("Department FE", "Yes", "Yes","Yes","Yes","Yes", "Yes"),
+                           c("Province of Birth FE", "Yes", "No","No","Yes", "No","No"),
+                           c("Individual FE", "No","Yes","Yes","No","Yes","Yes"),
+                           c("Golongan FE", "No","No","Yes","No","No","Yes"),
+                           c("Year FE","Yes","Yes","Yes","Yes","Yes","Yes")),
+          digits=2,
+          out="~/appendix_table_a14_gender_bali.tex"
+)
+#save(m1,m2,m3,m4,m5,m6, file = "~/appendix_table2_full_models_aceh.rdata")
+
+
+########### Table 3: Religion
+fmla1 <-  as.formula(paste(paste(dv_list[3],"~"),
+                           "bali_dummy+post_dem+factor(religion_cd)*post_dem*bali_dummy",
+                           paste(control_list),
+                           paste("| prov_tempat_lahir+instansi+years | 0 | pns_id")))
+
+fmla2 <-  as.formula(paste(paste(dv_list[3],"~"),
+                           "bali_dummy+post_dem+factor(religion_cd)*post_dem*bali_dummy",
+                           paste(control_list),
+                           paste("| pns_id+instansi+years | 0 | pns_id")))
+
+fmla3 <-  as.formula(paste(paste(dv_list[3],"~"),
+                           "bali_dummy+post_dem+factor(religion_cd)*post_dem*bali_dummy",
+                           paste(control_list),
+                           paste("| pns_id+instansi+golongan_id+years | 0 | pns_id")))
+
+# Estimation
+m1 <- felm(fmla1, data = geog_rotation, keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m2 <- felm(fmla2, data = geog_rotation, keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m3 <- felm(fmla3, data = geog_rotation, keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m4 <- felm(fmla1, data = geog_rotation[post_dem_hire == 0], keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m5 <- felm(fmla2, data = geog_rotation[post_dem_hire == 0], keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+m6 <- felm(fmla3, data = geog_rotation[post_dem_hire == 0], keepX = FALSE, keepCX = FALSE, psdef=FALSE)
+
+# Get standard errors
+se1 <- m1$cse
+se2 <- m2$cse
+se3 <- m3$cse
+se4 <- m4$cse
+se5 <- m5$cse
+se6 <- m6$cse
+
+
+# Table:
+stargazer(m1,m2,m3,m4,m5,m6,type="latex",notes = "Standard errors are clustered at the individual level.",
+          style="qje",
+          title            = "Promotion Analysis: Echelon",
+          covariate.labels =  c("Working in Bali",
+                              "Post Democratization",
+                               "Protestant",
+                               "Catholic",
+                               "Buddhist",
+                               "Hindu",
+                               "Confucian",
+                               "Other",
+                               "Female",
+                               "Age",
+                               "Education: Junior High",
+                               "Education: Senior High",
+                               "Education: Diploma I/II/III",
+                               "Education: Diploma IV/S1",
+                               "Education: Post-Graduate",
+                               "Years in Civil Service",
+                               "Protestant*Post Democratization",
+                               "Catholic*Post Democratization",
+                               "Buddhist*Post Democratization",
+                               "Hindu*Post Democratization",
+                               "Confucian*Post Democratization",
+                               "Other*Post Democratization",
+                                "Protestant*Working in Bali",
+                               "Catholic*Working in Bali",
+                               "Buddhist*Working in Bali",
+                               "Hindu*Working in Bali",
+                               "Confucian*Working in Bali",
+                               "Other*Working in Bali",
+            "Post Democratization*Working in Bali",
+             "Protestant*Post Democratization*Working in Bali",
+                               "Catholic*Post Democratization*Working in Bali",
+                               "Buddhist*Post Democratization*Working in Bali",
+                               "Hindu*Post Democratization*Working in Bali",
+                               "Confucian*Post Democratization*Working in Bali",
+                               "Other*Post Democratization*Working in Bali"),
+          dep.var.caption  = "Promotion",
+          dep.var.labels.include = FALSE,
+           column.labels   = c("Promotion","Promotion","Promotion","Promotion","Promotion","Promotion"),
+          se=list(se1,se2,se3,se4,se5,se6),
+          add.lines = list(c("Sample", "Full", "Full","Full","Pre-1999","Pre-1999", "Pre-1999"),
+                           c("Department FE", "Yes", "Yes","Yes","Yes","Yes", "Yes"),
+                           c("Province of Birth FE", "Yes", "No","No","Yes", "No","No"),
+                           c("Individual FE", "No","Yes","Yes","No","Yes","Yes"),
+                           c("Golongan FE", "No","No","Yes","No","No","Yes"),
+                           c("Year FE","Yes","Yes","Yes","Yes","Yes","Yes")),
+          digits=2,
+          out="~/appendix_table_a15_religion_bali.tex"
+)
+#save(m1,m2,m3,m4,m5,m6, file = "~/appendix_table3_full_models_aceh.rdata")

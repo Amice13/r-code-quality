@@ -1,0 +1,552 @@
+rm(list=ls())
+
+# Set working directory
+# setwd()
+
+# Load the function to create simulated data and estimation
+source("simsHT_function.R")
+
+first_time <- Sys.time()
+#########################################################################################
+N <- 50
+T <- 5
+lambda.cand <-exp(seq(-1,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 100
+T <- 5
+lambda.cand <-exp(seq(0,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 200
+T <- 5
+lambda.cand <-exp(seq(0,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+
+#########################################################################################
+N <- 50
+T <- 10
+lambda.cand <-exp(seq(0,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+#########################################################################################
+N <- 100
+T <- 10
+lambda.cand <-exp(seq(1,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+#########################################################################################
+N <- 200
+T <- 10
+lambda.cand <-exp(seq(1,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+#########################################################################################
+N <- 50
+T <- 20
+lambda.cand <-exp(seq(0,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+
+#########################################################################################
+N <- 100
+T <- 20
+lambda.cand <-exp(seq(1,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+#########################################################################################
+N <- 200
+T <- 20
+lambda.cand <-exp(seq(1,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+
+#########################################################################################
+N <- 150
+T <- 5
+lambda.cand <-exp(seq(1,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+#########################################################################################
+N <- 150
+T <- 10
+lambda.cand <-exp(seq(0,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+#########################################################################################
+N <- 150
+T <- 20
+lambda.cand <-exp(seq(1,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+
+
+last_time <- Sys.time()
+
+
+save.image("HT_TSCS_Simulations2.RData")
+
+#########################################################################################
+#########################################################################################
+#########################################################################################
+#########################################################################################
+#########################################################################################
+#########################################################################################
+#########################################################################################
+#########################################################################################
+
+rm(list=ls())
+# Small T Simulations
+source("simsHT_function.R")
+
+
+#########################################################################################
+N <- 200
+T <- 2
+lambda.cand <-exp(seq(0,5.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 500
+T <- 2
+lambda.cand <-exp(seq(0,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 1000
+T <- 2
+lambda.cand <-exp(seq(0.5,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 2000
+T <- 2
+lambda.cand <-exp(seq(1,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 200
+T <- 3
+lambda.cand <-exp(seq(0,5.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 500
+T <- 3
+lambda.cand <-exp(seq(1,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 1000
+T <- 3
+lambda.cand <-exp(seq(1,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 2000
+T <- 3
+lambda.cand <-exp(seq(1.5,4.5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+#N <- 200
+#T <- 5
+#lambda.cand <-exp(seq(0,5,by=0.25))
+
+#library(parallel)
+#cl <- makeCluster(detectCores()-1)
+#clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+#clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+#R=500
+#start_time <- Sys.time()
+#simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+##simulations=parLapply(cl,1:R,function(i) simsHT())
+#Sys.time() - start_time
+#stopCluster(cl)
+
+#assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+#write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 500
+T <- 5
+lambda.cand <-exp(seq(0,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 1000
+T <- 5
+lambda.cand <-exp(seq(2,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+#########################################################################################
+N <- 2000
+T <- 5
+lambda.cand <-exp(seq(2,5,by=0.25))
+
+library(parallel)
+cl <- makeCluster(detectCores()-1)
+clusterEvalQ(cl,c(library(MASS),library(pglm),library(survival),library(PFCRE),library(alpaca),library(lme4),library(optimx),library(plm),library(margins),library(lfe)))
+clusterExport(cl,c("simsHT","N","T","lambda.cand"))
+R=500
+start_time <- Sys.time()
+simulations=parLapply(cl,1:R,function(i) tryCatch(simsHT(),error=function(e) NULL))
+#simulations=parLapply(cl,1:R,function(i) simsHT())
+Sys.time() - start_time
+stopCluster(cl)
+
+assign(paste("sim.resHT2_","N",N,"T",T,sep=""),matrix(unlist(simulations),ncol=2,byrow=TRUE))
+
+write.csv(get(paste("sim.resHT2_","N",N,"T",T,sep="")),paste("SimsHT_N",N,"T",T,".csv"))
+#########################################################################################
+
+
+save.image("HT_SmallT_Simulations2.RData")
+
+
+

@@ -1,0 +1,17 @@
+## Packages (need to be installed) ----------------------
+#remotes::install_github("gabrielrvsc/HDeconometrics")
+
+library("dplyr")
+library("foreign")
+library("glmnet")
+library("ggplot2")
+library("HDeconometrics")
+library("lubridate")
+library("matrixStats")
+library("readxl")
+library("stringr")
+library("tis")
+library("xtable")
+library("xts")
+library("lmtest")
+library("sandwich")

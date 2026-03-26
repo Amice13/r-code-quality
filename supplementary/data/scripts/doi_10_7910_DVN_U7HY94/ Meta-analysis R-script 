@@ -1,0 +1,221 @@
+##---------------------------------------------------------------------------------------
+## Collection of all scripts: data collection, cleaning, and merging,  
+## modelling, supplementary analysis, and plots
+##---------------------------------------------------------------------------------------
+## TITLE:		      When the election rains out and how bad weather excludes
+##                marginal voters from turning out
+## CREATED:		    19 Dec 2022
+## AUTHORS:		    Søren Damsbo-Svendsen (https://soerendamsbo.github.io) 
+##                Kasper M. Hansen (https://kaspermhansen.eu)
+## AFFILIATIONS:	Department of Political Science, University of Copenhagen
+##---------------------------------------------------------------------------------------
+## Note that since the main data set (individual-level turnout records)
+## cannot be made publicly available, the data collection requires an
+## API key, and more, the script cannot and is not intended to run.
+## Instead, it is only intended as a reference and to provide full 
+## transparency over the applied methods.
+##---------------------------------------------------------------------------------------
+
+# load packages (requires pacman)
+pacman::p_load(tidyverse, readxl, here, janitor, ggthemes)
+
+# set input and output files
+meta_path <- here::here("meta.xlsx")
+plot_path_noext <- here::here("meta")
+
+# function to find/define outlier studies in terms of standard error-based weights
+is_outlier <- function(weight){
+  sum_weight <- sum(weight, na.rm = TRUE)
+  sum_weight_ex <- sum_weight - weight 
+  weight > sum_weight_ex
+}
+
+# manually input our own main result
+our_study <- tibble(
+  study = "Our study",
+  effect = -0.95,
+  se = 0.05,
+  low95 = effect - se * 1.96,
+  upp95 = effect + se * 1.96,
+  n = 7855406,
+  weight = 1 / se^2,
+  lvl = "individual")
+
+# load and clean metastudy data
+studies <- read_excel(meta_path) |> 
+  clean_names() |> 
+  mutate(effect = effect_on_turnout_percent_of_1_cm_rain,
+         se = abs(standard_error),
+         low95 = lower_95_percent_ci,
+         upp95 = higher_95_percent_ci,
+         lvl = ifelse(level_of_analysis_individual == 1, "individual", "aggregated")) |> 
+  # Errors ??? 
+  filter(!is.na(study), !str_detect(study, "vores")) |> 
+  #mutate(across(c(effect, se, low95, upp95), ~ifelse(str_detect(study, "Gavazza|Steinbrecher|Knack"), NA, .))) |> 
+  #filter(!str_detect(study, "Gavazza|Lind")) |> 
+  # Add ours
+  bind_rows(our_study) |> 
+  distinct() |> 
+  # Meta: add weights
+  mutate(weight = 1 / se^2,
+         effect_weighted = effect * weight,
+         se_weighted = se * weight,
+         effect_nweighted = effect * n,
+         se_nweighted = se * n) |> 
+  filter(!is.na(effect)) 
+
+# meta-estimate 1: SE-weighted average (prior)
+meta_prior <- studies |> 
+  filter(study != "Our study") |> 
+  summarise(effect = sum(effect_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE),
+            se = sum(se_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE)) |> 
+  mutate(study = "SE-weighted average (prior)",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "meta") |> 
+  print()
+
+# meta-estimate 2: SE-weighted average (posterior)
+meta_posterior <- studies |> 
+  summarise(effect = sum(effect_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE),
+            se = sum(se_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE)) |> 
+  mutate(study = "SE-weighted average (posterior)",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "meta") |> 
+  print()
+
+# meta-estimate 3: SE-weighted average (individual, prior)
+meta_individual_prior <- studies |> 
+  filter(study != "Our study") |> 
+  filter(lvl == "individual") |> 
+  summarise(effect = sum(effect_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE),
+            se = sum(se_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE)) |> 
+  mutate(study = "SE-weighted average (individual, prior)",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "individual") |> 
+  print()
+
+# meta-estimate 4: SE-weighted average (individual, posterior)
+meta_individual_posterior <- studies |> 
+  filter(lvl == "individual") |> 
+  summarise(effect = sum(effect_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE),
+            se = sum(se_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE)) |> 
+  mutate(study = "SE-weighted average (individual, posterior)",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "individual") |> 
+  print()
+
+# meta-estimate 5: Unweighted average (prior)
+meta_simple <- studies |>
+  filter(!str_detect(study, "Our study")) |> 
+  summarise(effect = mean(effect, na.rm =TRUE),
+            se = mean(se, na.rm =TRUE)) |> 
+  mutate(study = "Unweighted average (prior)",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "meta") |> 
+  print()
+
+# meta-estimate 6: N-weighted average (prior)
+meta_n_prior <- studies |> 
+  filter(study != "Our study") |> 
+  summarise(effect = sum(effect_nweighted, na.rm = TRUE) / sum(n, na.rm = TRUE),
+            se = sum(se_nweighted, na.rm = TRUE) / sum(n, na.rm = TRUE)) |> 
+  mutate(study = "N-weighted average (prior)",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "meta") |> 
+  print()
+
+# meta-estimate 7: N-weighted average (posterior)
+meta_n_posterior <- studies |> 
+  summarise(effect = sum(effect_nweighted, na.rm = TRUE) / sum(n, na.rm = TRUE),
+            se = sum(se_nweighted, na.rm = TRUE) / sum(n, na.rm = TRUE)) |> 
+  mutate(study = "N-weighted average (posterior)",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "meta") |> 
+  print()
+
+# meta-estimate 8: SE-weighted average (prior)*
+meta_prior_ex <- studies |> 
+  filter(!str_detect(study, "Our study")) |> 
+  filter(!is_outlier(weight)) |> filter(!is_outlier(weight)) |> filter(!is_outlier(weight)) |> 
+  summarise(effect = sum(effect_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE),
+            se = sum(se_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE)) |> 
+  mutate(study = "SE-weighted average (prior)*",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "meta") |> 
+  print()
+
+# meta-estimate 9: SE-weighted average (posterior)*
+meta_posterior_ex <- studies |> 
+  filter(!is_outlier(weight)) |> filter(!is_outlier(weight)) |> filter(!is_outlier(weight)) |> 
+  summarise(effect = sum(effect_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE),
+            se = sum(se_weighted, na.rm = TRUE) / sum(weight, na.rm = TRUE)) |> 
+  mutate(study = "SE-weighted average (posterior)*",
+         low95 = effect - se * 1.96,
+         upp95 = effect + se * 1.96,
+         lvl = "meta") |> 
+  print()
+
+# merge meta-estimates
+studies_merged <- studies |> 
+  bind_rows(meta_simple, meta_prior, meta_prior_ex, meta_posterior, meta_posterior_ex, meta_individual_prior, meta_individual_posterior, meta_n_prior, meta_n_posterior) |> 
+  bind_rows(tibble(study = " ", lvl = "meta")) |>
+  mutate(CI = paste0(format(round(effect, 3), nsmall = 3), " [", format(round(low95, 3), nsmall = 3), ", ", format(round(upp95, 3), nsmall = 3), "]") |> str_replace(fixed("[ "), fixed("["))) |> 
+  glimpse()
+
+# make plot  
+studies_merged |> 
+  mutate(order = case_when(str_detect(study, "Our study") ~ 1,
+                           study == " " ~ 2,
+                           study == "Unweighted average (prior)" ~ 3,
+                           study == "SE-weighted average (prior)" ~ 4,
+                           study == "SE-weighted average (posterior)" ~ 5,
+                           study == "SE-weighted average (prior)*" ~ 6,
+                           study == "SE-weighted average (posterior)*" ~ 7,
+                           study == "SE-weighted average (individual, prior)" ~ 8,
+                           study == "SE-weighted average (individual, posterior)" ~ 9,
+                           study == "N-weighted average (prior)" ~ 10,
+                           study == "N-weighted average (posterior)" ~ 11,
+                           TRUE ~ 0),
+         a = str_detect(study, "Unweighted"),
+         bold = study %in% c("Unweighted average (prior)", "SE-weighted average (prior)*", "SE-weighted average (posterior)*")) |> 
+  arrange(order, effect) |> 
+  mutate(order2 = row_number()) |> 
+  ggplot() +
+  aes(x = fct_reorder(study, -order2), 
+      y = effect,
+      fill = factor(lvl, levels = c("individual", "aggregated", "meta"), labels = c("Individual", "Aggregate", "Both"))) +
+  geom_hline(aes(yintercept = 0), color = "red", linetype = "solid", size = .5) +
+  geom_vline(aes(xintercept = nrow(studies_merged) - 5.5), color = "black", linetype = "solid", size = .25, alpha = .25) +
+  geom_vline(aes(xintercept = nrow(studies_merged) - 12.5), color = "black", linetype = "solid", size = .25, alpha = .25) +
+  geom_vline(aes(xintercept = nrow(studies_merged) - 19.5), color = "black", linetype = "solid", size = .25, alpha = .25) +
+  geom_hline(aes(yintercept = effect), color = "grey60", linetype = "dashed", data = . %>% filter(study == "Unweighted average (prior)")) +
+  coord_flip(ylim = c(-6,3)) +
+  scale_x_discrete() +
+  annotate("rect", xmin = 0, xmax = 8.7, ymin = -1, ymax = -.3, fill = "white") +
+  geom_point(size = 2.9, shape = 22) +
+  geom_errorbar(aes(ymin = low95, ymax = upp95), width = .4, size = .3) +
+  geom_text(aes(x = 36.7, y = -5.9, label = paste0("CI continues to ", round(low95, 3))), family = "Times New Roman", hjust = 0, size = 2.3, check_overlap = TRUE, data = . %>% filter(str_detect(study, "Knack"))) +
+  geom_text(aes(y = ifelse(effect > 100, upp95 + .7, low95 - .7), label = CI), vjust = .33, size = 3, color = "black", family = "Times New Roman", data = . %>% filter(str_detect(study, "average|Our"), bold), fontface = "bold") +
+  geom_text(aes(y = ifelse(effect > 100, upp95 + .7, low95 - .7), label = CI), vjust = .33, size = 3, color = "black", family = "Times New Roman", data = . %>% filter(str_detect(study, "average|Our"), !bold)) +
+  labs(x = NULL, y = "Estimated rainfall-turnout effect (%-points per cm)") +
+  scale_y_continuous(breaks = seq(-100,100,.5), expand = c(0,0)) +
+  scale_fill_manual(name = "Level of analysis", values = c("black", "white", "grey60")) +
+  theme_tufte() +
+  guides(alpha = "none", color = "none") +
+  theme(panel.border = element_rect(fill = NA),
+        legend.position = c(.915,.745),
+        legend.background = element_rect(fill = "white", color = NA)) +
+  geomtextpath::geom_textvline(aes(xintercept = 10, label = "Meta-analysis"), hjust = .1, family = "Times New Roman", fontface = "italic")
+
+# Save plot
+ggsave(paste0(plot_path_noext, ".png"), width = 10, height = 6.5, bg = "white")
+ggsave(paste0(plot_path_noext, ".jpg"), width = 10, height = 6.5, bg = "white", dpi = 1000)
+ggsave(paste0(plot_path_noext, ".pdf"), width = 10, height = 6.5, device = cairo_pdf)

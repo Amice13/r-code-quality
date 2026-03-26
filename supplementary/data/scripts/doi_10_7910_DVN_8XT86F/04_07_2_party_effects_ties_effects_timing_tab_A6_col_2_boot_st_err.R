@@ -1,0 +1,71 @@
+##############################################################################
+#
+#                             Replication scripts
+#       Horse race - Table A.6 Column 2 Bootstrapped Standard Errors
+#         Battaglini M., Leone Sciabolazza V., Patacchini, E. (2019)
+#                     "Effectiveness of connected legislators"
+#                      American Journal of Political Science
+#
+##############################################################################
+
+# Note:
+# This script should be run after completing scripts beginning with "02_"
+
+# Note 2:
+# To speed up replication time:
+# 04_01_2_main_estimates_tab_2_col_4_boot_st_err
+# 04_01_1_main_estimates_tab_2_col_3_boot_st_err
+# 04_02_1_heterogeneity_tab_3_col_1_boot_st_err
+# 04_02_2_heterogeneity_tab_3_col_2_boot_st_err
+# 04_02_3_heterogeneity_tab_3_col_3_boot_st_err
+# 04_02_4_heterogeneity_tab_3_col_4_boot_st_err
+# 04_02_5_heterogeneity_tab_3_col_5_boot_st_err
+# 04_02_6_heterogeneity_tab_3_col_6_boot_st_err
+# 04_03_1_robustness_checks_tab_A2_col_1_boot_st_err
+# 04_03_2_robustness_checks_tab_A2_col_2_boot_st_err
+# 04_03_3_robustness_checks_tab_A2_col_3_boot_st_err
+# 04_03_4_robustness_checks_tab_A2_col_4_boot_st_err
+# 04_03_5_robustness_checks_tab_A2_col_5_boot_st_err
+# 04_04_1_heterogeneity_appendix_tab_A5_col_1_boot_st_err
+# 04_04_2_heterogeneity_appendix_tab_A5_col_2_boot_st_err
+# 04_04_3_heterogeneity_appendix_tab_A5_col_3_boot_st_err
+# 04_04_4_heterogeneity_appendix_tab_A5_col_4_boot_st_err
+# 04_04_5_heterogeneity_appendix_tab_A5_col_5_boot_st_err
+# 04_04_6_heterogeneity_appendix_tab_A5_col_6_boot_st_err
+# 04_04_7_heterogeneity_appendix_tab_A5_col_7_boot_st_err
+# 04_04_8_heterogeneity_appendix_tab_A5_col_8_boot_st_err
+# 04_04_9_heterogeneity_appendix_tab_A5_col_9_boot_st_err
+# 04_04_10_heterogeneity_appendix_tab_A5_col_10_boot_st_err
+# 04_05_1_different_stages_tab_A7_col_1_boot_st_err
+# 04_05_2_different_stages_tab_A7_col_2_boot_st_err
+# 04_05_3_different_stages_tab_A7_col_3_boot_st_err
+# 04_06_horse_race_tab_A3_col_9_boot_st_err
+# 04_07_1_party_effects_ties_effects_timing_tab_A6_col_1_boot_st_err
+# 04_07_3_party_effects_ties_effects_timing_tab_A6_col_3_boot_st_err
+# 04_07_4_party_effects_ties_effects_timing_tab_A6_col_4_boot_st_err
+# by using 31 additional instances of R (i.e., one for each script)
+
+# load data
+load("replication_data.RData")
+load("table_a6.rda")
+
+# load libraries
+library(econet)
+library(minpack.lm)
+
+# load function to perform bootstrap
+source("boot_table_a6.R")
+
+# load econet:::solve_block to invert the matrix during estimation
+solve_block <- econet:::solve_block
+
+# Bootstrap standard errors
+# WARNING: This may take a very long time to run (i.e. more than a month).
+res_boot_table_a6 <- boot_table_a6(x = table_a6[[2]], db = db, niter = 500)
+
+#-----------------------------------------------------------------------------
+# Print results table A.6
+#-----------------------------------------------------------------------------
+
+# print results column 2 table A.6
+res_boot_table_a6

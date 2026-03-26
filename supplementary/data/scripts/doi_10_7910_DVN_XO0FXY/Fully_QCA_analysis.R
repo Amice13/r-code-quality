@@ -1,0 +1,448 @@
+
+############################################
+##### ANALYSIS OF NECESSiTY AND SUFFICIENCY WITH QCA -R  #####
+############################################
+
+
+rm(list = ls())
+# load prepared and calibrated data (see previous script)
+load("calibratedDon.rda")
+or 
+
+# Set working directory:
+setwd()
+Don <-read.csv("xxxx.csv", row.names=1)
+
+
+## NOTE: For correct replications, please load the packages QCA 3.1, 3.3 and SetMethods 2.3, 2.4
+
+# load packages
+library(QCA); library(QCAGUI); library(SetMethods); library(lattice);
+library(arm); library(plyr); library(car); library(stringr); library(xtable)
+library(betareg); library (gmodels); library (Hmisc); library (MASS);
+library (memisc); library (polycor); library (psych); library (reshape); 
+library (VIM); library (XML); library (foreign); library (directlabels);
+library (shiny);library (SetMethods); library (venn); dependencies = TRUE
+
+
+# get overview of data
+head(Don)
+
+
+# Outcome: LSCONTPOL ------------------------------------------------------------#
+# ----------------------------------------------------------------------------------------#
+
+# Analysis of necessity [only contexts]------------------------------------------------------------------#
+
+QCAfit(Don[, 2:10], Don$LSCONTPOL, necessity = TRUE, names(Don[, 2:10]))
+
+QCAfit(1-Don[, 2:10], Don$LSCONTPOL, necessity = TRUE, paste("~", names(Don[, 2:10])))
+
+SUIN <- superSubset(Don, outcome = "LSCONTPOL",
+            conditions = c("NONHERED", "OILPOOR","CORRUPT", "YOUTH", "MILBEHAV", "LOWSTATCAP","LIMDESPOT"),
+            incl.cut = 0.9, 
+            cov.cut = 0.8,
+            necessity = TRUE)
+SUIN
+
+
+# VISUALIZATION: This can be imputed as result and necessity should be set to \code{TRUE}:
+
+xy.plot(Don$NONHERED, Don$LSCONTPOL, case.lab = TRUE, labs = rownames(Don), necessity=TRUE)
+
+pimplot(data = Don, results = SUIN, outcome = "LSCONTPOL", necessity = TRUE)
+
+
+
+#For deviant cases consistency in kind, or degree ir irrelevant
+# Do this with all possible necessary conditions
+
+xy.plot(x, y)
+
+xy.plot(Don$NONHERED, Don$LSCONTPOL, necessity = TRUE, labs = rownames(Don),
+        main = "NONHERED as necessary for LSCONTPOL", ylab = "LSCONTPOL", xlab = "NONHERED")
+
+xy.plot(Don$MOBILIZ, Don$LSCONTPOL, necessity = TRUE, labs = rownames(Don),
+        main = "MOBILIZ as necessary for LSCONTPOL", ylab = "LSCONTPOL", xlab = "MOBILIZ")
+
+
+# We see that Yemen is a deviant case cosistency in degree "where both values
+# (for the condition and for the outcome) are greater than 0.5, 
+# but the outcome value is greater than the condition's value 
+# (thus invalidating the subset relation of the outcome in the condition)(Dusa, 2018: 117)". 
+
+
+# Analysis of sufficiency ----------------------------------------------------------------#
+
+# truth Table
+TT_y <- truthTable(Don, outcome = "LSCONTPOL",
+                   conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                   incl.cut1 = 0.8,
+                   n.cut = 1,
+                   show.cases = TRUE,
+                   details = TRUE,
+                   complete = FALSE,
+                   sort.by = c("OUT", "incl", "n"))
+
+TT_y
+
+# set consistency threshold at 0.8
+
+# Alternative truth table with incl.cut 1
+
+# Venn dyagram for the TT
+
+venn(TT_y, counts = TRUE, opacity = TT_y$TT_y$incl)
+
+
+# conservative solution
+sol_yc <- minimize(Don, outcome = "LSCONTPOL",
+                 conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                 incl.cut1 = 0.8,
+                 n.cut = 1,
+                 show.cases = TRUE,
+                 details = TRUE)
+sol_yc
+
+
+# most parsimonious solution
+sol_yp <- minimize(Don, outcome = "LSCONTPOL",
+                 conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                 incl.cut1 = 0.8,
+                 n.cut = 1,
+                 show.cases = TRUE,
+                 details = TRUE,
+                 row.dom = TRUE,
+                 include = "?")
+sol_yp
+
+# simplifying assumptions, are some contradictions?
+sol_yp$SA
+
+# intermediate solution
+sol_yi <- minimize(Don, outcome = "LSCONTPOL",
+                 conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                 incl.cut1 = 0.8,
+                 n.cut = 1,
+                 show.cases = TRUE,
+                 details = TRUE,
+                 include = "?",
+                 dir.exp = c("1","1","1","1","1","1"))
+sol_yi
+
+# dir. ex.: all conds are expected to be present in all persistent regimes beside repp due 
+# to its backfiring effects (cf. paper)
+
+# easy counterfactuals
+sol_yi$i.sol$C1P1$EC
+
+#Mapping the cases: 
+# dcn devian with regards to consistency for sufficiency
+# dcv devian with regards to coverage for sufficiency
+# iir irrelevant cases for sufficiency
+# typ typical cases for sufficiency
+# typ.fct typical cases with regards to sufficiency for each local conjunction
+# typ.most most typical cases for sufficiency
+# typ.unique uniquely typical cass with regards to sufficiency
+
+
+cases.suf.dcn(results, outcome, neg.out=FALSE, sol = 1)
+cases.suf.dcv(results=sol_yp, outcome="LSCONTPOL", neg.out=FALSE, sol = 2)
+cases.suf.iir(results=sol_yp, outcome="LSCONTPOL", neg.out=FALSE, sol = 2)
+cases.suf.typ(results=sol_yp, outcome="LSCONTPOL", neg.out=FALSE, sol = 2)
+cases.suf.typ.fct(results=sol_yp, outcome="LSCONTPOL", neg.out=FALSE, sol = 2)
+cases.suf.typ.most(results=sol_yp, outcome="LSCONTPOL", neg.out=FALSE, sol = 2)
+cases.suf.typ.unique(results=sol_yp, outcome="LSCONTPOL", neg.out=FALSE, sol = 2)
+
+# Visualization solutions
+
+pimplot(Don, sol_yc, "LSCONTPOL")
+pimplot(Don, sol_yp, "LSCONTPOL")
+pimplot(Don, sol_yi, "LSCONTPOL")
+
+
+# Visualization of results with cases names
+
+pimplot(data = Don, sol_yc, "LSCONTPOL", neg.out=FALSE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+pimplot(data = Don, sol_yp, "LSCONTPOL", neg.out=FALSE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+pimplot(data = Don, sol_yi, "LSCONTPOL", neg.out=FALSE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+
+# In ESA parsol, Yemen is the case with difference of degreee in the solution, wth 0.67
+
+# NEGATION OF THE OUTCOME: NON-LSCONTPOL --------------------------------------#
+# -----------------------------------------------------------------------------#
+
+
+# Analysis of necessity -------------------------------------------------------------------#
+
+QCAfit(Don[, 2:10], Don$LSCONTPOL, necessity = TRUE, names(Don[, 2:10]), neg.out = TRUE)
+
+QCAfit(1-Don[, 2:10], Don$LSCONTPOL, necessity = TRUE, paste("~", names(Don[, 2:10])), neg.out = TRUE)
+
+SUIN <- superSubset(Don, outcome = "LSCONTPOL", neg.out = TRUE,
+                      conditions = c("NONHERED", "OILPOOR","CORRUPT", "YOUTH", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                      incl.cut = 0.9, cov.cut = 0.8)
+SUIN
+
+
+# Visualization of possible deviant cases in kind/degreee
+
+xy.plot(x, y)
+xy.plot(1-Don$NONHERED, 1- Don$LSCONTPOL, necessity = TRUE, labs = rownames(Don),
+        main = "¬NONHERED as necessary for ¬LSCONTPOL", ylab = "¬LSCONTPOL", xlab = "¬NONHERED")
+
+# Algeria is a deviant case consistency in kind because it has a high value in
+# the outcome, and a low value on the condition (Dusa, 2018).
+
+xy.plot(1-Don$MOBILIZ, 1- Don$LSCONTPOL, necessity = TRUE, labs = rownames(Don),
+        main = "¬MOBILIZ as necessary for ¬LSCONTPOL", ylab = "¬LSCONTPOL", xlab = "¬MOBILIZ")
+
+# Syria is a deviant case consistency in degree, since violates the subset relation of necessity
+
+
+xy.plot(1-Don$NONRESCUE, 1- Don$LSCONTPOL, necessity = TRUE, labs = rownames(Don),
+        main = "¬NONRESCUE as necessary for ¬LSCONTPOL", ylab = "¬LSCONTPOL", xlab = "¬NONRESCUE")
+
+# Deviant cases consistency in degree were identified, such as the case of Syria 
+# and Jordan discarding the statement of necessity. 
+# Therefore, the condition ¬NONRESCUE is not considered a necessary condition
+
+xy.plot(1-Don$MILBEHAV, 1- Don$LSCONTPOL, necessity = TRUE, labs = rownames(Don),
+        main = "¬MILBEHAV as necessary for ¬LSCONTPOL", ylab = "¬LSCONTPOL", xlab = "¬MILBEHAV")
+
+# Two deviant cases consistency in degree can be identified: Bahrain and Syria, 
+# violating also the subset relation of necessity. 
+# Therefore, this condition is not considered as necessary for the failure of large-scale contentious politics. 
+
+
+# Analysis of sufficiency ----------------------------------------------------------------#
+
+# truth table
+TT_ny <- truthTable(Don, outcome = "LSCONTPOL", neg.out = TRUE,
+                    conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                    incl.cut1 = 0.8, 
+                    n.cut = 1,
+                    show.cases = TRUE,
+                    complete = FALSE,
+                    sort.by = c("OUT", "incl", "n"))
+
+TT_ny
+
+
+# conservative
+sol_nyc <- minimize(Don, outcome = "LSCONTPOL", neg.out = TRUE,
+                  conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),                  
+                  incl.cut1 = 0.8, 
+                  n.cut = 1,
+                  show.cases = TRUE,
+                  details = TRUE)
+sol_nyc
+
+
+# parsimonious
+
+sol_nyp <- minimize(Don, outcome = "LSCONTPOL", neg.out = TRUE,
+                  conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),            
+                  n.cut = 1,
+                  incl.cut1 = 0.8, 
+                  show.cases = TRUE,
+                  details = TRUE, include = "?")
+sol_nyp
+
+# simplifying assumptions
+sol_nyp$SA
+
+# intermediate solution
+sol_nyi <- minimize(Don, outcome = "LSCONTPOL", neg.out = TRUE,
+                  conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                  incl.cut1 = 0.8, 
+                  n.cut = 1,
+                  show.cases = TRUE,
+                  details = TRUE, include = "?", 
+                  dir.exp = c("0","-","-","-","-","-"))
+sol_nyi
+
+# easy counterfactuals
+sol_nyi$i.sol$C1P1$EC
+
+# Visualization solutions
+
+pimplot(Don, sol_nyc, "LSCONTPOL")
+pimplot(Don, sol_nyp, "LSCONTPOL")
+pimplot(Don, sol_nyi, "LSCONTPOL")
+
+
+# Visualization of results with cases names
+
+pimplot(data = Don, sol_nyc, "LSCONTPOL", neg.out=TRUE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+pimplot(data = Don, sol_nyp, "LSCONTPOL", neg.out=TRUE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+pimplot(data = Don, sol_nyi, "LSCONTPOL", neg.out=TRUE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+
+
+
+# Enhanced Standard Analysis (ESA) --------------------------------------------------------#
+# -----------------------------------------------------------------------------------------#
+
+
+# 1. CHECK: any SA contradicting the statement of necessity?
+# does not apply since no condition or conjunction of condition is declared necessary
+
+# 2. CHECK: any contradictory assumptions?
+# idea: none of the SAs should simultaniously 
+# assume sufficiency for y and -y 
+
+CSA_p <- intersect(rownames(sol_yp$SA$M1$M2$M3), rownames(sol_nyp$SA$M1))
+CSA_p
+
+CSA_i <- intersect(rownames(sol_yi$i.sol$C1P1$EC), rownames(sol_nyi$i.sol$C1P1$EC))
+CSA_i
+
+# the parsimonious relies on contradictory rows
+# lets exclude them from the parsimonious
+
+#ESA PRESENCE OF THE OUTCOME
+
+esol_yp <- minimize(Don, outcome = "LSCONTPOL",
+                 conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                 incl.cut1 = 0.8,
+                 n.cut = 1,
+                 show.cases = TRUE,
+                 details = TRUE,
+                 row.dom = TRUE,
+                 include = "?",
+                 omit = c(5:8, 13:32))
+esol_yp
+
+# simplifying assumptions
+esol_yp$SA
+
+# Intermediate solution
+
+esol_yi <- minimize(Don, outcome = "LSCONTPOL",
+                     conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                     incl.cut1 = 0.8, 
+                     n.cut = 1,
+                     show.cases = TRUE,
+                     details = TRUE, include = "?",
+                     dir.exp = c("1","1","1","1","1","1"),
+                     omit = c(5:8, 13:32))
+
+esol_yi
+
+# ESA - visualization solutions
+
+
+pimplot(data = Don, esol_yp, "LSCONTPOL", neg.out=FALSE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+pimplot(data = Don, esol_yi, "LSCONTPOL", neg.out=FALSE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+
+#ESA - Negation of the outcome
+# ESA most parsimonous solution
+
+esol_nyp <- minimize(Don, outcome = "LSCONTPOL", neg.out = TRUE,
+                     conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),            
+                     n.cut = 1,
+                     incl.cut1 = 0.8, 
+                     show.cases = TRUE,
+                     details = TRUE, 
+                     include = "?")
+esol_nyp
+
+#SA
+esol_nyp$SA
+
+# ESA intermediate solution
+
+esol_nyi <- minimize(Don, outcome = "LSCONTPOL", neg.out= TRUE,
+                    conditions = c("NONHERED", "MOBILIZ", "NONRESCUE", "MILBEHAV", "LOWSTATCAP", "LIMDESPOT"),
+                    incl.cut1 = 0.8, 
+                    n.cut = 1,
+                    show.cases = TRUE,
+                    details = TRUE, include = "?",
+                    dir.exp = c("0","-","-","-","-","-"))
+esol_nyi
+
+# easy counterfactuals
+esol_nyi$i.sol$C1P1$EC
+
+# Visualization
+
+pimplot(data = Don, esol_nyp, "LSCONTPOL", neg.out=TRUE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+pimplot(data = Don, esol_nyi, "LSCONTPOL", neg.out=TRUE, incl.tt=NULL, ttrows= c(),
+        necessity=FALSE, sol=1, case_labels=TRUE, all_labels=TRUE,
+        lab_color=rgb(0,0,0,0.5), lab_jitter =TRUE)
+
+
+# 3. CHECK: simultaneous subset relations for Y and -Y?
+
+# idea: none of the subsets should simultaniously 
+# assume sufficiency for y and -y 
+
+
+# Return typical cases for sufficiency for the parsimonious solution:
+cases.suf.typ(results = esol_yp, outcome = "LSCONTPOL")
+cases.suf.typ.fct(results = esol_yp, outcome = "LSCONTPOL", term = 1, neg.out=FALSE, sol = 1)
+
+# Return typical cases for sufficiency for the intermediate solution:
+cases.suf.typ(results = esol_yi, outcome = "LSCONTPOL")
+cases.suf.typ.fct(results = esol_yi, outcome = "LSCONTPOL", term = 1, neg.out=FALSE, sol = 1)
+
+
+
+#########################
+### theory evaluation ###
+#########################
+
+
+#	the logic of the argument is th following:
+# 	a) 	where do the theory (T) and empirical QCA findings (E) (not) overlap
+# 		(T*E; ~T*E; T*~E; ~T*~E)
+# 	b) 	which cases are in these four intersections?
+# 	c) 	what are the parameters of fit of these four intersections
+
+
+# theory is here the "QCA Model" with proximate and remote conditions
+
+
+### outcome: LSCONTPOL (Y) ###
+#########################################
+
+# Specify the theory. Let's assume the theory says that the
+
+t<-"NONHERED+OILPOOR*YOUTH+CORRUPT*MOBILIZ*MILBEHAV*NONRESCUE*LOWSTATCAP*LIMDESPOT"
+
+
+# Perform theory evaluation & 
+# Get only the names of the cases and the parameters of fit:
+
+theory.evaluation(theory = t, empirics = esol_yi, outcome = "LSCONTPOL", sol = 1, print.data=TRUE)
+
+
+# end of analysis (robustness tests in separate scripts!) ---------------------------------------#
+# -----------------------------------------------------------------------------------------------#

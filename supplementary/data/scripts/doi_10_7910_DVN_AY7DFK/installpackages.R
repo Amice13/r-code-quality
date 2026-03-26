@@ -1,0 +1,6 @@
+install.packages("readxl")
+install.packages("tidyverse")
+install.packages("haven")
+install.packages("igraph")
+install.packages("arrow")
+install.packages("readr")
