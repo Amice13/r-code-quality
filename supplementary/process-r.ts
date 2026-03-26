@@ -1,17 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import {
-  analyzeLines,
-  analyzePipes,
-  hasInteractiveMethods, 
-  getApiKeys,
-  getFunctionNames,
-  getFiles,
-  hasEpxlicitColumnDefinition,
-  getInstalledPackages,
-  getLoadedPackages,
-  getVariableNames
-} from './custom_modules/r-analysis.ts'
+import { getFormattingIssues } from './r_modules/index.ts'
 
 const SOURCE_FOLDER = path.join('..', 'data', 'scripts')
 
@@ -29,6 +18,9 @@ for (const file of projects) {
   const fileStats: Partial<FileStats> = { project, filename }
   fileStats.size = content.length
 
+  const issues = getFormattingIssues(content)
+  // console.log(issues)
+  console.log(file)
   // const linesData = analyzeLines(content)
   // const pipesData = analyzePipes(content)
   // const libraries = getLoadedPackages(content)  
@@ -39,18 +31,18 @@ for (const file of projects) {
   // const explicitColumnDefinition = hasEpxlicitColumnDefinition(content)
   // const installedPackages = getInstalledPackages(content)
   // const installedPackages = getLoadedPackages(content)
-  const installedPackages = getVariableNames(content)
-  console.log(installedPackages, file)
+  // const installedPackages = getVariableNames(content)
+  // console.log(installedPackages, file)
   // console.log(installedPackages)
   // console.log(files, project, file)
   // console.log(dependsOnInteractiveMethods)
   // console.log(functionNames, file)
   // const lines = content.split(/[\n\r]+/g)
-
+  // const wd = getWorkingDirectories(content)
+  // console.log(wd, file)
   // for (const line of lines) {
   //   if (line.match(/^[^#]*->(?!>)(?:[^"')]*(?:#|$))/g)) console.log(line.split(/^[^#]*->/g).slice(-1), line)
   // }
-
 
   // Use explicit returns - https://google.github.io/styleguide/Rguide.html
 
