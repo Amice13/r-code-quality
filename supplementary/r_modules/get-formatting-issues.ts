@@ -11,6 +11,16 @@ const infixExceptions = '(?::::|::|:)'
 const noInfixSpacesRegex = new RegExp(`[a-z\\d]${infixOperators}|${infixOperators}[a-z\\d.]`)
 const wrongInfixSpacesRegex = new RegExp(`\\s+${infixExceptions}(?!\\s?=)|${infixExceptions}\\s+`, 'g')
 
+const keywordsWithSpace = [
+  'if',
+  'for',
+  'while',
+  'repeat',
+  'switch',
+  'function',
+  'return'
+]
+
 interface Issue {
   name: string
   line: number
