@@ -111,7 +111,7 @@ ggmap_rast <- function(map){
 
 bb <- bbox(shape)
 ll_means <- rowMeans(bb)
-sq_map <- get_googlemap(center = c(lon=ll_means[1],lat=ll_means[2]), maptype = "satellite",  zoom = 7, key = "AIzaSyD_Hu54Gni7f4Kd__NYM_BsMq9Quxb9jXQ")
+sq_map <- get_googlemap(center = c(lon=ll_means[1],lat=ll_means[2]), maptype = "satellite",  zoom = 7, key = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA")
 
 sq_map.rast <- ggmap_rast(map = sq_map) # convert google map to raster object
 

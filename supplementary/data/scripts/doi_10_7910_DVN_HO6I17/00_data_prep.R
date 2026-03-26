@@ -58,7 +58,7 @@ outlets <- analysis_data %>%
 # Function to get geocode from Mapbox API
 get_geocode <- function(address) {
   if (any(!is.na(address))) {  # Check if any address is not NA
-    mapbox_access_token <- "pk.eyJ1Ijoic2ltb25hYmlzaWFuaSIsImEiOiJjbHRvaHZyZXowMTRmMmtycDlmZHB4N2h2In0.EdVXs5b__rvnSkgbByNEgg"
+    mapbox_access_token <- "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"
     base_url <- "https://api.mapbox.com/geocoding/v5/mapbox.places/"
     query <- list(
       bbox = "-8,49,2,61",
