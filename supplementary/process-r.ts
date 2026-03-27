@@ -19,7 +19,6 @@ for (const file of projects) {
   fileStats.size = content.length
 
   const issues = getFormattingIssues(content)
-  // console.log(issues)
   console.log(file)
   // const linesData = analyzeLines(content)
   // const pipesData = analyzePipes(content)

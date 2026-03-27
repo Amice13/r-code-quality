@@ -1,29 +1,32 @@
-import { validVariableRegex, stripStringsAndComments } from './constants.ts'
-import { getVariableNames } from './index.ts'
-import { rBaseFunctions } from './r-base-functions.ts'
+import { stripStringsAndComments } from './constants.ts'
+import { getSpacingIssues } from './lint-rules/get-spacing-issues.ts'
+import { getInfixWithoutSpacesAround } from './lint-rules/get-infix-without-spaces-around.ts'
+import { getColonWithSpacesAround } from './lint-rules/get-colon-with-spaces-around.ts'
+import { getReassignedVariables } from './lint-rules/get-reassigned-variables.ts'
+import { getBadComments } from './lint-rules/get-bad-comments.ts'
+import { hasAttach } from './lint-rules/has-attach.ts'
+import { hasRha } from './lint-rules/has-rha.ts'
+import { hasHelp } from './lint-rules/has-help.ts'
+import { getBadVerticalSpacing } from './lint-rules/get-bad-vertical-spacing.ts'
+import { getBadEmbracing } from './lint-rules/get-bad-embracing.ts'
+import { getLoopsWithoutBraces } from './lint-rules/get-loops-without-braces.ts'
+import { getSemicolons } from './lint-rules/get-semicolons.ts'
+import { getTf } from './lint-rules/get-tf.ts'
+import { getBadQuotes } from './lint-rules/get-bad-quotes.ts'
+import { getPipesWithoutSpaces } from './lint-rules/get-pipes-without-spaces.ts'
+import { getBracedIfElse } from './lint-rules/get-braced-if-else.ts'
+import { getFormulasWithRhs } from './lint-rules/get-formulas-with-rhs.ts'
 
-const attachRegex = /^[^#]*\battach\(/
-const rhaRegex = new RegExp(`^[^#]*->\\s*(?<name_rha>${validVariableRegex})(?=\\s*(?:[\n\r]|$))`)
-
-const infixOperators = '(?:[=+-]|<-|->|\\|>|%>%|%<%|%<>%|\\||\\|\\||&&|&|<|>)'
-const infixExceptions = '(?::::|::|:)'
-
-const noInfixSpacesRegex = new RegExp(`[a-z\\d]${infixOperators}|${infixOperators}[a-z\\d.]`)
-const wrongInfixSpacesRegex = new RegExp(`\\s+${infixExceptions}(?!\\s?=)|${infixExceptions}\\s+`, 'g')
-
-const keywordsWithSpace = [
-  'if',
-  'for',
-  'while',
-  'repeat',
-  'switch',
-  'function',
-  'return'
-]
+// Use <-, not =, for assignment - http://adv-r.had.co.nz/Style.html
+// File names should be machine readable - https://style.tidyverse.org/files.html
+// Variable and function names should use only lowercase letters, numbers, and _. - https://style.tidyverse.org/syntax.html
+// If you find yourself attempting to cram data into variable names (e.g. model_2018, model_2019, model_2020), consider using a list or data frame instead. - https://style.tidyverse.org/syntax.html
+// magrittr - https://style.tidyverse.org/pipes.html
+// variable names - datasets vs vars // snake case, camel case, etc
 
 interface Issue {
   name: string
-  line: number
+  line?: number
 }
 
 export const getFormattingIssues = (content: string) => {
@@ -31,19 +34,33 @@ export const getFormattingIssues = (content: string) => {
   const issues: Issue[] = []
   let n = 0
 
-  const lines = content.split(/[\n\r]+/g)
-  const variables = getVariableNames(content)
+  const reassingedVariables = getReassignedVariables(content)
+  issues.push(...reassingedVariables)
+  const spacingIssues = getSpacingIssues(content)
+  issues.push(...spacingIssues)
+  const infixIssues = getInfixWithoutSpacesAround(content)
+  issues.push(...infixIssues)
+  const colonIssues = getColonWithSpacesAround(content)
+  issues.push(...colonIssues)
+  const badVerticalSpacing = getBadVerticalSpacing(content)
+  issues.push(...badVerticalSpacing)
+  const semicolons = getSemicolons(content)
+  issues.push(...semicolons)
+  const badQuotes = getBadQuotes(content)
+  issues.push(...badQuotes)
 
-  // Avoid using names of existing functions and variables - http://adv-r.had.co.nz/Style.html
-  for (const variable of variables) {
-    if (rBaseFunctions.includes(variable.name)) {
-      issues.push({ name: 'Existing function is re-assigned', line: variable.line })
-    }
+  const withoutComments = stripStringsAndComments(content)
+
+  // When indenting your code, use two spaces. Never use tabs or mix tabs and spaces. -- http://adv-r.had.co.nz/Style.html
+  if (/^\t+/.test(withoutComments) && /^ +/.test(withoutComments)) {
+    issues.push({ name: 'Mix of tabs and spaces for indentation' })
   }
 
+  const lines = content.split(/\r?\n/g)
   for (let line of lines) {
     n++
 
+    // Strive to limit your code to 80 characters per line. - http://adv-r.had.co.nz/Style.html
     if (line.length > 80) issues.push({ name: 'Line length is greater than 80', line: n })
 
     // Skip comments
@@ -52,55 +69,39 @@ export const getFormattingIssues = (content: string) => {
     // Replace comments
     line = stripStringsAndComments(line)
 
-    // Don't use attach() - https://google.github.io/styleguide/Rguide.html
-    const usesAttach = attachRegex.test(line)
-    if (usesAttach) issues.push({ name: 'Attach is used', line: n })
+    const attach = hasAttach(line)
+    if (attach !== null) issues.push({ ...attach, line: n })
 
-    // Right-hand assignment - https://google.github.io/styleguide/Rguide.html - ->
-    const usesRHA = rhaRegex.test(line)
-    if (usesRHA) issues.push({ name: 'Right-hand assignment is used', line: n })
+    const rha = hasRha(line)
+    if (rha !== null) issues.push({ ...rha, line: n })
 
-    // No spaces around all infix operators - http://adv-r.had.co.nz/Style.html
-    const hasInfixWithoutSpaces = noInfixSpacesRegex.test(line)
-    if (hasInfixWithoutSpaces) issues.push({ name: 'Has no spaces around infix operators', line: n })
+    const badComments = getBadComments(line)
+    if (badComments !== null) issues.push({ ...badComments, line: n })
 
-    // Spaces around exceptional infix operators - http://adv-r.had.co.nz/Style.html
-    const hasWrongInfixSpacesRegex = wrongInfixSpacesRegex.test(line)
-    if (hasWrongInfixSpacesRegex) issues.push({ name: 'Has spaces around infix operators', line: n })
+    const help = hasHelp(line)
+    if (help !== null) issues.push({ ...help, line: n })
+
+    const badEmbracing = getBadEmbracing(line)
+    issues.push(...badEmbracing.map(el => ({ ...el, line: n })))
+
+    const loopWithoutBraces = getLoopsWithoutBraces(line)
+    if (loopWithoutBraces !== null) issues.push({ ...loopWithoutBraces, line: n })
+
+    const tfs = getTf(line)
+    issues.push(...tfs.map(el => ({ ...el, line: n })))
+
+    const pipesWithoutSpaces = getPipesWithoutSpaces(line)
+    issues.push(...pipesWithoutSpaces.map(el => ({ ...el, line: n })))
+
+    const bracedIfElse = getBracedIfElse(line)
+    if (bracedIfElse !== null) issues.push({ ...bracedIfElse, line: n })
+
+    const formulasWithRhs = getFormulasWithRhs(line)
+    if (formulasWithRhs.length > 0) console.log(...formulasWithRhs.map(el => ({ ...el, line: n })))
 
   }
 
-  // Place a space before left parentheses, except in a function call - http://adv-r.had.co.nz/Style.html
-  // Do not place spaces around code in parentheses or square brackets - http://adv-r.had.co.nz/Style.html
-  // An opening curly brace should never go on its own line and should always be followed by a new line. - http://adv-r.had.co.nz/Style.html
-  // Strive to limit your code to 80 characters per line. - http://adv-r.had.co.nz/Style.html
-  // When indenting your code, use two spaces. Never use tabs or mix tabs and spaces. -- http://adv-r.had.co.nz/Style.html
-  // Use <-, not =, for assignment - http://adv-r.had.co.nz/Style.html
-  // File names should be machine readable - https://style.tidyverse.org/files.html
-  // Use commented lines of - and = to break up your file into easily readable chunks - http://adv-r.had.co.nz/Style.html
-  // Variable and function names should use only lowercase letters, numbers, and _. - https://style.tidyverse.org/syntax.html
-  // If you find yourself attempting to cram data into variable names (e.g. model_2018, model_2019, model_2020), consider using a list or data frame instead. - https://style.tidyverse.org/syntax.html
-  // The embracing operator, { }, should always have inner spaces to help emphasise its special behaviour: - https://style.tidyverse.org/syntax.html
   // Single-sided formulas when the right-hand side is a single identifier. - https://style.tidyverse.org/syntax.html
-  // When used in tidy evaluation !! (bang-bang) and !!! (bang-bang-bang) (because they have precedence equivalent to unary -/+). - https://style.tidyverse.org/syntax.html
-  // The help operator - https://style.tidyverse.org/syntax.html ???
-  // Extra spaces - https://style.tidyverse.org/syntax.html
-  // Vertical space - https://style.tidyverse.org/syntax.html
-  // The body of a loop must be a braced expression. - https://style.tidyverse.org/syntax.html
-  // message <- if (x > 10) { "big" } else { "small" } - https://style.tidyverse.org/syntax.html
-  // Semicolons are never recommended. In particular, don’t put ; at the end of a line, and don’t use ; to put multiple commands on one line. - https://style.tidyverse.org/syntax.html
-  // Use ", not ', for quoting text. The only exception is when the text already contains double quotes and no single quotes. - https://style.tidyverse.org/syntax.html
-  // Prefer TRUE and FALSE over T and F. - https://style.tidyverse.org/syntax.html
-  // Each line of a comment should begin with the comment symbol and a single space: # - https://style.tidyverse.org/syntax.html
-  // Only use return() for early returns. Otherwise, rely on R to return the result of the last evaluated expression. - https://style.tidyverse.org/functions.html
-  // |> should always have a space before it, and should usually be followed by a new line. After the first step, each line should be indented by two spaces.  - https://style.tidyverse.org/pipes.html
-  // Short pipes - https://style.tidyverse.org/pipes.html
-  // Variable name and assignment on separate lines, Variable name and assignment on the same line: - https://style.tidyverse.org/pipes.html
-  // magrittr - https://style.tidyverse.org/pipes.html
-  // #' @describeIn something-cool Get the mean - https://style.tidyverse.org/package-files.html
-  // #' Combine values into a vector or list - https://style.tidyverse.org/documentation.html
-
-  // variable names - datasets vs vars // snake case, camel case, etc
   return issues
 }
 
