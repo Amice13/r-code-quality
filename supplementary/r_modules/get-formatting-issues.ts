@@ -18,11 +18,9 @@ import { getBracedIfElse } from './lint-rules/get-braced-if-else.ts'
 import { getFormulasWithRhs } from './lint-rules/get-formulas-with-rhs.ts'
 
 // Use <-, not =, for assignment - http://adv-r.had.co.nz/Style.html
-// File names should be machine readable - https://style.tidyverse.org/files.html
 // Variable and function names should use only lowercase letters, numbers, and _. - https://style.tidyverse.org/syntax.html
 // If you find yourself attempting to cram data into variable names (e.g. model_2018, model_2019, model_2020), consider using a list or data frame instead. - https://style.tidyverse.org/syntax.html
 // magrittr - https://style.tidyverse.org/pipes.html
-// variable names - datasets vs vars // snake case, camel case, etc
 
 interface Issue {
   name: string

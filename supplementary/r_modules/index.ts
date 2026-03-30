@@ -1,13 +1,13 @@
 export { analyzeLines } from './analyze-lines.ts'
 export { analyzePipes } from './analyze-pipes.ts'
 export { getDataSources } from './get-data-sources.ts'
-export { getFilenameIssues } from './get-filename-issues.ts' // ?
 export { getFormatters } from './get-formatters.ts'
-export { getFormattingIssues } from './get-formatting-issues.ts' // ?
+export { getFormattingIssues } from './get-formatting-issues.ts'
 export { getFunctionNames } from './get-function-names.ts'
 export { getInstalledPackages } from './get-installed-packages.ts'
 export { getLoadedPackages } from './get-loaded-packages.ts'
 export { getSaveMethods } from './get-save-methods.ts'
+export { getUdf } from './get-udf.ts'
 export { getUserDefinedFunctions } from './get-user-defined-functions.ts' // ?
 export { getVariableNames } from './get-variable-names.ts'
 export { getWorkingDirectories } from './get-working-directories.ts'

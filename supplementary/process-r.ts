@@ -1,6 +1,6 @@
 import fs from 'fs'
 import path from 'path'
-import { getFormattingIssues } from './r_modules/index.ts'
+import { getUdf } from './r_modules/index.ts'
 
 const SOURCE_FOLDER = path.join('..', 'data', 'scripts')
 
@@ -18,7 +18,7 @@ for (const file of projects) {
   const fileStats: Partial<FileStats> = { project, filename }
   fileStats.size = content.length
 
-  const issues = getFormattingIssues(content)
+  const issues = getUdf(content)
   console.log(file)
   // const linesData = analyzeLines(content)
   // const pipesData = analyzePipes(content)
@@ -48,4 +48,7 @@ for (const file of projects) {
   // Qualifying namespaces - https://google.github.io/styleguide/Rguide.html
 
   // Variable and function names should be lowercase - http://adv-r.had.co.nz/Style.html
+
+  // has file.path
+
 }

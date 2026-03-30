@@ -8,7 +8,7 @@
  * - `hasCompoundAssignmentPipes`: true if compound assignemnt pipe (`%<>%`) is found 
  */
 
-const magrittrPipeRegex = /%>%>/
+const magrittrPipeRegex = /%>%/
 const compoundAssignmentRegex = /%<>%/
 const nativePipeRegex = /\|>/
 export const analyzePipes = (content: string) => {
